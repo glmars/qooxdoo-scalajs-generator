@@ -271,6 +271,10 @@ class Parser {
                 if (Parser.LOG_LEVEL > 3) console.info("Processing method " + m.attributes.name);
 
                 var modifier = "";
+                if (isMixin) {
+                    modifier = "override ";
+                }
+
                 this.processedMethods[ m.attributes.name ] = true;
 
                 if (m.attributes.access) {
@@ -380,10 +384,9 @@ class Parser {
     }
 
 	/**
-	  * Write the mixin methods and properties, thereby mixin it into a class. This method
-	  * is used for including methods from both mixins and interfaces
+	  * Write the interface implemented methods and properties
 	  */
-    includeMixin(name: string) {
+    includeImplemented(name: string) {
         name = name.trim();
         if (!name) return;
         this.addIfNewDependency(name);
@@ -416,19 +419,16 @@ class Parser {
             return;
         }
 
-        // var impl = interfaces.split(",").concat(mixins.split(","));
+        var impl = interfaces.split(",").concat(mixins.split(","));
 
-        if (interfaces) write(" implements " + interfaces);
+        impl.forEach((name) => {
+            write(" with " + name);
+        });
         write(" {\n");
 
 
         interfaces.split(",").forEach((name) => {
-            this.includeMixin(name);
-        });
-
-
-        mixins.split(",").forEach((name) => {
-            this.includeMixin(name);
+            this.includeImplemented(name);
         });
     }
 
