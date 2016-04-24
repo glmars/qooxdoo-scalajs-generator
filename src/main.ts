@@ -294,7 +294,7 @@ class Parser {
 		* Determine the return type of a method and write it
 		*/
     writeReturnType(d: Fmt) {
-        var returnType = "void";
+        var returnType = "Unit";
         var a = this.findChildByType(Types.Return, d);
         a = this.findChildByType(Types.Types, a);
         a = this.findChildByType(Types.Entry, a);

@@ -1,5 +1,6 @@
 
 import scala.scalajs.js
+import org.scalajs.dom.raw._
 import js.annotation._
 import js.|
 
@@ -9,10 +10,6 @@ trait IMap extends js.Object {
   def apply(key: String): js.Any = js.native
   @JSBracketAccess
   def update(key: String, v: js.Any): Unit = js.native
-}
-
-@js.native
-class ErrorImpl extends js.Error {
 }
 
 package qx {
