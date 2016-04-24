@@ -1,14 +1,30 @@
 
-interface IMap { 
-    [key:string] : any; 
-} 
+import scala.scalajs.js
+import js.annotation._
+import js.|
 
-declare class ErrorImpl implements Error {
-    name: string; 
-    message:string 
+@js.native
+trait IMap extends js.Object {
+  @JSBracketAccess
+  def apply(key: String): js.Any = js.native
+  @JSBracketAccess
+  def update(key: String, v: js.Any): Unit = js.native
 }
 
-declare module qx.registry { 
-    function registerMainMethod(fn:(app: qx.application.Standalone)=>void):void;
+@js.native
+class ErrorImpl extends js.Error {
 }
 
+package qx {
+
+package registry {
+
+@JSName("qx.registry")
+@js.native
+object Registry extends js.Object {
+  def registerMainMethod(fn: js.Function1[qx.application.Standalone, Unit]): Unit = js.native
+}
+
+}
+
+}

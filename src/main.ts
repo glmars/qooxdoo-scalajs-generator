@@ -452,6 +452,9 @@ class Parser {
         var a = d.attributes;
         if (Parser.LOG_LEVEL > 2) console.info("Processing class " + d.attributes.packageName + "." + a.name);
 
+        write(`@js.native\n`);
+        write(`@JSName("${a.packageName}.${a.name}")\n`);
+        
         if (a.type === "interface") {
           write(`interface ${a.name}`);  
         } else {
@@ -487,9 +490,9 @@ class Parser {
         var moduleName = d.attributes.packageName;
 
         if (moduleName) {
-            write(`declare module ${moduleName} {\n`);
+            write(`package ${moduleName} {\n`);
         } else {
-            write("declare ");
+            write("package ");
         }
         this.writeClass(d);
 
@@ -507,6 +510,6 @@ var files = process.argv.slice(2);
 
 var parser = new Parser();
 parser.run();
-fs.writeFileSync("qooxdoo.d.ts", output);
+fs.writeFileSync("qooxdoo.scala", output);
 
 
