@@ -188,7 +188,7 @@ class Parser {
 	  * Do the mapping of types from Qooxdoo to TypeScript
 	  */
     getType(t: string) {
-        var defaultType = "any";
+        var defaultType = "js.Any";
         if (!t) return defaultType;
 
         // Check if we have a mpping for this type
@@ -305,6 +305,9 @@ class Parser {
                 console.log("Type determined for " + this.fromProperty + ":" + type);
             }
             returnType = this.getType(type);
+            if (returnType === "js.Any") {
+                returnType = "js.Dynamic";
+            }
             if (a.attributes.dimensions) returnType += "[]";
         }
         write(": " + returnType + " = js.native");
