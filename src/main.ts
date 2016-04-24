@@ -433,7 +433,7 @@ class Parser {
         var extendsClause = "";
 
         if (a.superClass && (a.superClass !== "Object")) {
-            extendsClause = "extends " + this.getType(a.superClass);
+            extendsClause = " extends " + this.getType(a.superClass);
         }
         write(extendsClause);
     }
@@ -453,9 +453,9 @@ class Parser {
         if (Parser.LOG_LEVEL > 2) console.info("Processing class " + d.attributes.packageName + "." + a.name);
 
         if (a.type === "interface") {
-          write(`interface ${a.name} `);  
+          write(`interface ${a.name}`);  
         } else {
-          write (`class ${a.name} `);
+          write (`class ${a.name}`);
         }
 
         this.writeExtendsClause(a);
