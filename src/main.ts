@@ -216,9 +216,9 @@ class Parser {
     writeConstructor(d: Fmt[]) {
         d.forEach((m) => {
             if (m.type === Types.Method) {
-                write(indent + "constructor (");
+                write(indent + "def this(");
                 this.writeParameters(m, true);
-                write(");\n");
+                write(") = this()\n");
             }
         });
     }
@@ -452,6 +452,12 @@ class Parser {
         });
     }
 
+    hasConstructor(d: Fmt): boolean {
+        return d.children.some((c) => {
+            return c.type === Types.Constructor;
+        });
+    }
+
 	/**
 		* Write the class or interface declaration
 		*/
@@ -467,6 +473,10 @@ class Parser {
         } else {
           write(`@JSName("${a.packageName}.${a.name}")\n`);
           write (`class ${a.name}`);
+        }
+
+        if (this.hasConstructor(d)) {
+          write(` protected ()`);  
         }
 
         this.writeExtendsClause(a);
