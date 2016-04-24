@@ -280,7 +280,7 @@ class Parser {
 
                 if (isMixin && (modifier == "protected ")) return;
 
-                write(indent + modifier + staticClause + m.attributes.name + "(");
+                write(indent + modifier + staticClause + "def " + m.attributes.name + "(");
                 this.writeParameters(m);
                 write(")");
                 this.writeReturnType(m);
@@ -307,18 +307,17 @@ class Parser {
             returnType = this.getType(type);
             if (a.attributes.dimensions) returnType += "[]";
         }
-        write(":" + returnType + ";");
+        write(": " + returnType + " = js.native");
     }
 
 	/**
 		* Write the specific type of one parameter. 
 		*/
     writeParam(p: Fmt, forceOptional: boolean): boolean {
-        var type = "any";
+        var type = "js.Any";
         write(p.attributes.name);
         if (p.attributes.name == "varargs") forceOptional = true;
-        if (p.attributes.optional || forceOptional) write("?");
-        write(":");
+        write(": ");
         var a = this.findChildByType(Types.Types, p);
         a = this.findChildByType(Types.Entry, a);
         if (a && a.attributes.type) {
@@ -326,6 +325,7 @@ class Parser {
             if (a.attributes.dimensions) type += "[]";
         }
         write(type);
+        if (p.attributes.optional || forceOptional) write(" = ???");
         return p.attributes.optional || forceOptional;
     }
 
@@ -339,7 +339,7 @@ class Parser {
         if (params) {
             params.children.forEach((c) => {
                 if (c.type === Types.Param) {
-                    if (!first) write(","); else first = false;
+                    if (!first) write(", "); else first = false;
                     optional = this.writeParam(c, optional);
                 }
             });
