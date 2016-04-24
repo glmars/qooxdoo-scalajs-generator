@@ -430,12 +430,14 @@ class Parser {
     }
 
     writeExtendsClause(a: Attributes) {
-        var extendsClause = "";
-
-        if (a.superClass && (a.superClass !== "Object")) {
-            extendsClause = " extends " + this.getType(a.superClass);
+        var superClassType = "";
+        if (!a.superClass || a.superClass === "Object") {
+            superClassType = "js.Object";
         }
-        write(extendsClause);
+        else {
+            superClassType = this.getType(a.superClass);
+        }
+        write(` extends ${superClassType}`);
     }
 
     runChildrenOfType(d: Fmt, type: string, fn: (param: Fmt) => void) {
@@ -453,11 +455,11 @@ class Parser {
         if (Parser.LOG_LEVEL > 2) console.info("Processing class " + d.attributes.packageName + "." + a.name);
 
         write(`@js.native\n`);
-        write(`@JSName("${a.packageName}.${a.name}")\n`);
         
         if (a.type === "interface") {
-          write(`interface ${a.name}`);  
+          write(`trait ${a.name}`);  
         } else {
+          write(`@JSName("${a.packageName}.${a.name}")\n`);
           write (`class ${a.name}`);
         }
 

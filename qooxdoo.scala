@@ -1,4 +1,4 @@
-// Generated declaration file at Sun Apr 24 2016 13:09:55 GMT+0600 (RTZ 5 (зима))
+// Generated declaration file at Sun Apr 24 2016 13:38:10 GMT+0600 (RTZ 5 (зима))
 
 import scala.scalajs.js
 import js.annotation._
@@ -32,7 +32,7 @@ object Registry extends js.Object {
 package qx {
 @js.native
 @JSName("qx.Bootstrap")
-class Bootstrap {
+class Bootstrap extends js.Object {
     static base(args:any,varargs?:any):any;
     static bind(func:Function,self?:any,varargs?:any):Function;
     static createNamespace(name:string,object:any):string;
@@ -66,7 +66,7 @@ class Bootstrap {
 package qx {
 @js.native
 @JSName("qx.Class")
-class Class {
+class Class extends js.Object {
     static define(name?:string,config?:IMap):qx.Class;
     static genericToString():string;
     static getByInterface(clazz:qx.Class,iface:qx.Interface):qx.Class;
@@ -98,7 +98,7 @@ class Class {
 package qx {
 @js.native
 @JSName("qx.Interface")
-class Interface {
+class Interface extends js.Object {
     static assert(clazz:qx.Class,iface:qx.Interface,wrap?:boolean):void;
     static assertObject(object:qx.core.Object,iface:qx.Interface):void;
     static classImplements(clazz:qx.Class,iface:qx.Interface):boolean;
@@ -115,7 +115,7 @@ class Interface {
 package qx {
 @js.native
 @JSName("qx.Mixin")
-class Mixin {
+class Mixin extends js.Object {
     static checkCompatibility(mixins:qx.Mixin[]):boolean;
     static define(name:string,config?:IMap):qx.Mixin;
     static flatten(mixins?:qx.Mixin[]):qx.data.Array;
@@ -130,7 +130,7 @@ class Mixin {
 package qx {
 @js.native
 @JSName("qx.Part")
-class Part {
+class Part extends js.Object {
     constructor (loader?:any);
     static $$notifyLoad(id:string,closure:Function):void;
     static getInstance():qx.Part;
@@ -149,7 +149,7 @@ class Part {
 package qx {
 @js.native
 @JSName("qx.Theme")
-class Theme {
+class Theme extends js.Object {
     static define(name:string,config:IMap):void;
     static genericToString():string;
     static getAll():IMap;
@@ -193,8 +193,7 @@ class Basic extends qx.core.Object implements qx.application.IApplication {
 }
 package qx.application {
 @js.native
-@JSName("qx.application.IApplication")
-interface IApplication {
+trait IApplication extends js.Object {
     close():string;
     finalize():void;
     main():void;
@@ -216,7 +215,7 @@ class Native extends qx.core.Object implements qx.application.IApplication {
 package qx.application {
 @js.native
 @JSName("qx.application.Routing")
-class Routing {
+class Routing extends js.Object {
     constructor ();
     protected _executeGet(path:string,customData:any,fromEvent:any):void;
     protected _getPathOrFallback(path:string,defaultPath?:string):string;
@@ -278,7 +277,7 @@ class Blocker extends qx.core.Object {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Cookie")
-class Cookie {
+class Cookie extends js.Object {
     static del(key:string,path?:string,domain?:string):void;
     static get(key:string):any;
     static set(key:string,value:string,expires?:number,path?:string,domain?:string,secure?:boolean):void;
@@ -288,7 +287,7 @@ class Cookie {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Document")
-class Document {
+class Document extends js.Object {
     static getHeight(win?:Window):number;
     static getWidth(win?:Window):number;
     static isQuirksMode(win?:Window):boolean;
@@ -299,7 +298,7 @@ class Document {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Element")
-class Element {
+class Element extends js.Object {
     static activate(element:HTMLElement):void;
     static addListener(element:HTMLElement,type:string,listener:Function,self?:any,capture?:boolean):string;
     static blur(element:HTMLElement):void;
@@ -317,7 +316,7 @@ class Element {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Event")
-class Event {
+class Event extends js.Object {
     static addNativeListener(target:any,type:string,listener:Function,useCapture?:boolean):void;
     static fire(target:HTMLElement,type:string):boolean;
     static getEventName(target:any,type:string):string;
@@ -352,7 +351,7 @@ class FileReader extends qx.core.Object {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Flash")
-class Flash {
+class Flash extends js.Object {
     static create(element:HTMLElement,attributes:IMap,variables?:IMap,params?:IMap,win?:Window):HTMLElement;
     static destroy(element:HTMLElement,win?:Window):void;
 
@@ -469,7 +468,7 @@ class History extends qx.core.Object {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Html")
-class Html {
+class Html extends js.Object {
     static clean(objs:HTMLElement[],context?:Document,fragment?:HTMLElement):HTMLElement[];
     static extractScripts(elements:HTMLElement[],fragment?:Document):HTMLElement[];
     static fixEmptyTags(html:string):string;
@@ -479,7 +478,7 @@ class Html {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Iframe")
-class Iframe {
+class Iframe extends js.Object {
     static create(attributes?:IMap,win?:Window):HTMLElement;
     static getBody(iframe:HTMLElement):HTMLElement;
     static getDocument(iframe:HTMLElement):Document;
@@ -501,7 +500,7 @@ class IframeHistory extends qx.bom.History {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Input")
-class Input {
+class Input extends js.Object {
     static create(type:string,attributes:IMap,win:Window):HTMLElement;
     static getValue(element:HTMLElement):string;
     static setValue(element:HTMLElement,value:string):void;
@@ -512,7 +511,7 @@ class Input {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Label")
-class Label {
+class Label extends js.Object {
     static create(content:string,html?:boolean,win?:Window):HTMLElement;
     static getHtmlSize(content:string,styles?:IMap,width?:number):IMap;
     static getTextSize(text:string,styles:IMap):IMap;
@@ -525,7 +524,7 @@ class Label {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Lifecycle")
-class Lifecycle {
+class Lifecycle extends js.Object {
     static onReady(callback:Function,context?:any):void;
     static onShutdown(callback:Function,context?:any):void;
 
@@ -563,7 +562,7 @@ class PageVisibility extends qx.event.Emitter {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Range")
-class Range {
+class Range extends js.Object {
     static get(node:Node):any;
 
 }
@@ -571,7 +570,7 @@ class Range {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Selection")
-class Selection {
+class Selection extends js.Object {
     static get(node:Node):string;
     static getEnd(node:Node):number;
     static getLength(node:Node):number;
@@ -585,7 +584,7 @@ class Selection {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Selector")
-class Selector {
+class Selector extends js.Object {
     static matches(selector:string,set:qx.data.Array):qx.data.Array;
     static query(selector:string,context:HTMLElement):qx.data.Array;
 
@@ -621,7 +620,7 @@ class Shortcut extends qx.core.Object {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Storage")
-class Storage {
+class Storage extends js.Object {
     static getLocal():qx.bom.storage.Web;
     static getSession():qx.bom.storage.Web;
 
@@ -630,7 +629,7 @@ class Storage {
 package qx.bom {
 @js.native
 @JSName("qx.bom.String")
-class String {
+class String extends js.Object {
     static escape(str:string):string;
     static fromText(str:string):string;
     static toText(str:string):string;
@@ -641,7 +640,7 @@ class String {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Style")
-class Style {
+class Style extends js.Object {
     static getAppliedStyle(element:HTMLElement,propertyName:string,value:string,prefixed?:boolean):string;
     static getCssName(propertyName:string):string;
     static getPropertyName(propertyName:string):string;
@@ -651,7 +650,7 @@ class Style {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Stylesheet")
-class Stylesheet {
+class Stylesheet extends js.Object {
     static addImport(sheet:any,url:string):void;
     static addRule(sheet:any,selector:string,entry:string):void;
     static createElement(text?:string):StyleSheet;
@@ -667,7 +666,7 @@ class Stylesheet {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Template")
-class Template {
+class Template extends js.Object {
     protected static _createNodeFromTemplate(template:string):HTMLElement;
     static get(id:string,view:any,partials:any):HTMLElement;
     static render(template:string,view:any,partials:any):string;
@@ -678,7 +677,7 @@ class Template {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Viewport")
-class Viewport {
+class Viewport extends js.Object {
     static getHeight(win?:Window):number;
     static getOrientation(win?:Window):number;
     static getScrollLeft(win?:Window):number;
@@ -692,7 +691,7 @@ class Viewport {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Vml")
-class Vml {
+class Vml extends js.Object {
     static create(type:string,attributes?:IMap,win?:any):HTMLElement;
     static createImage(source?:string,width?:number,height?:number,xOffset?:number,yOffset?:number,imageWidth?:number,imageHeight?:number):HTMLElement;
     static updateImage(image:HTMLElement,source:string,width:number,height:number,xOffset?:number,yOffset?:number,imageWidth?:number,imageHeight?:number):void;
@@ -713,7 +712,7 @@ class WebWorker extends qx.core.Object {
 package qx.bom {
 @js.native
 @JSName("qx.bom.Window")
-class Window {
+class Window extends js.Object {
     static close(win:Window):any;
     static getBlocker():qx.bom.Blocker;
     static isClosed(win:Window):boolean;
@@ -726,7 +725,7 @@ class Window {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Browser")
-class Browser {
+class Browser extends js.Object {
     static getDocumentMode():number;
     static getName():string;
     static getQuirksMode():boolean;
@@ -737,7 +736,7 @@ class Browser {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Css")
-class Css {
+class Css extends js.Object {
     static getAlphaImageLoaderNeeded():boolean;
     static getAppearance():string;
     static getBorderImage():string;
@@ -769,7 +768,7 @@ class Css {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.CssAnimation")
-class CssAnimation {
+class CssAnimation extends js.Object {
     static getAnimationEnd():string;
     static getAnimationIteration():string;
     static getAnimationStart():string;
@@ -785,7 +784,7 @@ class CssAnimation {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.CssTransform")
-class CssTransform {
+class CssTransform extends js.Object {
     static get3D():boolean;
     static getBackFaceVisibility():string;
     static getName():string;
@@ -800,7 +799,7 @@ class CssTransform {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.CssTransition")
-class CssTransition {
+class CssTransition extends js.Object {
     static getSupport():any;
     static getTransitionName():string;
 
@@ -809,7 +808,7 @@ class CssTransition {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Device")
-class Device {
+class Device extends js.Object {
     static detectDeviceType(userAgentString:string):string;
     static detectMobileDevice(userAgentString:string):boolean;
     static detectTabletDevice(userAgentString:string):boolean;
@@ -823,7 +822,7 @@ class Device {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.EcmaScript")
-class EcmaScript {
+class EcmaScript extends js.Object {
     static getArrayEvery():boolean;
     static getArrayFilter():boolean;
     static getArrayForEach():boolean;
@@ -845,7 +844,7 @@ class EcmaScript {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Engine")
-class Engine {
+class Engine extends js.Object {
     static getName():string;
     static getVersion():string;
 
@@ -854,7 +853,7 @@ class Engine {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Event")
-class Event {
+class Event extends js.Object {
     static getCustomEvent():boolean;
     static getDispatchEvent():boolean;
     static getHashChange():boolean;
@@ -869,7 +868,7 @@ class Event {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Flash")
-class Flash {
+class Flash extends js.Object {
     static getExpressInstall():boolean;
     static getStrictSecurityModel():boolean;
     static getVersion():string;
@@ -880,7 +879,7 @@ class Flash {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Html")
-class Html {
+class Html extends js.Object {
     static getAudio():boolean;
     static getAudioAif():string;
     static getAudioAu():string;
@@ -920,7 +919,7 @@ class Html {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Locale")
-class Locale {
+class Locale extends js.Object {
     static getLocale():string;
     static getVariant():string;
 
@@ -929,7 +928,7 @@ class Locale {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.OperatingSystem")
-class OperatingSystem {
+class OperatingSystem extends js.Object {
     static getName():string;
     static getVersion():string;
 
@@ -938,7 +937,7 @@ class OperatingSystem {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Pdfjs")
-class Pdfjs {
+class Pdfjs extends js.Object {
     static getPdfjs(callback:Function,context:any):void;
 
 }
@@ -946,7 +945,7 @@ class Pdfjs {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.PhoneGap")
-class PhoneGap {
+class PhoneGap extends js.Object {
     static getNotification():boolean;
     static getPhoneGap():boolean;
 
@@ -955,7 +954,7 @@ class PhoneGap {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Plugin")
-class Plugin {
+class Plugin extends js.Object {
     static getActiveX():boolean;
     static getDivX():boolean;
     static getDivXVersion():string;
@@ -975,7 +974,7 @@ class Plugin {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Runtime")
-class Runtime {
+class Runtime extends js.Object {
     static getName():string;
 
 }
@@ -983,7 +982,7 @@ class Runtime {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Scroll")
-class Scroll {
+class Scroll extends js.Object {
     static getNativeScroll():boolean;
     static scrollBarOverlayed():boolean;
 
@@ -992,7 +991,7 @@ class Scroll {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Stylesheet")
-class Stylesheet {
+class Stylesheet extends js.Object {
     static getAddImport():boolean;
     static getCreateStyleSheet():boolean;
     static getDeleteRule():boolean;
@@ -1004,7 +1003,7 @@ class Stylesheet {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Transport")
-class Transport {
+class Transport extends js.Object {
     static getMaxConcurrentRequestCount():number;
     static getSsl():boolean;
     static getXmlHttpRequest():string;
@@ -1014,7 +1013,7 @@ class Transport {
 package qx.bom.client {
 @js.native
 @JSName("qx.bom.client.Xml")
-class Xml {
+class Xml extends js.Object {
     static getAttributeNS():boolean;
     static getCreateElementNS():boolean;
     static getCreateNode():boolean;
@@ -1031,7 +1030,7 @@ class Xml {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Animation")
-class Animation {
+class Animation extends js.Object {
     static animate(el:HTMLElement,desc:IMap,duration?:number):qx.bom.element.AnimationHandle;
     static animateReverse(el:HTMLElement,desc:IMap,duration?:number):qx.bom.element.AnimationHandle;
 
@@ -1040,7 +1039,7 @@ class Animation {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.AnimationCss")
-class AnimationCss {
+class AnimationCss extends js.Object {
     protected static _animate(el:HTMLElement,desc:IMap,duration?:number,reverse?:boolean):qx.bom.element.AnimationHandle;
     static animate(el:HTMLElement,desc:IMap,duration?:number):qx.bom.element.AnimationHandle;
     static animateReverse(el:HTMLElement,desc:IMap,duration?:number):qx.bom.element.AnimationHandle;
@@ -1064,7 +1063,7 @@ class AnimationHandle extends qx.event.Emitter {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.AnimationJs")
-class AnimationJs {
+class AnimationJs extends js.Object {
     protected static _animate(el:HTMLElement,desc:IMap,duration?:number,reverse?:boolean):qx.bom.element.AnimationHandle;
     static animate(el:HTMLElement,desc:IMap,duration?:number):qx.bom.element.AnimationHandle;
     static animateReverse(el:HTMLElement,desc:IMap,duration?:number):qx.bom.element.AnimationHandle;
@@ -1077,7 +1076,7 @@ class AnimationJs {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Attribute")
-class Attribute {
+class Attribute extends js.Object {
     static compile(map:IMap):string;
     static get(element:HTMLElement,name:string):any;
     static reset(element:HTMLElement,name:string):void;
@@ -1088,7 +1087,7 @@ class Attribute {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Background")
-class Background {
+class Background extends js.Object {
     static compile(source?:string,repeat?:string,left?:number,top?:number):string;
     static getStyles(source:string,repeat?:string,left?:number,top?:number):IMap;
     static set(element:HTMLElement,source?:string,repeat?:string,left?:number,top?:number):void;
@@ -1098,7 +1097,7 @@ class Background {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.BoxSizing")
-class BoxSizing {
+class BoxSizing extends js.Object {
     static compile(value:string):string;
     static get(element:HTMLElement):string;
     static reset(element:HTMLElement):void;
@@ -1109,7 +1108,7 @@ class BoxSizing {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Class")
-class Class {
+class Class extends js.Object {
     static add(element:HTMLElement,name:string):string;
     static addClasses(element:HTMLElement,classes:string[]):string;
     static get(element:HTMLElement):string;
@@ -1124,7 +1123,7 @@ class Class {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Clip")
-class Clip {
+class Clip extends js.Object {
     static compile(map:IMap):string;
     static get(element:HTMLElement,mode:number):IMap;
     static reset(element:HTMLElement):void;
@@ -1135,7 +1134,7 @@ class Clip {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Cursor")
-class Cursor {
+class Cursor extends js.Object {
     static compile(cursor:string):string;
     static get(element:HTMLElement,mode:number):string;
     static reset(element:HTMLElement):void;
@@ -1146,7 +1145,7 @@ class Cursor {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Dataset")
-class Dataset {
+class Dataset extends js.Object {
     static get(element:HTMLElement,name:string):any;
     static getAll(element:HTMLElement):IMap;
     static hasData(element:HTMLElement):boolean;
@@ -1158,7 +1157,7 @@ class Dataset {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Decoration")
-class Decoration {
+class Decoration extends js.Object {
     static create(source:string,repeat:string,style:IMap):string;
     static getAttributes(source:string,repeat:string,style:IMap):string;
     static getTagName(repeat:string,source?:string):string;
@@ -1170,7 +1169,7 @@ class Decoration {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Dimension")
-class Dimension {
+class Dimension extends js.Object {
     protected static _getBoundingClientRect(element:HTMLElement):IMap;
     static getContentHeight(element:HTMLElement):number;
     static getContentSize(element:HTMLElement):IMap;
@@ -1184,7 +1183,7 @@ class Dimension {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Location")
-class Location {
+class Location extends js.Object {
     static get(elem:HTMLElement,mode?:string):IMap;
     static getBottom(elem:HTMLElement,mode:string):number;
     static getLeft(elem:HTMLElement,mode:string):number;
@@ -1199,7 +1198,7 @@ class Location {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Opacity")
-class Opacity {
+class Opacity extends js.Object {
     static compile(opacity:number):string;
     static get(element:HTMLElement,mode:number):number;
     static reset(element:HTMLElement):void;
@@ -1210,7 +1209,7 @@ class Opacity {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Scroll")
-class Scroll {
+class Scroll extends js.Object {
     static getScrollbarWidth():number;
     static intoView(element:HTMLElement,stop?:HTMLElement,alignX?:string,alignY?:string):void;
     static intoViewX(element:HTMLElement,stop?:HTMLElement,align?:string):void;
@@ -1221,7 +1220,7 @@ class Scroll {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Style")
-class Style {
+class Style extends js.Object {
     static compile(map:IMap):string;
     static get(element:HTMLElement,name:string,mode:number,smart?:boolean):any;
     static getCss(element:HTMLElement):string;
@@ -1236,7 +1235,7 @@ class Style {
 package qx.bom.element {
 @js.native
 @JSName("qx.bom.element.Transform")
-class Transform {
+class Transform extends js.Object {
     protected static _compute3dProperty(property:string,params:qx.data.Array):string;
     protected static _computeAxisProperties(property:string,params:qx.data.Array):string;
     static getBackfaceVisibility(el:HTMLElement):boolean;
@@ -1326,8 +1325,7 @@ class Video extends qx.bom.media.Abstract {
 }
 package qx.bom.request {
 @js.native
-@JSName("qx.bom.request.IRequest")
-interface IRequest {
+trait IRequest extends js.Object {
     abort():void;
     getAllResponseHeaders():string;
     getResponseHeader(header:string):string;
@@ -1359,7 +1357,7 @@ class Jsonp extends qx.bom.request.Script {
 package qx.bom.request {
 @js.native
 @JSName("qx.bom.request.Script")
-class Script {
+class Script extends js.Object {
     constructor ();
     protected _emit(event:string):void;
     protected _getScriptElement():HTMLElement;
@@ -1432,7 +1430,7 @@ class SimpleXhr extends qx.event.Emitter {
 package qx.bom.request {
 @js.native
 @JSName("qx.bom.request.Xhr")
-class Xhr {
+class Xhr extends js.Object {
     constructor ();
     protected _createNativeXhr():any;
     protected _emit(event:string):void;
@@ -1491,7 +1489,7 @@ class Resource extends qx.event.Emitter {
 package qx.bom.storage {
 @js.native
 @JSName("qx.bom.storage.Memory")
-class Memory {
+class Memory extends js.Object {
     constructor ();
     static getLocal():qx.bom.storage.Memory;
     static getSession():qx.bom.storage.Memory;
@@ -1509,7 +1507,7 @@ class Memory {
 package qx.bom.storage {
 @js.native
 @JSName("qx.bom.storage.UserData")
-class UserData {
+class UserData extends js.Object {
     constructor (storeName?:string);
     static getLocal():qx.bom.storage.UserData;
     static getSession():qx.bom.storage.UserData;
@@ -1527,7 +1525,7 @@ class UserData {
 package qx.bom.storage {
 @js.native
 @JSName("qx.bom.storage.Web")
-class Web {
+class Web extends js.Object {
     constructor (type?:string);
     static getLocal():qx.bom.storage.Web;
     static getSession():qx.bom.storage.Web;
@@ -1595,7 +1593,7 @@ class WebFont extends qx.bom.Font {
 package qx.core {
 @js.native
 @JSName("qx.core.Aspect")
-class Aspect {
+class Aspect extends js.Object {
     static addAdvice(fcn:Function,position?:string,type?:string,name?:string):void;
     static wrap(fullName:string,fcn:Function,type:string):Function;
 
@@ -1604,7 +1602,7 @@ class Aspect {
 package qx.core {
 @js.native
 @JSName("qx.core.Assert")
-class Assert {
+class Assert extends js.Object {
     static assert(condition:any,msg:string):void;
     static assertArgumentsCount(args:any,minCount:number,maxCount:number,msg:string):void;
     static assertArray(value:any,msg:string):void;
@@ -1660,7 +1658,7 @@ class AssertionError extends qx.type.BaseError {
 package qx.core {
 @js.native
 @JSName("qx.core.BaseInit")
-class BaseInit {
+class BaseInit extends js.Object {
     static getApplication():qx.core.Object;
     static ready():void;
 
@@ -1669,7 +1667,7 @@ class BaseInit {
 package qx.core {
 @js.native
 @JSName("qx.core.Environment")
-class Environment {
+class Environment extends js.Object {
     protected static _getClassNameFromEnvKey(key:string):qx.data.Array;
     protected static _initDefaultQxValues():void;
     static add(key:string,check:any):void;
@@ -1698,14 +1696,14 @@ class GlobalError extends ErrorImpl {
 package qx.core {
 @js.native
 @JSName("qx.core.Init")
-class Init {
+class Init extends js.Object {
 
 }
 }
 package qx.core {
 @js.native
 @JSName("qx.core.MAssert")
-class MAssert {
+class MAssert extends js.Object {
     assert(condition:any,msg:string):void;
     assertArgumentsCount(args:any,minCount:number,maxCount:number,msg:string):void;
     assertArray(value:any,msg:string):void;
@@ -1752,7 +1750,7 @@ class MAssert {
 package qx.core {
 @js.native
 @JSName("qx.core.MBindTo")
-class MBindTo {
+class MBindTo extends js.Object {
     bindTo(func:Function,varargs?:any):Function;
 
 }
@@ -1760,7 +1758,7 @@ class MBindTo {
 package qx.core {
 @js.native
 @JSName("qx.core.MEvent")
-class MEvent {
+class MEvent extends js.Object {
     addListener(type:string,listener:Function,self?:any,capture?:boolean):string;
     addListenerOnce(type:string,listener:Function,self?:any,capture?:boolean):string;
     dispatchEvent(evt:qx.event.type.Event):boolean;
@@ -1776,7 +1774,7 @@ class MEvent {
 package qx.core {
 @js.native
 @JSName("qx.core.MLogging")
-class MLogging {
+class MLogging extends js.Object {
     debug(varargs?:any):void;
     error(varargs?:any):void;
     info(varargs?:any):void;
@@ -1788,7 +1786,7 @@ class MLogging {
 package qx.core {
 @js.native
 @JSName("qx.core.MProperty")
-class MProperty {
+class MProperty extends js.Object {
     get(prop:string):any;
     reset(prop:string):void;
     set(data:IMap,value?:any):any;
@@ -1798,7 +1796,7 @@ class MProperty {
 package qx.core {
 @js.native
 @JSName("qx.core.Object")
-class Object {
+class Object extends js.Object {
     addListener(type:string,listener:Function,self?:any,capture?:boolean):string;
     addListenerOnce(type:string,listener:Function,self?:any,capture?:boolean):string;
     dispatchEvent(evt:qx.event.type.Event):boolean;
@@ -1880,7 +1878,7 @@ class Object {
 package qx.core {
 @js.native
 @JSName("qx.core.ObjectRegistry")
-class ObjectRegistry {
+class ObjectRegistry extends js.Object {
     static clearHashCode(obj:any):void;
     static fromHashCode(hash:string):qx.core.Object;
     static getNextHash():number;
@@ -1897,7 +1895,7 @@ class ObjectRegistry {
 package qx.core {
 @js.native
 @JSName("qx.core.Property")
-class Property {
+class Property extends js.Object {
     static attachMethods(clazz:qx.Class,name:string,config:IMap):void;
     static attachRefreshInheritables(clazz:qx.Class):void;
     static error(obj:qx.core.Object,id:number,property:string,variant:string,value:any):void;
@@ -1976,7 +1974,7 @@ class Array extends qx.core.Object implements qx.data.IListData {
 package qx.data {
 @js.native
 @JSName("qx.data.Conversion")
-class Conversion {
+class Conversion extends js.Object {
     static toBoolean(value:any):boolean;
     static toNumber(value:any):number;
 
@@ -1984,8 +1982,7 @@ class Conversion {
 }
 package qx.data {
 @js.native
-@JSName("qx.data.IListData")
-interface IListData {
+trait IListData extends js.Object {
     contains(item:any):boolean;
     getItem(index:number):any;
     getLength():number;
@@ -1998,7 +1995,7 @@ interface IListData {
 package qx.data {
 @js.native
 @JSName("qx.data.MBinding")
-class MBinding {
+class MBinding extends js.Object {
     constructor ();
     bind(sourcePropertyChain:string,targetObject:qx.core.Object,targetProperty:string,options:IMap):any;
     getBindings():qx.data.Array;
@@ -2011,7 +2008,7 @@ class MBinding {
 package qx.data {
 @js.native
 @JSName("qx.data.SingleValueBinding")
-class SingleValueBinding {
+class SingleValueBinding extends js.Object {
     static bind(sourceObject:qx.core.Object,sourcePropertyChain:string,targetObject:qx.core.Object,targetPropertyChain:string,options?:IMap):any;
     static getAllBindings():IMap;
     static getAllBindingsForObject(object:qx.core.Object):qx.data.Array;
@@ -2049,8 +2046,7 @@ class Form extends qx.core.Object {
 }
 package qx.data.controller {
 @js.native
-@JSName("qx.data.controller.IControllerDelegate")
-interface IControllerDelegate {
+trait IControllerDelegate extends js.Object {
     bindItem(controller:any,item:qx.ui.core.Widget,id:any):void;
     configureItem(item:any):void;
     createItem():qx.ui.core.Widget;
@@ -2060,8 +2056,7 @@ interface IControllerDelegate {
 }
 package qx.data.controller {
 @js.native
-@JSName("qx.data.controller.ISelection")
-interface ISelection {
+trait ISelection extends js.Object {
     getSelection():qx.data.IListData;
     resetSelection():void;
     setSelection(value:qx.data.IListData):void;
@@ -2131,7 +2126,7 @@ class List extends qx.core.Object implements qx.data.controller.ISelection {
 package qx.data.controller {
 @js.native
 @JSName("qx.data.controller.MSelection")
-class MSelection {
+class MSelection extends js.Object {
     constructor ();
     protected _addChangeTargetListener(value:qx.ui.core.Widget,old:qx.ui.core.Widget):void;
     protected _applySelection(value:qx.data.Array,old:qx.data.Array):void;
@@ -2222,8 +2217,7 @@ class Tree extends qx.core.Object implements qx.data.controller.ISelection {
 }
 package qx.data.marshal {
 @js.native
-@JSName("qx.data.marshal.IMarshaler")
-interface IMarshaler {
+trait IMarshaler extends js.Object {
     toClass(data:any,includeBubbleEvents:boolean):void;
     toModel(data:any):qx.core.Object;
 
@@ -2231,8 +2225,7 @@ interface IMarshaler {
 }
 package qx.data.marshal {
 @js.native
-@JSName("qx.data.marshal.IMarshalerDelegate")
-interface IMarshalerDelegate {
+trait IMarshalerDelegate extends js.Object {
     getArrayClass(parentProperty:string,depth:number):qx.Class;
     getModelClass(properties:string,object:IMap,parentProperty:string,depth:number):qx.Class;
     getModelMixins(properties:string,parentProperty:string,depth:number):qx.data.Array;
@@ -2257,7 +2250,7 @@ class Json extends qx.core.Object implements qx.data.marshal.IMarshaler {
 package qx.data.marshal {
 @js.native
 @JSName("qx.data.marshal.MEventBubbling")
-class MEventBubbling {
+class MEventBubbling extends js.Object {
     protected _applyEventPropagation(value:any,old:any,name:string):void;
     protected _registerEventChaining(value:any,old:any,name:string):void;
 
@@ -2265,8 +2258,7 @@ class MEventBubbling {
 }
 package qx.data.store {
 @js.native
-@JSName("qx.data.store.IStoreDelegate")
-interface IStoreDelegate {
+trait IStoreDelegate extends js.Object {
     configureRequest(request:any):void;
     manipulateData(data:any):any;
 
@@ -2364,7 +2356,7 @@ class Yql extends qx.data.store.Jsonp {
 package qx.dom {
 @js.native
 @JSName("qx.dom.Element")
-class Element {
+class Element extends js.Object {
     static create(name:string,attributes?:IMap,win?:Window):HTMLElement;
     static empty(element:HTMLElement):string;
     static getHelperElement(win?:Window):HTMLElement;
@@ -2389,7 +2381,7 @@ class Element {
 package qx.dom {
 @js.native
 @JSName("qx.dom.Hierarchy")
-class Hierarchy {
+class Hierarchy extends js.Object {
     protected static _recursivelyCollect(element:HTMLElement,property:string):qx.data.Array;
     static cleanWhitespace(element:HTMLElement):void;
     static contains(element:HTMLElement,target:Node):boolean;
@@ -2415,7 +2407,7 @@ class Hierarchy {
 package qx.dom {
 @js.native
 @JSName("qx.dom.Node")
-class Node {
+class Node extends js.Object {
     static getBodyElement(node:Node):HTMLElement;
     static getDocument(node:Node):Document;
     static getDocumentElement(node:Node):HTMLElement;
@@ -2463,7 +2455,7 @@ class AcceleratingTimer extends qx.core.Object {
 package qx.event {
 @js.native
 @JSName("qx.event.Emitter")
-class Emitter {
+class Emitter extends js.Object {
     addListener(name:string,listener:Function,ctx?:any):number;
     addListenerOnce(name:string,listener:Function,ctx?:any):number;
     emit(name:string,data?:any):void;
@@ -2481,7 +2473,7 @@ class Emitter {
 package qx.event {
 @js.native
 @JSName("qx.event.GlobalError")
-class GlobalError {
+class GlobalError extends js.Object {
     static handleError(ex:qx.core.WindowError):void;
     static observeMethod(method:Function):Function;
     static setErrorHandler(callback?:Function,context?:any):void;
@@ -2490,8 +2482,7 @@ class GlobalError {
 }
 package qx.event {
 @js.native
-@JSName("qx.event.IEventDispatcher")
-interface IEventDispatcher {
+trait IEventDispatcher extends js.Object {
     canDispatchEvent(target:HTMLElement,event:qx.event.type.Event,type:string):boolean;
     dispatchEvent(target:HTMLElement,event:qx.event.type.Event,type:string):void;
 
@@ -2499,8 +2490,7 @@ interface IEventDispatcher {
 }
 package qx.event {
 @js.native
-@JSName("qx.event.IEventHandler")
-interface IEventHandler {
+trait IEventHandler extends js.Object {
     canHandleEvent(target:any,type:string):boolean;
     registerEvent(target:any,type:string,capture:boolean):void;
     unregisterEvent(target:any,type:string,capture:boolean):void;
@@ -2525,7 +2515,7 @@ class Idle extends qx.core.Object {
 package qx.event {
 @js.native
 @JSName("qx.event.Manager")
-class Manager {
+class Manager extends js.Object {
     constructor (win?:Window,registration?:qx.event.Registration);
     static getNextUniqueId():string;
     addListener(target:any,type:string,listener:Function,self?:any,capture?:boolean):string;
@@ -2552,7 +2542,7 @@ class Manager {
 package qx.event {
 @js.native
 @JSName("qx.event.Messaging")
-class Messaging {
+class Messaging extends js.Object {
     constructor ();
     protected _addListener(channel:string,type:string,handler:Function,scope?:any):string;
     protected _emit(channel:string,path:string,params:IMap,customData:any):void;
@@ -2578,7 +2568,7 @@ class Pool extends qx.util.ObjectPool {
 package qx.event {
 @js.native
 @JSName("qx.event.Registration")
-class Registration {
+class Registration extends js.Object {
     static addDispatcher(dispatcher:qx.event.IEventDispatcher,priority:number):void;
     static addHandler(handler:qx.event.IEventHandler):void;
     static addListener(target:any,type:string,listener:Function,self?:any,capture?:boolean):any;
@@ -2810,7 +2800,7 @@ class Gesture extends qx.event.handler.GestureCore implements qx.event.IEventHan
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.GestureCore")
-class GestureCore {
+class GestureCore extends js.Object {
     constructor (target?:HTMLElement,emitter?:qx.event.Emitter);
     protected _calcAngle():number;
     protected _calcDistance():number;
@@ -2946,7 +2936,7 @@ class Orientation extends qx.core.Object implements qx.event.IEventHandler {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.OrientationCore")
-class OrientationCore {
+class OrientationCore extends js.Object {
     constructor (targetWindow?:Window,emitter?:qx.event.Emitter);
     protected _initObserver():void;
     protected _onNative(domEvent:qx.event.type.Event):void;
@@ -2968,7 +2958,7 @@ class Pointer extends qx.event.handler.PointerCore implements qx.event.IEventHan
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.PointerCore")
-class PointerCore {
+class PointerCore extends js.Object {
     constructor (target?:HTMLElement,emitter?:qx.event.Emitter);
     protected _determineActiveTouches(type:string,changedTouches:qx.data.Array):void;
     protected _fireEvent(domEvent:qx.event.type.Event,type?:string,target?:HTMLElement):void;
@@ -2997,7 +2987,7 @@ class Touch extends qx.event.handler.TouchCore implements qx.event.IEventHandler
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.TouchCore")
-class TouchCore {
+class TouchCore extends js.Object {
     constructor (target?:HTMLElement,emitter?:qx.event.Emitter);
     protected _calcSingleTouchDelta(touch:qx.event.type.Event):IMap;
     protected _calcTouchesDelta(touches:qx.data.Array):qx.data.Array;
@@ -3389,7 +3379,7 @@ class Track extends qx.event.type.Pointer {
 package qx.event.type.dom {
 @js.native
 @JSName("qx.event.type.dom.Custom")
-class Custom {
+class Custom extends js.Object {
     constructor (type?:string,domEvent?:qx.event.type.Event,customProps?:IMap);
     protected _createEvent():qx.event.type.Event;
     protected _initEvent(domEvent:qx.event.type.Event,customProps?:IMap):void;
@@ -3415,7 +3405,7 @@ class Pointer extends qx.event.type.dom.Custom {
 package qx.event.util {
 @js.native
 @JSName("qx.event.util.Keyboard")
-class Keyboard {
+class Keyboard extends js.Object {
     static charCodeToIdentifier(charCode:string):string;
     static isIdentifiableKeyCode(keyCode:string):boolean;
     static isNonPrintableKeyCode(keyCode:string):boolean;
@@ -3619,7 +3609,7 @@ class Root extends qx.html.Element {
 package qx.io {
 @js.native
 @JSName("qx.io.ImageLoader")
-class ImageLoader {
+class ImageLoader extends js.Object {
     static abort(source:string):void;
     static dispose():void;
     static getFormat(source:string):string;
@@ -3658,7 +3648,7 @@ class ClosurePart extends qx.io.part.Part {
 package qx.io.part {
 @js.native
 @JSName("qx.io.part.Package")
-class Package {
+class Package extends js.Object {
     constructor (urls?:string[],id?:any,loaded?:boolean);
     execute():void;
     getId():string;
@@ -3673,7 +3663,7 @@ class Package {
 package qx.io.part {
 @js.native
 @JSName("qx.io.part.Part")
-class Part {
+class Part extends js.Object {
     constructor (name?:string,packages?:any[],loader?:qx.Part);
     protected _appendPartListener(callback:Function,self?:any,part?:qx.io.part.Part):void;
     protected _checkCompleteLoading(callback:Function,self:any):boolean;
@@ -3964,7 +3954,7 @@ class Rpc extends qx.core.Object {
 package qx.io.remote {
 @js.native
 @JSName("qx.io.remote.RpcError")
-class RpcError {
+class RpcError extends js.Object {
 
 }
 }
@@ -4205,8 +4195,7 @@ class Basic extends qx.core.Object implements qx.io.request.authentication.IAuth
 }
 package qx.io.request.authentication {
 @js.native
-@JSName("qx.io.request.authentication.IAuthentication")
-interface IAuthentication {
+trait IAuthentication extends js.Object {
     getAuthHeaders():IMap[];
 
 }
@@ -4237,7 +4226,7 @@ class Resource extends qx.core.Object {
 package qx.lang {
 @js.native
 @JSName("qx.lang.Array")
-class Array {
+class Array extends js.Object {
     static append(arr1:qx.data.Array,arr2:qx.data.Array):qx.data.Array;
     static cast(object:any,constructor:Function,offset?:number):qx.data.Array;
     static clone(arr:qx.data.Array):qx.data.Array;
@@ -4264,7 +4253,7 @@ class Array {
 package qx.lang {
 @js.native
 @JSName("qx.lang.Function")
-class Function {
+class Function extends js.Object {
     static attempt(func:Function,self?:any,varargs?:any):boolean;
     static bind(func:Function,self?:any,varargs?:any):Function;
     static create(func:Function,options?:IMap):Function;
@@ -4281,7 +4270,7 @@ class Function {
 package qx.lang {
 @js.native
 @JSName("qx.lang.Json")
-class Json {
+class Json extends js.Object {
     static parse(text:string,reviver?:Function):any;
     static stringify(value:any,replacer?:Function,space?:string):string;
 
@@ -4290,7 +4279,7 @@ class Json {
 package qx.lang {
 @js.native
 @JSName("qx.lang.Number")
-class Number {
+class Number extends js.Object {
     static isBetweenRange(nr:number,vmin:number,vmax:number):boolean;
     static isInRange(nr:number,vmin:number,vmax:number):boolean;
     static limit(nr:number,vmin:number,vmax:number):number;
@@ -4300,7 +4289,7 @@ class Number {
 package qx.lang {
 @js.native
 @JSName("qx.lang.Object")
-class Object {
+class Object extends js.Object {
     static clone(source:any,deep:boolean):any;
     static contains(map:any,value:any):boolean;
     static empty(map:any):void;
@@ -4318,7 +4307,7 @@ class Object {
 package qx.lang {
 @js.native
 @JSName("qx.lang.String")
-class String {
+class String extends js.Object {
     static camelCase(str:string):string;
     static capitalize(str:string):string;
     static clean(str:string):string;
@@ -4344,7 +4333,7 @@ class String {
 package qx.lang {
 @js.native
 @JSName("qx.lang.Type")
-class Type {
+class Type extends js.Object {
     static getClass(value:any):string;
     static isArray(value:any):boolean;
     static isBoolean(value:any):boolean;
@@ -4361,7 +4350,7 @@ class Type {
 package qx.lang.normalize {
 @js.native
 @JSName("qx.lang.normalize.Array")
-class Array {
+class Array extends js.Object {
     static every(callback:Function,obj?:any):qx.data.Array;
     static filter(callback:Function,obj?:any):qx.data.Array;
     static forEach(callback:Function,obj?:any):void;
@@ -4377,7 +4366,7 @@ class Array {
 package qx.lang.normalize {
 @js.native
 @JSName("qx.lang.normalize.Date")
-class Date {
+class Date extends js.Object {
     static now():number;
 
 }
@@ -4385,14 +4374,14 @@ class Date {
 package qx.lang.normalize {
 @js.native
 @JSName("qx.lang.normalize.Error")
-class Error {
+class Error extends js.Object {
 
 }
 }
 package qx.lang.normalize {
 @js.native
 @JSName("qx.lang.normalize.Function")
-class Function {
+class Function extends js.Object {
     static bind(that?:any):Function;
 
 }
@@ -4400,7 +4389,7 @@ class Function {
 package qx.lang.normalize {
 @js.native
 @JSName("qx.lang.normalize.Object")
-class Object {
+class Object extends js.Object {
     static keys(map:any):qx.data.Array;
 
 }
@@ -4408,7 +4397,7 @@ class Object {
 package qx.lang.normalize {
 @js.native
 @JSName("qx.lang.normalize.String")
-class String {
+class String extends js.Object {
     static trim():string;
 
 }
@@ -4416,7 +4405,7 @@ class String {
 package qx.locale {
 @js.native
 @JSName("qx.locale.Date")
-class Date {
+class Date extends js.Object {
     protected static _getTerritory(locale:string):string;
     static getAmMarker(locale:string):string;
     static getDateFormat(size:string,locale?:string):string;
@@ -4437,7 +4426,7 @@ class Date {
 package qx.locale {
 @js.native
 @JSName("qx.locale.Key")
-class Key {
+class Key extends js.Object {
     static getKeyName(size:string,keyIdentifier:string,locale:string):string;
 
 }
@@ -4455,7 +4444,7 @@ class LocalizedString extends qx.type.BaseString {
 package qx.locale {
 @js.native
 @JSName("qx.locale.MTranslation")
-class MTranslation {
+class MTranslation extends js.Object {
     marktr(messageId:string):string;
     tr(messageId:string,varargs?:any):string;
     trc(hint:string,messageId:string,varargs?:any):string;
@@ -4493,7 +4482,7 @@ class Manager extends qx.core.Object {
 package qx.locale {
 @js.native
 @JSName("qx.locale.Number")
-class Number {
+class Number extends js.Object {
     static getDecimalSeparator(locale:string):string;
     static getGroupSeparator(locale:string):string;
     static getPercentFormat(locale:string):string;
@@ -4503,7 +4492,7 @@ class Number {
 package qx.locale {
 @js.native
 @JSName("qx.locale.String")
-class String {
+class String extends js.Object {
     static getAlternateQuotationEnd(locale:string):string;
     static getAlternateQuotationStart(locale:string):string;
     static getQuotationEnd(locale:string):string;
@@ -4514,7 +4503,7 @@ class String {
 package qx.log {
 @js.native
 @JSName("qx.log.Logger")
-class Logger {
+class Logger extends js.Object {
     static clear():void;
     static debug(object:any,message:any):void;
     static deprecatedClassWarning(clazz:qx.Class,msg?:string):void;
@@ -4539,7 +4528,7 @@ class Logger {
 package qx.log.appender {
 @js.native
 @JSName("qx.log.appender.Console")
-class Console {
+class Console extends js.Object {
     static clear():void;
     static dispose():void;
     static execute():void;
@@ -4564,7 +4553,7 @@ class Element extends qx.core.Object {
 package qx.log.appender {
 @js.native
 @JSName("qx.log.appender.Native")
-class Native {
+class Native extends js.Object {
     static process(entry:IMap):void;
 
 }
@@ -4572,7 +4561,7 @@ class Native {
 package qx.log.appender {
 @js.native
 @JSName("qx.log.appender.NodeConsole")
-class NodeConsole {
+class NodeConsole extends js.Object {
     static debug(logMessage:string):void;
     static error(logMessage:string):void;
     static info(logMessage:string):void;
@@ -4585,7 +4574,7 @@ class NodeConsole {
 package qx.log.appender {
 @js.native
 @JSName("qx.log.appender.PhoneGap")
-class PhoneGap {
+class PhoneGap extends js.Object {
     static process(entry:IMap):void;
 
 }
@@ -4593,7 +4582,7 @@ class PhoneGap {
 package qx.log.appender {
 @js.native
 @JSName("qx.log.appender.RhinoConsole")
-class RhinoConsole {
+class RhinoConsole extends js.Object {
     static debug(logMessage:string):void;
     static error(logMessage:string):void;
     static info(logMessage:string):void;
@@ -4606,7 +4595,7 @@ class RhinoConsole {
 package qx.log.appender {
 @js.native
 @JSName("qx.log.appender.RhinoFile")
-class RhinoFile {
+class RhinoFile extends js.Object {
     static create():void;
     static debug(logMessage:string):void;
     static error(logMessage:string):void;
@@ -4634,7 +4623,7 @@ class RingBuffer extends qx.util.RingBuffer {
 package qx.log.appender {
 @js.native
 @JSName("qx.log.appender.Util")
-class Util {
+class Util extends js.Object {
     static escapeHTML(value:string):string;
     static formatOffset(offset:number,length?:number):string;
     static toHtml(entry:IMap):void;
@@ -4646,98 +4635,98 @@ class Util {
 package qx.theme {
 @js.native
 @JSName("qx.theme.Classic")
-class Classic {
+class Classic extends js.Object {
 
 }
 }
 package qx.theme {
 @js.native
 @JSName("qx.theme.Indigo")
-class Indigo {
+class Indigo extends js.Object {
 
 }
 }
 package qx.theme {
 @js.native
 @JSName("qx.theme.Modern")
-class Modern {
+class Modern extends js.Object {
 
 }
 }
 package qx.theme {
 @js.native
 @JSName("qx.theme.Simple")
-class Simple {
+class Simple extends js.Object {
 
 }
 }
 package qx.theme.classic {
 @js.native
 @JSName("qx.theme.classic.Appearance")
-class Appearance {
+class Appearance extends js.Object {
 
 }
 }
 package qx.theme.classic {
 @js.native
 @JSName("qx.theme.classic.Color")
-class Color {
+class Color extends js.Object {
 
 }
 }
 package qx.theme.classic {
 @js.native
 @JSName("qx.theme.classic.Decoration")
-class Decoration {
+class Decoration extends js.Object {
 
 }
 }
 package qx.theme.classic {
 @js.native
 @JSName("qx.theme.classic.Font")
-class Font {
+class Font extends js.Object {
 
 }
 }
 package qx.theme.icon {
 @js.native
 @JSName("qx.theme.icon.Oxygen")
-class Oxygen {
+class Oxygen extends js.Object {
 
 }
 }
 package qx.theme.icon {
 @js.native
 @JSName("qx.theme.icon.Tango")
-class Tango {
+class Tango extends js.Object {
 
 }
 }
 package qx.theme.indigo {
 @js.native
 @JSName("qx.theme.indigo.Appearance")
-class Appearance {
+class Appearance extends js.Object {
 
 }
 }
 package qx.theme.indigo {
 @js.native
 @JSName("qx.theme.indigo.Color")
-class Color {
+class Color extends js.Object {
 
 }
 }
 package qx.theme.indigo {
 @js.native
 @JSName("qx.theme.indigo.Decoration")
-class Decoration {
+class Decoration extends js.Object {
 
 }
 }
 package qx.theme.indigo {
 @js.native
 @JSName("qx.theme.indigo.Font")
-class Font {
+class Font extends js.Object {
 
 }
 }
@@ -4838,56 +4827,56 @@ class Meta extends qx.core.Object {
 package qx.theme.modern {
 @js.native
 @JSName("qx.theme.modern.Appearance")
-class Appearance {
+class Appearance extends js.Object {
 
 }
 }
 package qx.theme.modern {
 @js.native
 @JSName("qx.theme.modern.Color")
-class Color {
+class Color extends js.Object {
 
 }
 }
 package qx.theme.modern {
 @js.native
 @JSName("qx.theme.modern.Decoration")
-class Decoration {
+class Decoration extends js.Object {
 
 }
 }
 package qx.theme.modern {
 @js.native
 @JSName("qx.theme.modern.Font")
-class Font {
+class Font extends js.Object {
 
 }
 }
 package qx.theme.simple {
 @js.native
 @JSName("qx.theme.simple.Appearance")
-class Appearance {
+class Appearance extends js.Object {
 
 }
 }
 package qx.theme.simple {
 @js.native
 @JSName("qx.theme.simple.Color")
-class Color {
+class Color extends js.Object {
 
 }
 }
 package qx.theme.simple {
 @js.native
 @JSName("qx.theme.simple.Decoration")
-class Decoration {
+class Decoration extends js.Object {
 
 }
 }
 package qx.theme.simple {
 @js.native
 @JSName("qx.theme.simple.Font")
-class Font {
+class Font extends js.Object {
 
 }
 }
@@ -4954,7 +4943,7 @@ class BaseError extends ErrorImpl {
 package qx.type {
 @js.native
 @JSName("qx.type.BaseString")
-class BaseString {
+class BaseString extends js.Object {
     constructor (txt?:string);
     base(args:any,varags:any):any;
     charAt(index:number):string;
@@ -5539,8 +5528,7 @@ class FocusHandler extends qx.core.Object {
 }
 package qx.ui.core {
 @js.native
-@JSName("qx.ui.core.IMultiSelection")
-interface IMultiSelection {
+trait IMultiSelection extends js.Object {
     addToSelection(item:qx.ui.core.Widget):void;
     removeFromSelection(item:qx.ui.core.Widget):void;
     selectAll():void;
@@ -5549,8 +5537,7 @@ interface IMultiSelection {
 }
 package qx.ui.core {
 @js.native
-@JSName("qx.ui.core.ISingleSelection")
-interface ISingleSelection {
+trait ISingleSelection extends js.Object {
     getSelectables(all:boolean):qx.ui.core.Widget[];
     getSelection():qx.ui.core.Widget[];
     isSelected(item:qx.ui.core.Widget):boolean;
@@ -5562,8 +5549,7 @@ interface ISingleSelection {
 }
 package qx.ui.core {
 @js.native
-@JSName("qx.ui.core.ISingleSelectionProvider")
-interface ISingleSelectionProvider {
+trait ISingleSelectionProvider extends js.Object {
     getItems():qx.ui.core.Widget[];
     isItemSelectable(item:qx.ui.core.Widget):boolean;
 
@@ -5688,7 +5674,7 @@ class LayoutItem extends qx.core.Object {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MBlocker")
-class MBlocker {
+class MBlocker extends js.Object {
     protected _applyBlockerColor(value:string,old:string):void;
     protected _applyBlockerOpacity(value:number,old:number):void;
     protected _createBlocker():qx.ui.core.Blocker;
@@ -5712,7 +5698,7 @@ class MBlocker {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MChildrenHandling")
-class MChildrenHandling {
+class MChildrenHandling extends js.Object {
     static remap(members:IMap):void;
     add(child:qx.ui.core.LayoutItem,options?:IMap):void;
     addAfter(child:qx.ui.core.LayoutItem,after:qx.ui.core.LayoutItem,options?:IMap):void;
@@ -5730,7 +5716,7 @@ class MChildrenHandling {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MContentPadding")
-class MContentPadding {
+class MContentPadding extends js.Object {
     protected _applyContentPadding(value:number,old:number):void;
     getContentPaddingBottom():number;
     getContentPaddingLeft():number;
@@ -5756,7 +5742,7 @@ class MContentPadding {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MDragDropScrolling")
-class MDragDropScrolling {
+class MDragDropScrolling extends js.Object {
     constructor ();
     protected _calculateScrollAmount(scrollbarSize:number,exceedanceAmount:number):number;
     protected _calculateThresholdExceedance(diff:number,threshold:number):number;
@@ -5787,7 +5773,7 @@ class MDragDropScrolling {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MExecutable")
-class MExecutable {
+class MExecutable extends js.Object {
     protected _applyCommand(value:qx.ui.command.Command,old:qx.ui.command.Command):void;
     execute():void;
     getCommand():qx.ui.command.Command;
@@ -5800,7 +5786,7 @@ class MExecutable {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MLayoutHandling")
-class MLayoutHandling {
+class MLayoutHandling extends js.Object {
     static remap(members:IMap):void;
     getLayout():qx.ui.layout.Abstract;
     setLayout(layout:qx.ui.layout.Abstract):void;
@@ -5810,7 +5796,7 @@ class MLayoutHandling {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MMovable")
-class MMovable {
+class MMovable extends js.Object {
     protected _activateMoveHandle(widget:qx.ui.core.Widget):void;
     protected _onMovePointerDown(e:qx.event.type.Pointer):void;
     protected _onMovePointerMove(e:qx.event.type.Pointer):void;
@@ -5834,7 +5820,7 @@ class MMovable {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MMultiSelectionHandling")
-class MMultiSelectionHandling {
+class MMultiSelectionHandling extends js.Object {
     constructor ();
     protected _applyDragSelection(value:boolean,old:boolean):void;
     protected _applyQuickSelection(value:boolean,old:boolean):void;
@@ -5877,7 +5863,7 @@ class MMultiSelectionHandling {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MNativeOverflow")
-class MNativeOverflow {
+class MNativeOverflow extends js.Object {
     protected _applyOverflowX(value:any,old:any):void;
     protected _applyOverflowY(value:any,old:any):void;
     getOverflowX():any;
@@ -5896,7 +5882,7 @@ class MNativeOverflow {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MPlacement")
-class MPlacement {
+class MPlacement extends js.Object {
     static getMoveDirection():string;
     static getVisibleElement():qx.ui.core.Widget;
     static setMoveDirection(direction:string):void;
@@ -5955,7 +5941,7 @@ class MPlacement {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MRemoteChildrenHandling")
-class MRemoteChildrenHandling {
+class MRemoteChildrenHandling extends js.Object {
     add(child:qx.ui.core.LayoutItem,options?:IMap):qx.ui.core.Widget;
     addAfter(child:qx.ui.core.LayoutItem,after:qx.ui.core.LayoutItem,options?:IMap):void;
     addAt(child:qx.ui.core.LayoutItem,index:number,options?:IMap):void;
@@ -5972,7 +5958,7 @@ class MRemoteChildrenHandling {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MRemoteLayoutHandling")
-class MRemoteLayoutHandling {
+class MRemoteLayoutHandling extends js.Object {
     getLayout():qx.ui.layout.Abstract;
     setLayout(layout:qx.ui.layout.Abstract):void;
 
@@ -5981,7 +5967,7 @@ class MRemoteLayoutHandling {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MResizable")
-class MResizable {
+class MResizable extends js.Object {
     constructor ();
     protected _getResizeFrame():qx.ui.core.Widget;
     getResizableBottom():boolean;
@@ -6026,7 +6012,7 @@ class MResizable {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MSingleSelectionHandling")
-class MSingleSelectionHandling {
+class MSingleSelectionHandling extends js.Object {
     protected _onChangeSelected(e:qx.event.type.Data):void;
     getSelectables(all:boolean):qx.ui.core.Widget[];
     getSelection():qx.ui.core.Widget[];
@@ -6329,7 +6315,7 @@ class Widget extends qx.ui.core.LayoutItem {
 package qx.ui.core.queue {
 @js.native
 @JSName("qx.ui.core.queue.Appearance")
-class Appearance {
+class Appearance extends js.Object {
     static add(widget:qx.ui.core.Widget):void;
     static flush():void;
     static has(widget:qx.ui.core.Widget):boolean;
@@ -6340,7 +6326,7 @@ class Appearance {
 package qx.ui.core.queue {
 @js.native
 @JSName("qx.ui.core.queue.Dispose")
-class Dispose {
+class Dispose extends js.Object {
     static add(widget:qx.ui.core.Widget):void;
     static flush():void;
     static isEmpty():boolean;
@@ -6350,7 +6336,7 @@ class Dispose {
 package qx.ui.core.queue {
 @js.native
 @JSName("qx.ui.core.queue.Layout")
-class Layout {
+class Layout extends js.Object {
     static add(widget:qx.ui.core.Widget):void;
     static flush():void;
     static getNestingLevel(widget:qx.ui.core.Widget):number;
@@ -6362,7 +6348,7 @@ class Layout {
 package qx.ui.core.queue {
 @js.native
 @JSName("qx.ui.core.queue.Manager")
-class Manager {
+class Manager extends js.Object {
     static flush():void;
     static scheduleFlush(job:string):void;
 
@@ -6371,7 +6357,7 @@ class Manager {
 package qx.ui.core.queue {
 @js.native
 @JSName("qx.ui.core.queue.Visibility")
-class Visibility {
+class Visibility extends js.Object {
     static add(widget:qx.ui.core.Widget):void;
     static flush():void;
     static isVisible(widget:qx.ui.core.Widget):boolean;
@@ -6382,7 +6368,7 @@ class Visibility {
 package qx.ui.core.queue {
 @js.native
 @JSName("qx.ui.core.queue.Widget")
-class Widget {
+class Widget extends js.Object {
     static add(widget:qx.ui.core.Widget,job?:string):void;
     static flush():void;
     static remove(widget:qx.ui.core.Widget,job?:string):void;
@@ -6439,8 +6425,7 @@ class AbstractScrollArea extends qx.ui.core.Widget {
 }
 package qx.ui.core.scroll {
 @js.native
-@JSName("qx.ui.core.scroll.IScrollBar")
-interface IScrollBar {
+trait IScrollBar extends js.Object {
     getKnobFactor():any;
     getMaximum():any;
     getOrientation():any;
@@ -6466,7 +6451,7 @@ interface IScrollBar {
 package qx.ui.core.scroll {
 @js.native
 @JSName("qx.ui.core.scroll.MRoll")
-class MRoll {
+class MRoll extends js.Object {
     protected _addRollHandling():void;
     protected _onPointerDownForRoll(e:qx.event.type.Pointer):void;
     protected _onRoll(e:qx.event.type.Roll):void;
@@ -6477,7 +6462,7 @@ class MRoll {
 package qx.ui.core.scroll {
 @js.native
 @JSName("qx.ui.core.scroll.MScrollBarFactory")
-class MScrollBarFactory {
+class MScrollBarFactory extends js.Object {
     protected _createScrollBar(orientation?:string):qx.ui.core.scroll.IScrollBar;
 
 }
@@ -6485,7 +6470,7 @@ class MScrollBarFactory {
 package qx.ui.core.scroll {
 @js.native
 @JSName("qx.ui.core.scroll.MWheelHandling")
-class MWheelHandling {
+class MWheelHandling extends js.Object {
     protected _onMouseWheel(e:qx.event.type.Mouse):void;
 
 }
@@ -6867,8 +6852,7 @@ class Decorator extends qx.ui.decoration.Abstract implements qx.ui.decoration.ID
 }
 package qx.ui.decoration {
 @js.native
-@JSName("qx.ui.decoration.IDecorator")
-interface IDecorator {
+trait IDecorator extends js.Object {
     getInsets():IMap;
     getPadding():IMap;
     getStyles():IMap;
@@ -6878,7 +6862,7 @@ interface IDecorator {
 package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.MBackgroundColor")
-class MBackgroundColor {
+class MBackgroundColor extends js.Object {
     protected _applyBackgroundColor(value:string,old:string):void;
     protected _styleBackgroundColor(styles:IMap):void;
     getBackgroundColor():string;
@@ -6891,7 +6875,7 @@ class MBackgroundColor {
 package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.MBackgroundImage")
-class MBackgroundImage {
+class MBackgroundImage extends js.Object {
     protected _applyBackgroundImage(value:any,old:any):void;
     protected _applyBackgroundPosition(value:any,old:any):void;
     protected _styleBackgroundImage(styles:IMap):void;
@@ -6919,7 +6903,7 @@ class MBackgroundImage {
 package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.MBorderImage")
-class MBorderImage {
+class MBorderImage extends js.Object {
     protected _applyBorderImage(value:any,old:any):void;
     protected _getDefaultInsetsForBorderImage():IMap;
     protected _styleBorderImage(styles:IMap):void;
@@ -6971,7 +6955,7 @@ class MBorderImage {
 package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.MBorderRadius")
-class MBorderRadius {
+class MBorderRadius extends js.Object {
     protected _applyBorderRadius(value:number,old:number):void;
     protected _styleBorderRadius(styles:IMap):void;
     getRadiusBottomLeft():number;
@@ -6998,7 +6982,7 @@ class MBorderRadius {
 package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.MBoxShadow")
-class MBoxShadow {
+class MBoxShadow extends js.Object {
     protected _applyBoxShadow(value:any,old:any):void;
     protected _styleBoxShadow(styles:IMap):void;
     getInset():boolean;
@@ -7035,7 +7019,7 @@ class MBoxShadow {
 package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.MDoubleBorder")
-class MDoubleBorder {
+class MDoubleBorder extends js.Object {
     getColorBottom():string;
     getColorLeft():string;
     getColorRight():string;
@@ -7148,7 +7132,7 @@ class MDoubleBorder {
 package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.MLinearBackgroundGradient")
-class MLinearBackgroundGradient {
+class MLinearBackgroundGradient extends js.Object {
     protected _applyLinearBackgroundGradient(value:any,old:any):void;
     protected _styleLinearBackgroundGradient(styles:IMap):void;
     getColorPositionUnit():any;
@@ -7185,7 +7169,7 @@ class MLinearBackgroundGradient {
 package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.MSingleBorder")
-class MSingleBorder {
+class MSingleBorder extends js.Object {
     protected _applyStyle(value:any,old:any):void;
     protected _applyWidth(value:number,old:number):void;
     protected _getDefaultInsetsForBorder():IMap;
@@ -7810,8 +7794,7 @@ class HoverButton extends qx.ui.basic.Atom implements qx.ui.form.IExecutable {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.IBooleanForm")
-interface IBooleanForm {
+trait IBooleanForm extends js.Object {
     getValue():boolean;
     resetValue():void;
     setValue(value:boolean):void;
@@ -7820,8 +7803,7 @@ interface IBooleanForm {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.IColorForm")
-interface IColorForm {
+trait IColorForm extends js.Object {
     getValue():string;
     resetValue():void;
     setValue(value:string):void;
@@ -7830,8 +7812,7 @@ interface IColorForm {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.IDateForm")
-interface IDateForm {
+trait IDateForm extends js.Object {
     getValue():Date;
     resetValue():void;
     setValue(value:Date):void;
@@ -7840,8 +7821,7 @@ interface IDateForm {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.IExecutable")
-interface IExecutable {
+trait IExecutable extends js.Object {
     execute():void;
     getCommand():qx.ui.command.Command;
     setCommand(command:qx.ui.command.Command):void;
@@ -7850,8 +7830,7 @@ interface IExecutable {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.IForm")
-interface IForm {
+trait IForm extends js.Object {
     getEnabled():boolean;
     getInvalidMessage():string;
     getRequired():boolean;
@@ -7867,8 +7846,7 @@ interface IForm {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.IModel")
-interface IModel {
+trait IModel extends js.Object {
     getModel():any;
     resetModel():void;
     setModel(value:any):void;
@@ -7877,8 +7855,7 @@ interface IModel {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.IModelSelection")
-interface IModelSelection {
+trait IModelSelection extends js.Object {
     getModelSelection():qx.data.Array;
     setModelSelection(value:qx.data.Array):void;
 
@@ -7886,8 +7863,7 @@ interface IModelSelection {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.INumberForm")
-interface INumberForm {
+trait INumberForm extends js.Object {
     getValue():number;
     resetValue():void;
     setValue(value:number):void;
@@ -7896,8 +7872,7 @@ interface INumberForm {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.IRadioItem")
-interface IRadioItem {
+trait IRadioItem extends js.Object {
     getGroup():qx.ui.form.RadioGroup;
     getValue():boolean;
     setGroup(value:qx.ui.form.RadioGroup):void;
@@ -7907,8 +7882,7 @@ interface IRadioItem {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.IRange")
-interface IRange {
+trait IRange extends js.Object {
     getMaximum():number;
     getMinimum():number;
     getPageStep():number;
@@ -7922,8 +7896,7 @@ interface IRange {
 }
 package qx.ui.form {
 @js.native
-@JSName("qx.ui.form.IStringForm")
-interface IStringForm {
+trait IStringForm extends js.Object {
     getValue():string;
     resetValue():void;
     setValue(value:string):void;
@@ -8034,7 +8007,7 @@ class ListItem extends qx.ui.basic.Atom implements qx.ui.form.IModel {
 package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.MForm")
-class MForm {
+class MForm extends js.Object {
     constructor ();
     protected _applyValid(value:boolean,old:boolean):void;
     getInvalidMessage():string;
@@ -8063,7 +8036,7 @@ class MForm {
 package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.MModelProperty")
-class MModelProperty {
+class MModelProperty extends js.Object {
     protected _applyModel(value:any,old:any):void;
     getModel():any;
     protected initModel(value:any):any;
@@ -8075,7 +8048,7 @@ class MModelProperty {
 package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.MModelSelection")
-class MModelSelection {
+class MModelSelection extends js.Object {
     constructor ();
     getModelSelection():qx.data.Array;
     setModelSelection(modelSelection:qx.data.Array):void;
@@ -8796,8 +8769,7 @@ class Double extends qx.ui.form.renderer.AbstractRenderer {
 }
 package qx.ui.form.renderer {
 @js.native
-@JSName("qx.ui.form.renderer.IFormRenderer")
-interface IFormRenderer {
+trait IFormRenderer extends js.Object {
     addButton(button:qx.ui.form.Button,options?:IMap):void;
     addItems(items:qx.ui.core.Widget[],names:string[],title?:string,itemsOptions?:qx.data.Array,headerOptions?:IMap):void;
 
@@ -9205,7 +9177,7 @@ class HBox extends qx.ui.layout.Abstract {
 package qx.ui.layout {
 @js.native
 @JSName("qx.ui.layout.LineSizeIterator")
-class LineSizeIterator {
+class LineSizeIterator extends js.Object {
     constructor (children?:qx.ui.core.Widget[],spacing?:number);
     computeNextLine(availWidth:number):IMap;
     hasMoreLines():boolean;
@@ -9215,7 +9187,7 @@ class LineSizeIterator {
 package qx.ui.layout {
 @js.native
 @JSName("qx.ui.layout.Util")
-class Util {
+class Util extends js.Object {
     static arrangeIdeals(beginMin:number,beginIdeal:number,beginMax:number,endMin:number,endIdeal:number,endMax:number):IMap;
     static collapseMargins(varargs?:any):number;
     static computeFlexOffsets(flexibles:IMap,avail:number,used:number):IMap;
@@ -9363,8 +9335,7 @@ class List extends qx.ui.virtual.core.Scroller implements qx.data.controller.ISe
 }
 package qx.ui.list.core {
 @js.native
-@JSName("qx.ui.list.core.IListDelegate")
-interface IListDelegate {
+trait IListDelegate extends js.Object {
     bindGroupItem(controller:qx.ui.list.core.MWidgetController,item:qx.ui.core.Widget,id:number):void;
     bindItem(controller:qx.ui.list.core.MWidgetController,item:qx.ui.core.Widget,id:number):void;
     configureGroupItem(item:qx.ui.core.Widget):void;
@@ -9381,7 +9352,7 @@ interface IListDelegate {
 package qx.ui.list.core {
 @js.native
 @JSName("qx.ui.list.core.MWidgetController")
-class MWidgetController {
+class MWidgetController extends js.Object {
     constructor ();
     protected _bindGroupItem(item:qx.ui.core.Widget,index:number):void;
     protected _bindItem(item:qx.ui.core.Widget,index:number):void;
@@ -9425,8 +9396,7 @@ class MWidgetController {
 }
 package qx.ui.list.provider {
 @js.native
-@JSName("qx.ui.list.provider.IListProvider")
-interface IListProvider {
+trait IListProvider extends js.Object {
     createGroupRenderer():any;
     createItemRenderer():any;
     createLayer():qx.ui.virtual.layer.Abstract;
@@ -10298,8 +10268,7 @@ class Stylesheet extends qx.core.Object {
 }
 package qx.ui.table {
 @js.native
-@JSName("qx.ui.table.ICellEditorFactory")
-interface ICellEditorFactory {
+trait ICellEditorFactory extends js.Object {
     createCellEditor(cellInfo:IMap):qx.ui.core.Widget;
     getCellEditorValue(cellEditor:qx.ui.core.Widget):any;
 
@@ -10307,16 +10276,14 @@ interface ICellEditorFactory {
 }
 package qx.ui.table {
 @js.native
-@JSName("qx.ui.table.ICellRenderer")
-interface ICellRenderer {
+trait ICellRenderer extends js.Object {
     createDataCellHtml(cellInfo:IMap,htmlArr:string[]):boolean;
 
 }
 }
 package qx.ui.table {
 @js.native
-@JSName("qx.ui.table.IColumnMenuButton")
-interface IColumnMenuButton {
+trait IColumnMenuButton extends js.Object {
     empty():void;
     factory(item:string,options:IMap):qx.ui.core.Widget;
     getMenu():any;
@@ -10328,8 +10295,7 @@ interface IColumnMenuButton {
 }
 package qx.ui.table {
 @js.native
-@JSName("qx.ui.table.IColumnMenuItem")
-interface IColumnMenuItem {
+trait IColumnMenuItem extends js.Object {
     getVisible():any;
     protected initVisible(value:any):any;
     resetVisible():void;
@@ -10339,8 +10305,7 @@ interface IColumnMenuItem {
 }
 package qx.ui.table {
 @js.native
-@JSName("qx.ui.table.IHeaderRenderer")
-interface IHeaderRenderer {
+trait IHeaderRenderer extends js.Object {
     createHeaderCell(cellInfo:IMap):qx.ui.core.Widget;
     updateHeaderCell(cellInfo:IMap,cellWidget:qx.ui.core.Widget):void;
 
@@ -10348,8 +10313,7 @@ interface IHeaderRenderer {
 }
 package qx.ui.table {
 @js.native
-@JSName("qx.ui.table.IRowRenderer")
-interface IRowRenderer {
+trait IRowRenderer extends js.Object {
     createRowStyle(rowInfo:IMap):void;
     getRowClass(rowInfo:IMap):void;
     getRowHeightStyle(height:number):void;
@@ -10359,8 +10323,7 @@ interface IRowRenderer {
 }
 package qx.ui.table {
 @js.native
-@JSName("qx.ui.table.ITableModel")
-interface ITableModel {
+trait ITableModel extends js.Object {
     getColumnCount():number;
     getColumnId(columnIndex:number):string;
     getColumnIndexById(columnId:string):number;
@@ -10383,7 +10346,7 @@ interface ITableModel {
 package qx.ui.table {
 @js.native
 @JSName("qx.ui.table.MTableContextMenu")
-class MTableContextMenu {
+class MTableContextMenu extends js.Object {
     constructor ();
     getContextMenuHandler(col:number):Function;
     setContextMenuHandler(col:number,handler:Function,context?:any):void;
@@ -12170,8 +12133,7 @@ class FolderOpenButton extends qx.ui.basic.Image {
 }
 package qx.ui.tree.core {
 @js.native
-@JSName("qx.ui.tree.core.IVirtualTree")
-interface IVirtualTree {
+trait IVirtualTree extends js.Object {
     closeNode(node:qx.core.Object):void;
     closeNodeWithoutScrolling(node:qx.core.Object):void;
     getLevel(row:number):number;
@@ -12188,8 +12150,7 @@ interface IVirtualTree {
 }
 package qx.ui.tree.core {
 @js.native
-@JSName("qx.ui.tree.core.IVirtualTreeDelegate")
-interface IVirtualTreeDelegate {
+trait IVirtualTreeDelegate extends js.Object {
     bindItem(controller:qx.ui.list.core.MWidgetController,item:qx.ui.core.Widget,id:number):void;
     configureItem(item:qx.ui.core.Widget):void;
     createItem():qx.ui.core.Widget;
@@ -12202,7 +12163,7 @@ interface IVirtualTreeDelegate {
 package qx.ui.tree.core {
 @js.native
 @JSName("qx.ui.tree.core.MWidgetController")
-class MWidgetController {
+class MWidgetController extends js.Object {
     constructor ();
     protected _bindItem(item:qx.ui.core.Widget,index:number):void;
     protected _removeBindingsFrom(item:qx.ui.core.Widget):void;
@@ -12240,7 +12201,7 @@ class MWidgetController {
 package qx.ui.tree.core {
 @js.native
 @JSName("qx.ui.tree.core.Util")
-class Util {
+class Util extends js.Object {
     static hasChildren(node:qx.core.Object,childProperty:string,ignoreLeafs?:boolean):boolean;
     static isNode(node:qx.core.Object,childProperty:string):boolean;
 
@@ -12248,8 +12209,7 @@ class Util {
 }
 package qx.ui.tree.provider {
 @js.native
-@JSName("qx.ui.tree.provider.IVirtualTreeProvider")
-interface IVirtualTreeProvider {
+trait IVirtualTreeProvider extends js.Object {
     createLayer():qx.ui.virtual.layer.Abstract;
     createRenderer():any;
     isSelectable(row:number):boolean;
@@ -12319,7 +12279,7 @@ class DefaultDataCellRenderer extends qx.ui.table.cellrenderer.Default {
 package qx.ui.treevirtual {
 @js.native
 @JSName("qx.ui.treevirtual.MFamily")
-class MFamily {
+class MFamily extends js.Object {
     familyGetFirstChild(nodeReference:any):number;
     familyGetLastChild(nodeReference:any):number;
     familyGetNextSibling(nodeReference:any):number;
@@ -12330,7 +12290,7 @@ class MFamily {
 package qx.ui.treevirtual {
 @js.native
 @JSName("qx.ui.treevirtual.MNode")
-class MNode {
+class MNode extends js.Object {
     nodeGet(nodeReference:any):any;
     nodeGetCellStyle(nodeReference:any):string;
     nodeGetHideOpenClose(nodeReference:any):boolean;
@@ -12356,7 +12316,7 @@ class MNode {
 package qx.ui.treevirtual {
 @js.native
 @JSName("qx.ui.treevirtual.MTreePrimitive")
-class MTreePrimitive {
+class MTreePrimitive extends js.Object {
     protected static _addNode(nodeArr:qx.data.Array,parentNodeId:number,label:string,bOpened:boolean,bHideOpenCloseButton:boolean,type:number,icon:string,iconSelected:string,nodeId?:number):number;
     protected static _getEmptyTree():IMap;
 
@@ -12640,16 +12600,14 @@ class Html extends qx.ui.virtual.cell.Cell {
 }
 package qx.ui.virtual.cell {
 @js.native
-@JSName("qx.ui.virtual.cell.ICell")
-interface ICell {
+trait ICell extends js.Object {
     getCellProperties(data:any,states:IMap):IMap;
 
 }
 }
 package qx.ui.virtual.cell {
 @js.native
-@JSName("qx.ui.virtual.cell.IWidgetCell")
-interface IWidgetCell {
+trait IWidgetCell extends js.Object {
     getCellWidget(data:any,states:IMap):qx.ui.core.LayoutItem;
     pool(widget:qx.ui.core.LayoutItem):void;
     updateData(widget:qx.ui.core.LayoutItem,data:any):void;
@@ -12659,8 +12617,7 @@ interface IWidgetCell {
 }
 package qx.ui.virtual.cell {
 @js.native
-@JSName("qx.ui.virtual.cell.IWidgetCellDelegate")
-interface IWidgetCellDelegate {
+trait IWidgetCellDelegate extends js.Object {
     createWidget():qx.ui.core.LayoutItem;
 
 }
@@ -12740,16 +12697,14 @@ class CellEvent extends qx.event.type.Pointer {
 }
 package qx.ui.virtual.core {
 @js.native
-@JSName("qx.ui.virtual.core.IHtmlCellProvider")
-interface IHtmlCellProvider {
+trait IHtmlCellProvider extends js.Object {
     getCellProperties(row:number,column:number):IMap;
 
 }
 }
 package qx.ui.virtual.core {
 @js.native
-@JSName("qx.ui.virtual.core.ILayer")
-interface ILayer {
+trait ILayer extends js.Object {
     fullUpdate(firstRow:number,firstColumn:number,rowSizes:number[],columnSizes:number[]):void;
     updateLayerData():void;
     updateLayerWindow(firstRow:number,firstColumn:number,rowSizes:number[],columnSizes:number[]):void;
@@ -12758,8 +12713,7 @@ interface ILayer {
 }
 package qx.ui.virtual.core {
 @js.native
-@JSName("qx.ui.virtual.core.IWidgetCellProvider")
-interface IWidgetCellProvider {
+trait IWidgetCellProvider extends js.Object {
     getCellWidget(row:number,column:number):qx.ui.core.LayoutItem;
     poolCellWidget(widget:qx.ui.core.LayoutItem):void;
 
@@ -13011,8 +12965,7 @@ class Column extends qx.ui.virtual.selection.Row {
 }
 package qx.ui.virtual.selection {
 @js.native
-@JSName("qx.ui.virtual.selection.ISelectionDelegate")
-interface ISelectionDelegate {
+trait ISelectionDelegate extends js.Object {
     isItemSelectable(item:any):boolean;
     styleSelectable(item:any,type:string,wasAdded:boolean):void;
 
@@ -13021,7 +12974,7 @@ interface ISelectionDelegate {
 package qx.ui.virtual.selection {
 @js.native
 @JSName("qx.ui.virtual.selection.MModel")
-class MModel {
+class MModel extends js.Object {
     constructor ();
     protected _applyDefaultSelection():void;
     protected _applyDragSelection(value:boolean,old:boolean):void;
@@ -13105,8 +13058,7 @@ class Desktop extends qx.ui.core.Widget implements qx.ui.window.IDesktop {
 }
 package qx.ui.window {
 @js.native
-@JSName("qx.ui.window.IDesktop")
-interface IDesktop {
+trait IDesktop extends js.Object {
     blockContent(zIndex:number):void;
     getWindows():qx.ui.window.Window[];
     isBlocked():boolean;
@@ -13118,8 +13070,7 @@ interface IDesktop {
 }
 package qx.ui.window {
 @js.native
-@JSName("qx.ui.window.IWindowManager")
-interface IWindowManager {
+trait IWindowManager extends js.Object {
     bringToFront(win:Window):void;
     changeActiveWindow(active:Window,oldActive:Window):void;
     sendToBack(win:Window):void;
@@ -13131,7 +13082,7 @@ interface IWindowManager {
 package qx.ui.window {
 @js.native
 @JSName("qx.ui.window.MDesktop")
-class MDesktop {
+class MDesktop extends js.Object {
     protected _addWindow(win:qx.ui.window.Window):void;
     protected _afterAddChild(win:qx.ui.core.Widget):void;
     protected _afterRemoveChild(win:qx.ui.core.Widget):void;
@@ -13351,14 +13302,14 @@ class AliasManager extends qx.util.ValueManager {
 package qx.util {
 @js.native
 @JSName("qx.util.Animation")
-class Animation {
+class Animation extends js.Object {
 
 }
 }
 package qx.util {
 @js.native
 @JSName("qx.util.Base64")
-class Base64 {
+class Base64 extends js.Object {
     static decode(input:string,is8bit?:boolean):string;
     static encode(input:string,is8bit?:boolean):string;
 
@@ -13367,7 +13318,7 @@ class Base64 {
 package qx.util {
 @js.native
 @JSName("qx.util.ColorUtil")
-class ColorUtil {
+class ColorUtil extends js.Object {
     static cssStringToRgb(str:string):qx.data.Array;
     static hex3StringToHex6String(value:string):string;
     static hex3StringToRgb(value:string):qx.data.Array;
@@ -13418,7 +13369,7 @@ class DeferredCallManager extends qx.core.Object {
 package qx.util {
 @js.native
 @JSName("qx.util.Delegate")
-class Delegate {
+class Delegate extends js.Object {
     static containsMethod(delegate:any,specificMethod:string):boolean;
     static getMethod(delegate:any,specificMethod:string):Function;
 
@@ -13427,7 +13378,7 @@ class Delegate {
 package qx.util {
 @js.native
 @JSName("qx.util.DisposeUtil")
-class DisposeUtil {
+class DisposeUtil extends js.Object {
     protected static _collectContainerChildren(container:qx.ui.container.Composite,arr:qx.data.Array):void;
     static destroyContainer(container:qx.ui.container.Composite):void;
     static disposeArray(obj:any,field:string):void;
@@ -13440,7 +13391,7 @@ class DisposeUtil {
 package qx.util {
 @js.native
 @JSName("qx.util.EditDistance")
-class EditDistance {
+class EditDistance extends js.Object {
     static getEditOperations(dataA:qx.data.Array,dataB:qx.data.Array):IMap[];
 
 }
@@ -13448,7 +13399,7 @@ class EditDistance {
 package qx.util {
 @js.native
 @JSName("qx.util.ExtendedColor")
-class ExtendedColor {
+class ExtendedColor extends js.Object {
     static isExtendedColor(value:string):boolean;
     static toRgb(value:string):qx.data.Array;
     static toRgbString(value:string):string;
@@ -13458,7 +13409,7 @@ class ExtendedColor {
 package qx.util {
 @js.native
 @JSName("qx.util.OOUtil")
-class OOUtil {
+class OOUtil extends js.Object {
     static classIsDefined(name:string):boolean;
     static getByInterface(clazz:qx.Class,iface:qx.Interface):qx.Class;
     static getEventType(clazz:qx.Class,name:string):string;
@@ -13487,7 +13438,7 @@ class ObjectPool extends qx.core.Object {
 package qx.util {
 @js.native
 @JSName("qx.util.Permutation")
-class Permutation {
+class Permutation extends js.Object {
     static permute(options:IMap,callback:Function,context:any):void;
 
 }
@@ -13495,7 +13446,7 @@ class Permutation {
 package qx.util {
 @js.native
 @JSName("qx.util.PropertyUtil")
-class PropertyUtil {
+class PropertyUtil extends js.Object {
     static deleteInitValue(object:any,propertyName:string):void;
     static deleteThemeValue(object:any,propertyName:string):void;
     static deleteUserValue(object:any,propertyName:string):void;
@@ -13515,7 +13466,7 @@ class PropertyUtil {
 package qx.util {
 @js.native
 @JSName("qx.util.Request")
-class Request {
+class Request extends js.Object {
     static isCrossDomain(url:string):boolean;
     static isMethod(method:string):boolean;
     static isSuccessful(status:number):boolean;
@@ -13543,7 +13494,7 @@ class ResourceManager extends qx.core.Object {
 package qx.util {
 @js.native
 @JSName("qx.util.ResponseParser")
-class ResponseParser {
+class ResponseParser extends js.Object {
     constructor (parser?:string);
     protected _getParser(contentType:string):Function;
     parse(response:string,contentType:string):string;
@@ -13554,7 +13505,7 @@ class ResponseParser {
 package qx.util {
 @js.native
 @JSName("qx.util.RingBuffer")
-class RingBuffer {
+class RingBuffer extends js.Object {
     constructor (maxEntries?:number);
     addEntry(entry:any):void;
     clear():void;
@@ -13570,7 +13521,7 @@ class RingBuffer {
 package qx.util {
 @js.native
 @JSName("qx.util.Serializer")
-class Serializer {
+class Serializer extends js.Object {
     static toJson(object:qx.core.Object,qxSerializer?:Function,dateFormat?:qx.util.format.DateFormat):string;
     static toNativeObject(object:qx.core.Object,qxSerializer?:Function,dateFormat?:qx.util.format.DateFormat):string;
     static toUriParameter(object:qx.core.Object,qxSerializer?:Function,dateFormat?:qx.util.format.DateFormat):string;
@@ -13593,7 +13544,7 @@ class StringBuilder extends qx.type.BaseArray {
 package qx.util {
 @js.native
 @JSName("qx.util.StringEscape")
-class StringEscape {
+class StringEscape extends js.Object {
     static escape(str:string,charCodeToEntities:IMap):string;
     static unescape(str:string,entitiesToCharCode:IMap):string;
 
@@ -13602,7 +13553,7 @@ class StringEscape {
 package qx.util {
 @js.native
 @JSName("qx.util.StringSplit")
-class StringSplit {
+class StringSplit extends js.Object {
     static split(str:string,separator:RegExp,limit?:number):string[];
 
 }
@@ -13620,7 +13571,7 @@ class TimerManager extends qx.core.Object {
 package qx.util {
 @js.native
 @JSName("qx.util.Uri")
-class Uri {
+class Uri extends js.Object {
     static appendParamsToUrl(url:string,params:string):string;
     static getAbsolute(uri:string):string;
     static parseUri(str:string,strict:boolean):any;
@@ -13631,7 +13582,7 @@ class Uri {
 package qx.util {
 @js.native
 @JSName("qx.util.Validate")
-class Validate {
+class Validate extends js.Object {
     static checkColor(value:any,formItem:qx.ui.form.IForm,errorMessage?:string):void;
     static checkEmail(value:any,formItem:qx.ui.form.IForm,errorMessage?:string):void;
     static checkNumber(value:any,formItem:qx.ui.form.IForm,errorMessage?:string):void;
@@ -13664,7 +13615,7 @@ class ValueManager extends qx.core.Object {
 package qx.util {
 @js.native
 @JSName("qx.util.Wheel")
-class Wheel {
+class Wheel extends js.Object {
     static getDelta(domEvent:qx.event.type.Event,axis?:string):number;
 
 }
@@ -13688,8 +13639,7 @@ class DateFormat extends qx.core.Object implements qx.util.format.IFormat {
 }
 package qx.util.format {
 @js.native
-@JSName("qx.util.format.IFormat")
-interface IFormat {
+trait IFormat extends js.Object {
     format(obj:any):string;
     parse(str:string):any;
 
@@ -13866,7 +13816,7 @@ class Transition extends qx.core.Object {
 package qx.util.placement {
 @js.native
 @JSName("qx.util.placement.AbstractAxis")
-class AbstractAxis {
+class AbstractAxis extends js.Object {
     protected static _isInRange(start:number,size:number,areaSize:number):boolean;
     protected static _moveToEdgeAndAlign(size:number,target:IMap,offsets:IMap,position:string):number;
     static computeStart(size:number,target:IMap,offsets:IMap,areaSize:number,position:string):number;
@@ -13876,7 +13826,7 @@ class AbstractAxis {
 package qx.util.placement {
 @js.native
 @JSName("qx.util.placement.BestFitAxis")
-class BestFitAxis {
+class BestFitAxis extends js.Object {
     static computeStart(size:number,target:IMap,offsets:IMap,areaSize:number,position:string):number;
 
 }
@@ -13884,7 +13834,7 @@ class BestFitAxis {
 package qx.util.placement {
 @js.native
 @JSName("qx.util.placement.DirectAxis")
-class DirectAxis {
+class DirectAxis extends js.Object {
     static computeStart(size:number,target:IMap,offsets:IMap,areaSize:number,position:string):number;
 
 }
@@ -13892,7 +13842,7 @@ class DirectAxis {
 package qx.util.placement {
 @js.native
 @JSName("qx.util.placement.KeepAlignAxis")
-class KeepAlignAxis {
+class KeepAlignAxis extends js.Object {
     static computeStart(size:number,target:IMap,offsets:IMap,areaSize:number,position:string):number;
 
 }
@@ -13925,7 +13875,7 @@ class Placement extends qx.core.Object {
 package qx.xml {
 @js.native
 @JSName("qx.xml.Document")
-class Document {
+class Document extends js.Object {
     static create(namespaceUri?:string,qualifiedName?:string):Document;
     static fromString(str:string):Document;
     static isXmlDocument(elem:Document):boolean;
@@ -13935,7 +13885,7 @@ class Document {
 package qx.xml {
 @js.native
 @JSName("qx.xml.Element")
-class Element {
+class Element extends js.Object {
     static createSubElementNS(document:Document,parent:HTMLElement,name:string,namespaceUri:string):HTMLElement;
     static getAttributeNS(element:HTMLElement,namespaceUri:string,name:string):string;
     static getElementsByTagNameNS(element:HTMLElement,namespaceURI:any,tagname:string):HTMLElement[];
@@ -13950,7 +13900,7 @@ class Element {
 package qx.xml {
 @js.native
 @JSName("qx.xml.String")
-class String {
+class String extends js.Object {
     static escape(str:string):string;
     static unescape(str:string):string;
 
