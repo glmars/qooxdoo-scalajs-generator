@@ -309,7 +309,7 @@ class Parser {
             if (returnType === "js.Any") {
                 returnType = "js.Dynamic";
             }
-            if (a.attributes.dimensions) returnType += "[]";
+            if (a.attributes.dimensions) returnType = `js.Array[${returnType}]`;
         }
         write(": " + returnType + " = js.native");
     }
