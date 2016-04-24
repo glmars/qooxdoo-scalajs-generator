@@ -215,7 +215,7 @@ class Parser {
 	  */
     writeConstructor(d: Fmt[]) {
         d.forEach((m) => {
-            if (m.type === Types.Method) {
+            if (m.type === Types.Method && this.methodHasParams(m)) {
                 write(indent + "def this(");
                 this.writeParameters(m, true);
                 write(") = this()\n");
@@ -452,10 +452,18 @@ class Parser {
         });
     }
 
-    hasConstructor(d: Fmt): boolean {
+    hasNonTrivialConstructor(d: Fmt): boolean {
         return d.children.some((c) => {
-            return c.type === Types.Constructor;
+            return c.type === Types.Constructor &&
+                c.children.some((m) => {
+                    	return m.type === Types.Method && this.methodHasParams(m);
+                });
         });
+    }
+    
+    methodHasParams(d: Fmt): boolean {
+        var params = this.findChildByType("params", d);
+        return params && params.children.length > 0;
     }
 
 	/**
@@ -475,7 +483,7 @@ class Parser {
           write (`class ${a.name}`);
         }
 
-        if (this.hasConstructor(d)) {
+        if (this.hasNonTrivialConstructor(d)) {
           write(` protected ()`);  
         }
 
