@@ -326,7 +326,7 @@ class Parser {
         a = this.findChildByType(Types.Entry, a);
         if (a && a.attributes.type) {
             type = this.getType(a.attributes.type);
-            if (a.attributes.dimensions) type += "[]";
+            if (a.attributes.dimensions) type = `js.Array[${type}]`;
         }
         write(type);
         if (p.attributes.optional || forceOptional) write(" = ???");
