@@ -261,9 +261,6 @@ class Parser {
                 // Check if we already processed this method as part of mixin or interface
                 if (this.processedMethods[ m.attributes.name ]) return;
 
-                // var modifier = "public";
-                var staticClause = isStatic ? "static " : "";
-
                 // Seems access when defined is private, protected and internal
                 // We all map this to private
                 // if ((!m.attributes.access) || (m.attributes.access === "protected")) {
@@ -284,7 +281,7 @@ class Parser {
 
                 if (isMixin && (modifier == "protected ")) return;
 
-                write(indent + modifier + staticClause + "def " + m.attributes.name + "(");
+                write(indent + modifier + "def " + m.attributes.name + "(");
                 this.writeParameters(m);
                 write(")");
                 this.writeReturnType(m);
@@ -449,6 +446,12 @@ class Parser {
         });
     }
 
+    hasStaticMethods(d: Fmt): boolean {
+        return d.children.some((c) => {
+            return c.type === Types.MethodsStatic;
+        });
+    }
+
 	/**
 		* Write the class or interface declaration
 		*/
@@ -476,17 +479,33 @@ class Parser {
         this.runChildrenOfType(d, Types.Constructor, (c) => {
             this.writeConstructor(c.children);
         });
-        this.runChildrenOfType(d, Types.MethodsStatic, (c) => {
-            this.writeMethods(c.children, true);
-        });
 
         this.runChildrenOfType(d, Types.Methods, (c) => {
             this.writeMethods(c.children);
         });
 
         write("\n}\n");
+        
+        if (a.type !== "interface" && this.hasStaticMethods(d)) {
+            this.writeObject(d);
+        }
     }
 
+    writeObject(d: Fmt) {
+
+        var a = d.attributes;
+        if (Parser.LOG_LEVEL > 2) console.info("Processing object " + d.attributes.packageName + "." + a.name);
+
+        write(`@js.native\n`);
+        write(`@JSName("${a.packageName}.${a.name}")\n`);
+        write(`object ${a.name} extends js.Object {\n`);
+        
+        this.runChildrenOfType(d, Types.MethodsStatic, (c) => {
+            this.writeMethods(c.children, true);
+        });
+
+        write("\n}\n");
+    }
 
 	/**
 		* Write the module declaration if any.
