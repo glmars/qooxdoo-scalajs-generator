@@ -4,6 +4,14 @@ This application based on https://github.com/jbaron/qx-parser (TypeScript declar
 
 This application generates a Scala.js facade types for the Qooxdoo framework.
 
+Please note that the generated delcaration file is not 100% OK and still need a few manual tweaks to compile correctly and be 
+usable in your project.
+
+If you are just interested in using the Qooxdoo within a Scala.js project, better to use the project
+`qooxdoo-scalajs-example`. This project has a fully functional facade types file and also some glue so you can start right away.
+
+You can get it from: https://github.com/glmars/qooxdoo-scalajs-example.git
+
 Using it
 =========
 Simple make sure you have nodejs installed and then run it:
