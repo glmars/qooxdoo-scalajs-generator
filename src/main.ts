@@ -58,8 +58,7 @@ var indent = "    ";
 
 
 // This is the string that contains the full declaration
-var time = new Date();
-var output = `// Generated declaration file at ${time}\n`
+var output = "";
 
 
 /**

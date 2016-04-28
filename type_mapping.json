@@ -35,7 +35,7 @@
      "var" :  "js.Any",
      "Array" :  "qx.data.Array",
      "Object" :  "js.Any",
-     "Map" :  "qx.IMap",
+     "Map" :  "js.Any",
      "Integer": "Int",
      "Number": "Long",
      "Double":  "Double",

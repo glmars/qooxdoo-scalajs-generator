@@ -6,19 +6,6 @@ import js.|
 
 package qx {
 
-@JSName("qx.IMap")
-@js.native
-trait IMap extends js.Object {
-  @JSBracketAccess
-  def apply(key: String): js.Any = js.native
-  @JSBracketAccess
-  def update(key: String, v: js.Any): Unit = js.native
-}
-
-}
-
-package qx {
-
 package registry {
 
 @JSName("qx.registry")
