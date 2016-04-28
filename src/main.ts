@@ -407,23 +407,20 @@ class Parser {
 	 * Implements used 
 	 */
     writeImplementsClause(a: Attributes) {
-        var interfaces = a.interfaces || "";
-        var mixins = a.mixins || "";
+        var interfaces = (a.interfaces && a.interfaces.split(",")) || [];
+        var mixins = (a.mixins && a.mixins.split(",")) || [];
 
-        if ((!interfaces) && (!mixins)) {
+        if (interfaces.length == 0 && mixins.length == 0) {
             write(" {\n");
             return;
         }
 
-        var impl = interfaces.split(",").concat(mixins.split(","));
+        var impl = interfaces.concat(mixins);
 
-        impl.forEach((name) => {
-            write(" with " + name);
-        });
-        write(" {\n");
+        var joinString = " with ";
+        write(joinString + impl.join(joinString) + " {\n");
 
-
-        interfaces.split(",").forEach((name) => {
+        interfaces.forEach((name) => {
             this.includeImplemented(name);
         });
     }

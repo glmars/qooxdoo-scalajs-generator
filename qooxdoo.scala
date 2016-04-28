@@ -196,7 +196,7 @@ class AbstractGui extends qx.core.Object with qx.application.IApplication with q
 package qx.application {
 @js.native
 @JSName("qx.application.Basic")
-class Basic extends qx.core.Object with qx.application.IApplication with  {
+class Basic extends qx.core.Object with qx.application.IApplication {
     override def close(): String = js.native
     override def finalize(): Unit = js.native
     override def main(): Unit = js.native
@@ -217,7 +217,7 @@ trait IApplication extends js.Object {
 package qx.application {
 @js.native
 @JSName("qx.application.Native")
-class Native extends qx.core.Object with qx.application.IApplication with  {
+class Native extends qx.core.Object with qx.application.IApplication {
     override def close(): String = js.native
     override def finalize(): Unit = js.native
     override def main(): Unit = js.native
@@ -2175,7 +2175,7 @@ class MProperty extends js.Object {
 package qx.core {
 @js.native
 @JSName("qx.core.Object")
-class Object extends js.Object with  with qx.core.MEvent with qx.core.MAssert with qx.core.MProperty with qx.core.MLogging with qx.data.MBinding {
+class Object extends js.Object with qx.core.MEvent with qx.core.MAssert with qx.core.MProperty with qx.core.MLogging with qx.data.MBinding {
     protected def _disposeArray(field: String): Unit = js.native
     protected def _disposeMap(field: String): Unit = js.native
     protected def _disposeObjects(varargs: js.Any = ???): Unit = js.native
@@ -2573,7 +2573,7 @@ trait IMarshalerDelegate extends js.Object {
 package qx.data.marshal {
 @js.native
 @JSName("qx.data.marshal.Json")
-class Json protected () extends qx.core.Object with qx.data.marshal.IMarshaler with  {
+class Json protected () extends qx.core.Object with qx.data.marshal.IMarshaler {
     override def toClass(data: js.Any, includeBubbleEvents: Boolean): Unit = js.native
     override def toModel(data: js.Any): qx.core.Object = js.native
     def this(delegate: js.Any = ???) = this()
@@ -2999,7 +2999,7 @@ object Timer extends js.Object {
 package qx.event.dispatch {
 @js.native
 @JSName("qx.event.dispatch.AbstractBubbling")
-class AbstractBubbling protected () extends qx.core.Object with qx.event.IEventDispatcher with  {
+class AbstractBubbling protected () extends qx.core.Object with qx.event.IEventDispatcher {
     override def canDispatchEvent(target: HTMLElement, event: qx.event.type.Event, type: String): Boolean = js.native
     override def dispatchEvent(target: HTMLElement, event: qx.event.type.Event, type: String): Unit = js.native
     def this(manager: qx.event.Manager = ???) = this()
@@ -3010,7 +3010,7 @@ class AbstractBubbling protected () extends qx.core.Object with qx.event.IEventD
 package qx.event.dispatch {
 @js.native
 @JSName("qx.event.dispatch.Direct")
-class Direct protected () extends qx.core.Object with qx.event.IEventDispatcher with  {
+class Direct protected () extends qx.core.Object with qx.event.IEventDispatcher {
     override def canDispatchEvent(target: HTMLElement, event: qx.event.type.Event, type: String): Boolean = js.native
     override def dispatchEvent(target: HTMLElement, event: qx.event.type.Event, type: String): Unit = js.native
     def this(manager: qx.event.Manager = ???) = this()
@@ -3040,7 +3040,7 @@ class MouseCapture protected () extends qx.event.dispatch.AbstractBubbling {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Appear")
-class Appear protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class Appear protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3057,7 +3057,7 @@ object Appear extends js.Object {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Application")
-class Application protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class Application protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3079,7 +3079,7 @@ object Application extends js.Object {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Capture")
-class Capture extends qx.core.Object with qx.event.IEventHandler with  {
+class Capture extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3089,7 +3089,7 @@ class Capture extends qx.core.Object with qx.event.IEventHandler with  {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.DragDrop")
-class DragDrop protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class DragDrop protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3127,7 +3127,7 @@ class DragDrop protected () extends qx.core.Object with qx.event.IEventHandler w
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Element")
-class Element protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class Element protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3139,7 +3139,7 @@ class Element protected () extends qx.core.Object with qx.event.IEventHandler wi
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.ElementResize")
-class ElementResize protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class ElementResize protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3151,7 +3151,7 @@ class ElementResize protected () extends qx.core.Object with qx.event.IEventHand
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Focus")
-class Focus protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class Focus protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3179,7 +3179,7 @@ class Focus protected () extends qx.core.Object with qx.event.IEventHandler with
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Gesture")
-class Gesture protected () extends qx.event.handler.GestureCore with qx.event.IEventHandler with  {
+class Gesture protected () extends qx.event.handler.GestureCore with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3217,7 +3217,7 @@ class GestureCore protected () extends js.Object {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Iframe")
-class Iframe extends qx.core.Object with qx.event.IEventHandler with  {
+class Iframe extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3233,7 +3233,7 @@ object Iframe extends js.Object {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Input")
-class Input extends qx.core.Object with qx.event.IEventHandler with  {
+class Input extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3251,7 +3251,7 @@ class Input extends qx.core.Object with qx.event.IEventHandler with  {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Keyboard")
-class Keyboard protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class Keyboard protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3269,7 +3269,7 @@ class Keyboard protected () extends qx.core.Object with qx.event.IEventHandler w
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Mouse")
-class Mouse protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class Mouse protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3290,7 +3290,7 @@ class Mouse protected () extends qx.core.Object with qx.event.IEventHandler with
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Object")
-class Object extends qx.core.Object with qx.event.IEventHandler with  {
+class Object extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3300,7 +3300,7 @@ class Object extends qx.core.Object with qx.event.IEventHandler with  {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Offline")
-class Offline protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class Offline protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3315,7 +3315,7 @@ class Offline protected () extends qx.core.Object with qx.event.IEventHandler wi
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Orientation")
-class Orientation protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class Orientation protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3341,7 +3341,7 @@ class OrientationCore protected () extends js.Object {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Pointer")
-class Pointer protected () extends qx.event.handler.PointerCore with qx.event.IEventHandler with  {
+class Pointer protected () extends qx.event.handler.PointerCore with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3370,7 +3370,7 @@ class PointerCore protected () extends js.Object {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Touch")
-class Touch protected () extends qx.event.handler.TouchCore with qx.event.IEventHandler with  {
+class Touch protected () extends qx.event.handler.TouchCore with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3402,7 +3402,7 @@ class TouchCore protected () extends js.Object {
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Transition")
-class Transition protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class Transition protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3414,7 +3414,7 @@ class Transition protected () extends qx.core.Object with qx.event.IEventHandler
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.UserAction")
-class UserAction protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class UserAction protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -3425,7 +3425,7 @@ class UserAction protected () extends qx.core.Object with qx.event.IEventHandler
 package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Window")
-class Window protected () extends qx.core.Object with qx.event.IEventHandler with  {
+class Window protected () extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -4639,7 +4639,7 @@ class Xhr protected () extends qx.io.request.AbstractRequest {
 package qx.io.request.authentication {
 @js.native
 @JSName("qx.io.request.authentication.Basic")
-class Basic protected () extends qx.core.Object with qx.io.request.authentication.IAuthentication with  {
+class Basic protected () extends qx.core.Object with qx.io.request.authentication.IAuthentication {
     override def getAuthHeaders(): js.Array[js.Dynamic] = js.native
     def this(username: js.Any = ???, password: js.Any = ???) = this()
 
@@ -5655,7 +5655,7 @@ class Image protected () extends qx.ui.core.Widget {
 package qx.ui.basic {
 @js.native
 @JSName("qx.ui.basic.Label")
-class Label protected () extends qx.ui.core.Widget with qx.ui.form.IStringForm with  {
+class Label protected () extends qx.ui.core.Widget with qx.ui.form.IStringForm {
     override def getValue(): String = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: String): Unit = js.native
@@ -5694,7 +5694,7 @@ class Label protected () extends qx.ui.core.Widget with qx.ui.form.IStringForm w
 package qx.ui.container {
 @js.native
 @JSName("qx.ui.container.Composite")
-class Composite protected () extends qx.ui.core.Widget with  with qx.ui.core.MChildrenHandling with qx.ui.core.MLayoutHandling {
+class Composite protected () extends qx.ui.core.Widget with qx.ui.core.MChildrenHandling with qx.ui.core.MLayoutHandling {
     def this(layout: qx.ui.layout.Abstract = ???) = this()
 
 }
@@ -5702,14 +5702,14 @@ class Composite protected () extends qx.ui.core.Widget with  with qx.ui.core.MCh
 package qx.ui.container {
 @js.native
 @JSName("qx.ui.container.Resizer")
-class Resizer extends qx.ui.container.Composite with  with qx.ui.core.MResizable {
+class Resizer extends qx.ui.container.Composite with qx.ui.core.MResizable {
 
 }
 }
 package qx.ui.container {
 @js.native
 @JSName("qx.ui.container.Scroll")
-class Scroll protected () extends qx.ui.core.scroll.AbstractScrollArea with  with qx.ui.core.MContentPadding {
+class Scroll protected () extends qx.ui.core.scroll.AbstractScrollArea with qx.ui.core.MContentPadding {
     def this(content: qx.ui.core.LayoutItem = ???) = this()
     protected def _getContentPaddingTarget(): qx.ui.core.Widget = js.native
     def add(widget: qx.ui.core.Widget): Unit = js.native
@@ -5721,7 +5721,7 @@ class Scroll protected () extends qx.ui.core.scroll.AbstractScrollArea with  wit
 package qx.ui.container {
 @js.native
 @JSName("qx.ui.container.SlideBar")
-class SlideBar protected () extends qx.ui.core.Widget with  with qx.ui.core.MRemoteChildrenHandling with qx.ui.core.MRemoteLayoutHandling {
+class SlideBar protected () extends qx.ui.core.Widget with qx.ui.core.MRemoteChildrenHandling with qx.ui.core.MRemoteLayoutHandling {
     def this(orientation: String = ???) = this()
     protected def _applyOrientation(value: js.Any, old: js.Any): Unit = js.native
     protected def _hideArrows(): Unit = js.native
@@ -5774,7 +5774,7 @@ class Stack extends qx.ui.core.Widget with qx.ui.core.ISingleSelection with qx.u
 package qx.ui.control {
 @js.native
 @JSName("qx.ui.control.ColorPopup")
-class ColorPopup extends qx.ui.popup.Popup with qx.ui.form.IColorForm with  {
+class ColorPopup extends qx.ui.popup.Popup with qx.ui.form.IColorForm {
     override def getValue(): String = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: String): Unit = js.native
@@ -5809,7 +5809,7 @@ class ColorPopup extends qx.ui.popup.Popup with qx.ui.form.IColorForm with  {
 package qx.ui.control {
 @js.native
 @JSName("qx.ui.control.ColorSelector")
-class ColorSelector extends qx.ui.core.Widget with qx.ui.form.IColorForm with  {
+class ColorSelector extends qx.ui.core.Widget with qx.ui.form.IColorForm {
     override def getValue(): String = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: String): Unit = js.native
@@ -5962,7 +5962,7 @@ class ColumnData extends qx.ui.core.LayoutItem {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.DragDropCursor")
-class DragDropCursor extends qx.ui.basic.Image with  with qx.ui.core.MPlacement {
+class DragDropCursor extends qx.ui.basic.Image with qx.ui.core.MPlacement {
     protected def _applyAction(value: js.Any, old: js.Any): Unit = js.native
     def getAction(): js.Dynamic = js.native
     protected def initAction(value: js.Any): js.Dynamic = js.native
@@ -5980,7 +5980,7 @@ object DragDropCursor extends js.Object {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.EventHandler")
-class EventHandler extends qx.core.Object with qx.event.IEventHandler with  {
+class EventHandler extends qx.core.Object with qx.event.IEventHandler {
     override def canHandleEvent(target: js.Any, type: String): Boolean = js.native
     override def registerEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, type: String, capture: Boolean): Unit = js.native
@@ -6555,7 +6555,7 @@ class Spacer protected () extends qx.ui.core.LayoutItem {
 package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.Widget")
-class Widget extends qx.ui.core.LayoutItem with  with qx.locale.MTranslation {
+class Widget extends qx.ui.core.LayoutItem with qx.locale.MTranslation {
     protected def _add(child: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
     protected def _addAfter(child: qx.ui.core.LayoutItem, after: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
     protected def _addAt(child: qx.ui.core.LayoutItem, index: Int, options: js.Any = ???): Unit = js.native
@@ -6905,7 +6905,7 @@ object Widget extends js.Object {
 package qx.ui.core.scroll {
 @js.native
 @JSName("qx.ui.core.scroll.AbstractScrollArea")
-class AbstractScrollArea extends qx.ui.core.Widget with  with qx.ui.core.scroll.MScrollBarFactory with qx.ui.core.scroll.MRoll with qx.ui.core.MDragDropScrolling {
+class AbstractScrollArea extends qx.ui.core.Widget with qx.ui.core.scroll.MScrollBarFactory with qx.ui.core.scroll.MRoll with qx.ui.core.MDragDropScrolling {
     protected def _computeScrollbars(): Unit = js.native
     protected def _onChangeScrollbarXVisibility(e: qx.event.type.Event): Unit = js.native
     protected def _onChangeScrollbarYVisibility(e: qx.event.type.Event): Unit = js.native
@@ -6995,7 +6995,7 @@ class MWheelHandling extends js.Object {
 package qx.ui.core.scroll {
 @js.native
 @JSName("qx.ui.core.scroll.NativeScrollBar")
-class NativeScrollBar protected () extends qx.ui.core.Widget with qx.ui.core.scroll.IScrollBar with  {
+class NativeScrollBar protected () extends qx.ui.core.Widget with qx.ui.core.scroll.IScrollBar {
     override def getKnobFactor(): js.Dynamic = js.native
     override def getMaximum(): js.Dynamic = js.native
     override def getOrientation(): js.Dynamic = js.native
@@ -7032,7 +7032,7 @@ class NativeScrollBar protected () extends qx.ui.core.Widget with qx.ui.core.scr
 package qx.ui.core.scroll {
 @js.native
 @JSName("qx.ui.core.scroll.ScrollBar")
-class ScrollBar protected () extends qx.ui.core.Widget with qx.ui.core.scroll.IScrollBar with  {
+class ScrollBar protected () extends qx.ui.core.Widget with qx.ui.core.scroll.IScrollBar {
     override def getKnobFactor(): js.Dynamic = js.native
     override def getMaximum(): js.Dynamic = js.native
     override def getOrientation(): js.Dynamic = js.native
@@ -7219,7 +7219,7 @@ class Widget protected () extends qx.ui.core.selection.Abstract {
 package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.Abstract")
-class Abstract extends qx.core.Object with qx.ui.decoration.IDecorator with  {
+class Abstract extends qx.core.Object with qx.ui.decoration.IDecorator {
     override def getInsets(): js.Dynamic = js.native
     override def getPadding(): js.Dynamic = js.native
     override def getStyles(): js.Dynamic = js.native
@@ -7409,7 +7409,7 @@ class MBoxShadow extends js.Object {
 package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.MDoubleBorder")
-class MDoubleBorder extends js.Object with  with qx.ui.decoration.MSingleBorder with qx.ui.decoration.MBackgroundImage {
+class MDoubleBorder extends js.Object with qx.ui.decoration.MSingleBorder with qx.ui.decoration.MBackgroundImage {
     protected def _applyDoubleBorder(value: js.Any, old: js.Any): Unit = js.native
     def getInnerColorBottom(): String = js.native
     def getInnerColorLeft(): String = js.native
@@ -7705,7 +7705,7 @@ class Flash protected () extends qx.ui.core.Widget {
 package qx.ui.embed {
 @js.native
 @JSName("qx.ui.embed.Html")
-class Html protected () extends qx.ui.core.Widget with  with qx.ui.core.MNativeOverflow {
+class Html protected () extends qx.ui.core.Widget with qx.ui.core.MNativeOverflow {
     def this(html: String = ???) = this()
     protected def _applyCssClass(value: String, old: String): Unit = js.native
     protected def _applyHtml(value: String, old: String): Unit = js.native
@@ -7749,7 +7749,7 @@ class Iframe protected () extends qx.ui.embed.AbstractIframe {
 package qx.ui.embed {
 @js.native
 @JSName("qx.ui.embed.ThemedIframe")
-class ThemedIframe protected () extends qx.ui.embed.AbstractIframe with  with qx.ui.core.scroll.MRoll {
+class ThemedIframe protected () extends qx.ui.embed.AbstractIframe with qx.ui.core.scroll.MRoll {
     def this(source: js.Any = ???) = this()
     protected def _addRollListener(): Unit = js.native
     protected def _configureScrollbar(scrollbarId: String, show: Boolean, containerSize: Int, contentSize: Int): Unit = js.native
@@ -7938,7 +7938,7 @@ class CheckBox protected () extends qx.ui.form.ToggleButton with qx.ui.form.IFor
 package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.ComboBox")
-class ComboBox extends qx.ui.form.AbstractSelectBox with qx.ui.form.IStringForm with  {
+class ComboBox extends qx.ui.form.AbstractSelectBox with qx.ui.form.IStringForm {
     override def getValue(): String = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: String): Unit = js.native
@@ -8780,7 +8780,7 @@ class ToggleButton protected () extends qx.ui.basic.Atom with qx.ui.form.IBoolea
 package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.VirtualComboBox")
-class VirtualComboBox protected () extends qx.ui.form.core.AbstractVirtualBox with qx.ui.form.IStringForm with  {
+class VirtualComboBox protected () extends qx.ui.form.core.AbstractVirtualBox with qx.ui.form.IStringForm {
     override def getValue(): String = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: String): Unit = js.native
@@ -8807,7 +8807,7 @@ class VirtualComboBox protected () extends qx.ui.form.core.AbstractVirtualBox wi
 package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.VirtualSelectBox")
-class VirtualSelectBox protected () extends qx.ui.form.core.AbstractVirtualBox with qx.data.controller.ISelection with  {
+class VirtualSelectBox protected () extends qx.ui.form.core.AbstractVirtualBox with qx.data.controller.ISelection {
     override def getSelection(): qx.data.IListData = js.native
     override def resetSelection(): Unit = js.native
     override def setSelection(value: qx.data.IListData): Unit = js.native
@@ -8917,7 +8917,7 @@ class VirtualDropDownList protected () extends qx.ui.popup.Popup {
 package qx.ui.form.renderer {
 @js.native
 @JSName("qx.ui.form.renderer.AbstractRenderer")
-class AbstractRenderer protected () extends qx.ui.core.Widget with qx.ui.form.renderer.IFormRenderer with  {
+class AbstractRenderer protected () extends qx.ui.core.Widget with qx.ui.form.renderer.IFormRenderer {
     override def addButton(button: qx.ui.form.Button, options: js.Any = ???): Unit = js.native
     override def addItems(items: js.Array[qx.ui.core.Widget], names: js.Array[String], title: String = ???, itemsOptions: qx.data.Array = ???, headerOptions: js.Any = ???): Unit = js.native
     def this(form: qx.ui.form.Form = ???) = this()
@@ -8962,7 +8962,7 @@ class Single protected () extends qx.ui.form.renderer.AbstractRenderer {
 package qx.ui.form.renderer {
 @js.native
 @JSName("qx.ui.form.renderer.SinglePlaceholder")
-class SinglePlaceholder extends qx.ui.form.renderer.Single with qx.ui.form.renderer.IFormRenderer with  {
+class SinglePlaceholder extends qx.ui.form.renderer.Single with qx.ui.form.renderer.IFormRenderer {
     override def addButton(button: qx.ui.form.Button, options: js.Any = ???): Unit = js.native
     override def addItems(items: js.Array[qx.ui.core.Widget], names: js.Array[String], title: String = ???, itemsOptions: qx.data.Array = ???, headerOptions: js.Any = ???): Unit = js.native
 
@@ -9621,7 +9621,7 @@ class ButtonLayout extends qx.ui.layout.Abstract {
 package qx.ui.menu {
 @js.native
 @JSName("qx.ui.menu.CheckBox")
-class CheckBox protected () extends qx.ui.menu.AbstractButton with qx.ui.form.IBooleanForm with  {
+class CheckBox protected () extends qx.ui.menu.AbstractButton with qx.ui.form.IBooleanForm {
     override def getValue(): Boolean = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: Boolean): Unit = js.native
@@ -9700,7 +9700,7 @@ object Manager extends js.Object {
 package qx.ui.menu {
 @js.native
 @JSName("qx.ui.menu.Menu")
-class Menu extends qx.ui.core.Widget with  with qx.ui.core.MPlacement with qx.ui.core.MRemoteChildrenHandling {
+class Menu extends qx.ui.core.Widget with qx.ui.core.MPlacement with qx.ui.core.MRemoteChildrenHandling {
     protected def _applyArrowColumnWidth(value: Int, old: Int): Unit = js.native
     protected def _applyBlockerColor(value: String, old: String): Unit = js.native
     protected def _applyBlockerOpacity(value: Long, old: Long): Unit = js.native
@@ -9849,7 +9849,7 @@ object Manager extends js.Object {
 package qx.ui.popup {
 @js.native
 @JSName("qx.ui.popup.Popup")
-class Popup protected () extends qx.ui.container.Composite with  with qx.ui.core.MPlacement {
+class Popup protected () extends qx.ui.container.Composite with qx.ui.core.MPlacement {
     def this(layout: js.Any = ???) = this()
     def getAutoHide(): Boolean = js.native
     protected def initAutoHide(value: js.Any): Boolean = js.native
@@ -10113,7 +10113,7 @@ class Default protected () extends qx.ui.progressive.structure.Abstract {
 package qx.ui.root {
 @js.native
 @JSName("qx.ui.root.Abstract")
-class Abstract extends qx.ui.core.Widget with  with qx.ui.core.MChildrenHandling with qx.ui.core.MBlocker with qx.ui.window.MDesktop {
+class Abstract extends qx.ui.core.Widget with qx.ui.core.MChildrenHandling with qx.ui.core.MBlocker with qx.ui.window.MDesktop {
     protected def _applyNativeHelp(value: Boolean, old: Boolean): Unit = js.native
     protected def _onNativeContextMenu(e: qx.event.type.Mouse): Unit = js.native
     def getGlobalCursor(): String = js.native
@@ -10142,7 +10142,7 @@ class Application protected () extends qx.ui.root.Abstract {
 package qx.ui.root {
 @js.native
 @JSName("qx.ui.root.Inline")
-class Inline protected () extends qx.ui.root.Abstract with  with qx.ui.core.MLayoutHandling {
+class Inline protected () extends qx.ui.root.Abstract with qx.ui.core.MLayoutHandling {
     def this(el: HTMLElement = ???, dynamicX: Boolean = ???, dynamicY: Boolean = ???) = this()
     protected def _onResize(e: qx.event.type.Event): Unit = js.native
     protected def _onWindowResize(): Unit = js.native
@@ -10338,7 +10338,7 @@ class MTableContextMenu extends js.Object {
 package qx.ui.table {
 @js.native
 @JSName("qx.ui.table.Table")
-class Table protected () extends qx.ui.core.Widget with  with qx.ui.core.MDragDropScrolling {
+class Table protected () extends qx.ui.core.Widget with qx.ui.core.MDragDropScrolling {
     def this(tableModel: qx.ui.table.ITableModel = ???, custom: js.Any = ???) = this()
     protected def _applyAdditionalStatusBarText(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyColumnVisibilityButtonVisible(value: Boolean, old: Boolean): Unit = js.native
@@ -10537,7 +10537,7 @@ class Table protected () extends qx.ui.core.Widget with  with qx.ui.core.MDragDr
 package qx.ui.table.celleditor {
 @js.native
 @JSName("qx.ui.table.celleditor.AbstractField")
-class AbstractField extends qx.core.Object with qx.ui.table.ICellEditorFactory with  {
+class AbstractField extends qx.core.Object with qx.ui.table.ICellEditorFactory {
     override def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
     protected def _createEditor(): qx.ui.core.Widget = js.native
@@ -10551,7 +10551,7 @@ class AbstractField extends qx.core.Object with qx.ui.table.ICellEditorFactory w
 package qx.ui.table.celleditor {
 @js.native
 @JSName("qx.ui.table.celleditor.CheckBox")
-class CheckBox extends qx.core.Object with qx.ui.table.ICellEditorFactory with  {
+class CheckBox extends qx.core.Object with qx.ui.table.ICellEditorFactory {
     override def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
 
@@ -10560,7 +10560,7 @@ class CheckBox extends qx.core.Object with qx.ui.table.ICellEditorFactory with  
 package qx.ui.table.celleditor {
 @js.native
 @JSName("qx.ui.table.celleditor.ComboBox")
-class ComboBox extends qx.core.Object with qx.ui.table.ICellEditorFactory with  {
+class ComboBox extends qx.core.Object with qx.ui.table.ICellEditorFactory {
     override def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
     def getListData(): qx.data.Array = js.native
@@ -10577,7 +10577,7 @@ class ComboBox extends qx.core.Object with qx.ui.table.ICellEditorFactory with  
 package qx.ui.table.celleditor {
 @js.native
 @JSName("qx.ui.table.celleditor.Dynamic")
-class Dynamic protected () extends qx.core.Object with qx.ui.table.ICellEditorFactory with  {
+class Dynamic protected () extends qx.core.Object with qx.ui.table.ICellEditorFactory {
     override def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
     def this(cellEditorFactoryFunction: js.Function = ???) = this()
@@ -10598,7 +10598,7 @@ class PasswordField extends qx.ui.table.celleditor.AbstractField {
 package qx.ui.table.celleditor {
 @js.native
 @JSName("qx.ui.table.celleditor.SelectBox")
-class SelectBox extends qx.core.Object with qx.ui.table.ICellEditorFactory with  {
+class SelectBox extends qx.core.Object with qx.ui.table.ICellEditorFactory {
     override def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
     def getListData(): qx.data.Array = js.native
@@ -10622,7 +10622,7 @@ class TextField extends qx.ui.table.celleditor.AbstractField {
 package qx.ui.table.cellrenderer {
 @js.native
 @JSName("qx.ui.table.cellrenderer.Abstract")
-class Abstract extends qx.core.Object with qx.ui.table.ICellRenderer with  {
+class Abstract extends qx.core.Object with qx.ui.table.ICellRenderer {
     override def createDataCellHtml(cellInfo: js.Any, htmlArr: js.Array[String]): Boolean = js.native
     protected def _createStyleSheet(): Unit = js.native
     protected def _getCellAttributes(cellInfo: js.Any): String = js.native
@@ -10783,7 +10783,7 @@ class String extends qx.ui.table.cellrenderer.Conditional {
 package qx.ui.table.columnmenu {
 @js.native
 @JSName("qx.ui.table.columnmenu.Button")
-class Button extends qx.ui.form.MenuButton with qx.ui.table.IColumnMenuButton with  {
+class Button extends qx.ui.form.MenuButton with qx.ui.table.IColumnMenuButton {
     override def empty(): Unit = js.native
     override def factory(item: String, options: js.Any): qx.ui.core.Widget = js.native
     override def getMenu(): js.Dynamic = js.native
@@ -10796,7 +10796,7 @@ class Button extends qx.ui.form.MenuButton with qx.ui.table.IColumnMenuButton wi
 package qx.ui.table.columnmenu {
 @js.native
 @JSName("qx.ui.table.columnmenu.MenuItem")
-class MenuItem protected () extends qx.ui.menu.CheckBox with qx.ui.table.IColumnMenuItem with  {
+class MenuItem protected () extends qx.ui.menu.CheckBox with qx.ui.table.IColumnMenuItem {
     override def getVisible(): js.Dynamic = js.native
     override def resetVisible(): Unit = js.native
     override def setVisible(value: js.Any): js.Dynamic = js.native
@@ -10837,7 +10837,7 @@ class Basic extends qx.core.Object {
 package qx.ui.table.columnmodel {
 @js.native
 @JSName("qx.ui.table.columnmodel.Resize")
-class Resize extends qx.ui.table.columnmodel.Basic with  with qx.locale.MTranslation {
+class Resize extends qx.ui.table.columnmodel.Basic with qx.locale.MTranslation {
     protected def _addResetColumnWidthButton(event: qx.event.type.Data): Unit = js.native
     protected def _applyBehavior(value: qx.ui.table.columnmodel.resizebehavior.Abstract, old: qx.ui.table.columnmodel.resizebehavior.Abstract): Unit = js.native
     protected def _onappear(event: qx.event.type.Event): Unit = js.native
@@ -10900,7 +10900,7 @@ class Default extends qx.ui.table.columnmodel.resizebehavior.Abstract {
 package qx.ui.table.headerrenderer {
 @js.native
 @JSName("qx.ui.table.headerrenderer.Default")
-class Default extends qx.core.Object with qx.ui.table.IHeaderRenderer with  {
+class Default extends qx.core.Object with qx.ui.table.IHeaderRenderer {
     override def createHeaderCell(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def updateHeaderCell(cellInfo: js.Any, cellWidget: qx.ui.core.Widget): Unit = js.native
     def getToolTip(): String = js.native
@@ -10947,7 +10947,7 @@ class Icon protected () extends qx.ui.table.headerrenderer.Default {
 package qx.ui.table.model {
 @js.native
 @JSName("qx.ui.table.model.Abstract")
-class Abstract extends qx.core.Object with qx.ui.table.ITableModel with  {
+class Abstract extends qx.core.Object with qx.ui.table.ITableModel {
     override def getColumnCount(): Int = js.native
     override def getColumnId(columnIndex: Int): String = js.native
     override def getColumnIndexById(columnId: String): Int = js.native
@@ -11204,7 +11204,7 @@ class Pane protected () extends qx.ui.core.Widget {
 package qx.ui.table.pane {
 @js.native
 @JSName("qx.ui.table.pane.Scroller")
-class Scroller protected () extends qx.ui.core.Widget with  with qx.ui.core.scroll.MScrollBarFactory {
+class Scroller protected () extends qx.ui.core.Widget with qx.ui.core.scroll.MScrollBarFactory {
     def this(table: qx.ui.table.Table = ???) = this()
     protected def _applyHorizontalScrollBarVisible(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyScrollTimeout(value: Int, old: Int): Unit = js.native
@@ -11347,7 +11347,7 @@ class Scroller protected () extends qx.ui.core.Widget with  with qx.ui.core.scro
 package qx.ui.table.rowrenderer {
 @js.native
 @JSName("qx.ui.table.rowrenderer.Default")
-class Default extends qx.core.Object with qx.ui.table.IRowRenderer with  {
+class Default extends qx.core.Object with qx.ui.table.IRowRenderer {
     override def createRowStyle(rowInfo: js.Any): Unit = js.native
     override def getRowClass(rowInfo: js.Any): Unit = js.native
     override def getRowHeightStyle(height: Int): Unit = js.native
@@ -11441,7 +11441,7 @@ class Page protected () extends qx.ui.container.Composite {
 package qx.ui.tabview {
 @js.native
 @JSName("qx.ui.tabview.TabButton")
-class TabButton extends qx.ui.form.RadioButton with qx.ui.form.IRadioItem with  {
+class TabButton extends qx.ui.form.RadioButton with qx.ui.form.IRadioItem {
     override def getGroup(): qx.ui.form.RadioGroup = js.native
     override def getValue(): Boolean = js.native
     override def setGroup(value: qx.ui.form.RadioGroup): Unit = js.native
@@ -11519,7 +11519,7 @@ class MenuButton extends qx.ui.menubar.Button {
 package qx.ui.toolbar {
 @js.native
 @JSName("qx.ui.toolbar.Part")
-class Part extends qx.ui.core.Widget with  with qx.ui.core.MRemoteChildrenHandling {
+class Part extends qx.ui.core.Widget with qx.ui.core.MRemoteChildrenHandling {
     protected def _applySpacing(value: Int, old: Int): Unit = js.native
     def addSeparator(): Unit = js.native
     def getMenuButtons(): qx.data.Array = js.native
@@ -11577,7 +11577,7 @@ class SplitButton protected () extends qx.ui.form.SplitButton {
 package qx.ui.toolbar {
 @js.native
 @JSName("qx.ui.toolbar.ToolBar")
-class ToolBar extends qx.ui.core.Widget with  with qx.ui.core.MChildrenHandling {
+class ToolBar extends qx.ui.core.Widget with qx.ui.core.MChildrenHandling {
     protected def _applyOverflowHandling(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyOverflowIndicator(value: qx.ui.core.Widget, old: qx.ui.core.Widget): Unit = js.native
     protected def _applyShow(value: js.Any, old: js.Any): Unit = js.native
@@ -11960,7 +11960,7 @@ class AbstractTreeItem protected () extends qx.ui.tree.core.AbstractItem {
 package qx.ui.tree.core {
 @js.native
 @JSName("qx.ui.tree.core.FolderOpenButton")
-class FolderOpenButton extends qx.ui.basic.Image with  with qx.ui.core.MExecutable {
+class FolderOpenButton extends qx.ui.basic.Image with qx.ui.core.MExecutable {
     protected def _applyOpen(value: Boolean, old: Boolean): Unit = js.native
     protected def _onTap(e: qx.event.type.Pointer): Unit = js.native
     protected def _stopPropagation(e: qx.event.type.Event): Unit = js.native
@@ -12204,7 +12204,7 @@ object SimpleTreeDataCellRenderer extends js.Object {
 package qx.ui.treevirtual {
 @js.native
 @JSName("qx.ui.treevirtual.SimpleTreeDataModel")
-class SimpleTreeDataModel extends qx.ui.table.model.Abstract with  with qx.ui.treevirtual.MTreePrimitive {
+class SimpleTreeDataModel extends qx.ui.table.model.Abstract with qx.ui.treevirtual.MTreePrimitive {
     protected def _applyFilter(value: js.Function, old: js.Function): Unit = js.native
     protected def _clearSelections(): Unit = js.native
     def addBranch(parentNodeId: Int, label: String, bOpened: Boolean, bHideOpenCloseButton: Boolean, icon: String, iconSelected: String): Int = js.native
@@ -12293,7 +12293,7 @@ class Prefetch protected () extends qx.core.Object {
 package qx.ui.virtual.cell {
 @js.native
 @JSName("qx.ui.virtual.cell.Abstract")
-class Abstract extends qx.core.Object with qx.ui.virtual.cell.ICell with  {
+class Abstract extends qx.core.Object with qx.ui.virtual.cell.ICell {
     override def getCellProperties(data: js.Any, states: js.Any): js.Dynamic = js.native
     def getAttributes(value: js.Any, states: js.Any): String = js.native
     def getContent(value: js.Any, states: js.Any): String = js.native
@@ -12314,7 +12314,7 @@ class AbstractImage extends qx.ui.virtual.cell.Cell {
 package qx.ui.virtual.cell {
 @js.native
 @JSName("qx.ui.virtual.cell.AbstractWidget")
-class AbstractWidget extends qx.core.Object with qx.ui.virtual.cell.IWidgetCell with  {
+class AbstractWidget extends qx.core.Object with qx.ui.virtual.cell.IWidgetCell {
     override def getCellWidget(data: js.Any, states: js.Any): qx.ui.core.LayoutItem = js.native
     override def pool(widget: qx.ui.core.LayoutItem): Unit = js.native
     override def updateData(widget: qx.ui.core.LayoutItem, data: js.Any): Unit = js.native
@@ -12601,7 +12601,7 @@ class Scroller protected () extends qx.ui.core.scroll.AbstractScrollArea {
 package qx.ui.virtual.layer {
 @js.native
 @JSName("qx.ui.virtual.layer.Abstract")
-class Abstract extends qx.ui.core.Widget with qx.ui.virtual.core.ILayer with  {
+class Abstract extends qx.ui.core.Widget with qx.ui.virtual.core.ILayer {
     override def fullUpdate(firstRow: Int, firstColumn: Int, rowSizes: js.Array[Int], columnSizes: js.Array[Int]): Unit = js.native
     override def updateLayerData(): Unit = js.native
     override def updateLayerWindow(firstRow: Int, firstColumn: Int, rowSizes: js.Array[Int], columnSizes: js.Array[Int]): Unit = js.native
@@ -12716,7 +12716,7 @@ class Row extends qx.ui.virtual.layer.AbstractBackground {
 package qx.ui.virtual.layer {
 @js.native
 @JSName("qx.ui.virtual.layer.WidgetCell")
-class WidgetCell protected () extends qx.ui.virtual.layer.Abstract with  with qx.ui.core.MChildrenHandling {
+class WidgetCell protected () extends qx.ui.virtual.layer.Abstract with qx.ui.core.MChildrenHandling {
     def this(widgetCellProvider: qx.ui.virtual.core.IWidgetCellProvider = ???) = this()
     protected def _activateNotEmptyChild(elementToPool: qx.ui.core.Widget): Unit = js.native
     protected def _getSpacer(): qx.ui.core.Spacer = js.native
@@ -12727,7 +12727,7 @@ class WidgetCell protected () extends qx.ui.virtual.layer.Abstract with  with qx
 package qx.ui.virtual.layer {
 @js.native
 @JSName("qx.ui.virtual.layer.WidgetCellSpan")
-class WidgetCellSpan protected () extends qx.ui.virtual.layer.Abstract with  with qx.ui.core.MChildrenHandling {
+class WidgetCellSpan protected () extends qx.ui.virtual.layer.Abstract with qx.ui.core.MChildrenHandling {
     def this(widgetCellProvider: qx.ui.virtual.core.IWidgetCellProvider = ???, rowConfig: qx.ui.virtual.core.Axis = ???, columnConfig: qx.ui.virtual.core.Axis = ???) = this()
     protected def _getSpacer(): qx.ui.core.Spacer = js.native
     def getRenderedCellWidget(row: Int, column: Int): qx.ui.core.LayoutItem = js.native
@@ -12888,7 +12888,7 @@ class MDesktop extends js.Object {
 package qx.ui.window {
 @js.native
 @JSName("qx.ui.window.Manager")
-class Manager extends qx.core.Object with qx.ui.window.IWindowManager with  {
+class Manager extends qx.core.Object with qx.ui.window.IWindowManager {
     override def bringToFront(win: Window): Unit = js.native
     override def changeActiveWindow(active: Window, oldActive: Window): Unit = js.native
     override def sendToBack(win: Window): Unit = js.native
@@ -12902,7 +12902,7 @@ class Manager extends qx.core.Object with qx.ui.window.IWindowManager with  {
 package qx.ui.window {
 @js.native
 @JSName("qx.ui.window.Window")
-class Window protected () extends qx.ui.core.Widget with  with qx.ui.core.MRemoteChildrenHandling with qx.ui.core.MRemoteLayoutHandling with qx.ui.core.MResizable with qx.ui.core.MMovable with qx.ui.core.MContentPadding {
+class Window protected () extends qx.ui.core.Widget with qx.ui.core.MRemoteChildrenHandling with qx.ui.core.MRemoteLayoutHandling with qx.ui.core.MResizable with qx.ui.core.MMovable with qx.ui.core.MContentPadding {
     def this(caption: String = ???, icon: String = ???) = this()
     protected def _applyActive(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyCaptionBarChange(value: js.Any, old: js.Any): Unit = js.native
@@ -13436,7 +13436,7 @@ object Wheel extends js.Object {
 package qx.util.format {
 @js.native
 @JSName("qx.util.format.DateFormat")
-class DateFormat protected () extends qx.core.Object with qx.util.format.IFormat with  {
+class DateFormat protected () extends qx.core.Object with qx.util.format.IFormat {
     override def format(obj: js.Any): String = js.native
     override def parse(str: String): js.Dynamic = js.native
     def this(format: String = ???, locale: String = ???) = this()
@@ -13466,7 +13466,7 @@ trait IFormat extends js.Object {
 package qx.util.format {
 @js.native
 @JSName("qx.util.format.NumberFormat")
-class NumberFormat protected () extends qx.core.Object with qx.util.format.IFormat with  {
+class NumberFormat protected () extends qx.core.Object with qx.util.format.IFormat {
     override def format(obj: js.Any): String = js.native
     override def parse(str: String): js.Dynamic = js.native
     def this(locale: String = ???) = this()
