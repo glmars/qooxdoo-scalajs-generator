@@ -22,6 +22,7 @@ class Types {
   * The possbile attributes keys
   */
 interface Attributes {
+    fullName?: string;
     packageName?: string;
     name?: string;
     fromProperty?: string;
@@ -472,10 +473,10 @@ class Parser {
 
         write(`@js.native\n`);
         
-        if (a.type === "interface") {
+        if (a.type === "interface" || a.type === "mixin") {
           write(`trait ${a.name}`);  
         } else {
-          write(`@JSName("${a.packageName}.${a.name}")\n`);
+          write(`@JSName("${a.fullName}")\n`);
           write (`class ${a.name}`);
         }
 
@@ -511,7 +512,7 @@ class Parser {
         if (Parser.LOG_LEVEL > 2) console.info("Processing object " + d.attributes.packageName + "." + a.name);
 
         write(`@js.native\n`);
-        write(`@JSName("${a.packageName}.${a.name}")\n`);
+        write(`@JSName("${a.fullName}")\n`);
         write(`object ${a.name} extends js.Object {\n`);
         
         this.runChildrenOfType(d, Types.MethodsStatic, (c) => {
