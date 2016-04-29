@@ -94,8 +94,11 @@ class Parser {
     // Where to find the API documentation json files
     static BASE_DIR = "api_5.0/";
 
-    // Contains the mapping from Qooxdoo types to TypeScript types
+    // Contains the mapping from Qooxdoo types to Scala types
     private typeMappings: Map<string, string>;
+
+    // Contains the mapping from Scala keywords to escaped or renamed idents
+    private keywordMappings: Map<string, string>;
 
     private fileNames: string[];
 
@@ -107,6 +110,7 @@ class Parser {
 
     constructor() {
         this.loadTypeMappings();
+        this.loadKeywordMappings();
         this.loadFileNames();
     }
 
@@ -135,6 +139,14 @@ class Parser {
     private loadTypeMappings() {
         var content = fs.readFileSync("type_mapping.json", "UTF-8");
         this.typeMappings = JSON.parse(content);
+    }
+
+	/**
+		* Load the keyword mappings from the config file
+		*/
+    private loadKeywordMappings() {
+        var content = fs.readFileSync("keyword_mapping.json", "UTF-8");
+        this.keywordMappings = JSON.parse(content);
     }
 
 	/**
@@ -185,7 +197,7 @@ class Parser {
     }
 
 	/**
-	  * Do the mapping of types from Qooxdoo to TypeScript
+	  * Do the mapping of types from Qooxdoo to Scala
 	  */
     getType(t: string) {
         var defaultType = "js.Any";
@@ -207,6 +219,26 @@ class Parser {
         // We don't know the type
         if (Parser.LOG_LEVEL > 2) console.error("Unknow type: " + t);
         return defaultType;
+    }
+
+	/**
+	  * Do the mapping of name from Qooxdoo to Scala
+	  */
+    getName(n: string): string {
+        if (this.keywordMappings.hasOwnProperty(n)) {
+            return this.keywordMappings[n];
+        }
+
+        return n;
+    }
+
+	/**
+	  * Do the mapping of full name from Qooxdoo to Scala
+	  */
+    
+    getFullName(n: string): string {
+        var nameSeparator = ".";
+        return n.split(nameSeparator).map(this.getName.bind(this)).join(nameSeparator);
     }
 
 
@@ -281,7 +313,7 @@ class Parser {
 
                 if (isMixin && (modifier == "protected ")) return;
 
-                write(indent + modifier + "def " + m.attributes.name + "(");
+                write(indent + modifier + "def " + this.getName(m.attributes.name) + "(");
                 this.writeParameters(m);
                 write(")");
                 this.writeReturnType(m);
@@ -305,7 +337,7 @@ class Parser {
                 type = this.properties[ this.fromProperty ];
                 console.log("Type determined for " + this.fromProperty + ":" + type);
             }
-            returnType = this.getType(type);
+            returnType = this.getFullName(this.getType(type));
             if (returnType === "js.Any") {
                 returnType = "js.Dynamic";
             }
@@ -319,13 +351,13 @@ class Parser {
 		*/
     writeParam(p: Fmt, forceOptional: boolean): boolean {
         var type = "js.Any";
-        write(p.attributes.name);
+        write(this.getName(p.attributes.name));
         if (p.attributes.name == "varargs") forceOptional = true;
         write(": ");
         var a = this.findChildByType(Types.Types, p);
         a = this.findChildByType(Types.Entry, a);
         if (a && a.attributes.type) {
-            type = this.getType(a.attributes.type);
+            type = this.getFullName(this.getType(a.attributes.type));
             if (a.attributes.dimensions) type = `js.Array[${type}]`;
         }
         write(type);
@@ -416,7 +448,7 @@ class Parser {
             return;
         }
 
-        var impl = interfaces.concat(mixins);
+        var impl = interfaces.concat(mixins).map(this.getFullName.bind(this));
 
         var joinString = " with ";
         write(joinString + impl.join(joinString) + " {\n");
@@ -432,7 +464,7 @@ class Parser {
             superClassType = "js.Object";
         }
         else {
-            superClassType = this.getType(a.superClass);
+            superClassType = this.getFullName(this.getType(a.superClass));
         }
         write(` extends ${superClassType}`);
     }
@@ -473,11 +505,12 @@ class Parser {
 
         write(`@js.native\n`);
         
+        var name = this.getName(a.name);
         if (a.type === "interface" || a.type === "mixin") {
-          write(`trait ${a.name}`);  
+          write(`trait ${name}`);  
         } else {
           write(`@JSName("${a.fullName}")\n`);
-          write (`class ${a.name}`);
+          write (`class ${name}`);
         }
 
         if (this.hasNonTrivialConstructor(d)) {
@@ -511,9 +544,10 @@ class Parser {
         var a = d.attributes;
         if (Parser.LOG_LEVEL > 2) console.info("Processing object " + d.attributes.packageName + "." + a.name);
 
+        var name = this.getName(a.name);
         write(`@js.native\n`);
         write(`@JSName("${a.fullName}")\n`);
-        write(`object ${a.name} extends js.Object {\n`);
+        write(`object ${name} extends js.Object {\n`);
         
         this.runChildrenOfType(d, Types.MethodsStatic, (c) => {
             this.writeMethods(c.children, true);
@@ -526,7 +560,7 @@ class Parser {
 		* Write the module declaration if any.
 		*/
     writeModule(d: Fmt) {
-        var moduleName = d.attributes.packageName;
+        var moduleName = this.getName(d.attributes.packageName);
 
         if (moduleName) {
             write(`package ${moduleName} {\n`);
