@@ -2081,6 +2081,7 @@ object Init extends js.Object {
 }
 package qx.core {
 @js.native
+@JSName("qx.core.MAssert")
 trait MAssert extends js.Object {
     def assert(condition: js.Any, msg: String): Unit = js.native
     def assertArgumentsCount(args: js.Any, minCount: Int, maxCount: Int, msg: String): Unit = js.native
@@ -2127,6 +2128,7 @@ trait MAssert extends js.Object {
 }
 package qx.core {
 @js.native
+@JSName("qx.core.MBindTo")
 trait MBindTo extends js.Object {
     def bindTo(func: js.Function, varargs: js.Any = ???): js.Function = js.native
 
@@ -2134,6 +2136,7 @@ trait MBindTo extends js.Object {
 }
 package qx.core {
 @js.native
+@JSName("qx.core.MEvent")
 trait MEvent extends js.Object {
     def addListener(`type`: String, listener: js.Function, self: js.Any = ???, capture: Boolean = ???): String = js.native
     def addListenerOnce(`type`: String, listener: js.Function, self: js.Any = ???, capture: Boolean = ???): String = js.native
@@ -2149,6 +2152,7 @@ trait MEvent extends js.Object {
 }
 package qx.core {
 @js.native
+@JSName("qx.core.MLogging")
 trait MLogging extends js.Object {
     def debug(varargs: js.Any = ???): Unit = js.native
     def error(varargs: js.Any = ???): Unit = js.native
@@ -2160,6 +2164,7 @@ trait MLogging extends js.Object {
 }
 package qx.core {
 @js.native
+@JSName("qx.core.MProperty")
 trait MProperty extends js.Object {
     def get(prop: String): js.Dynamic = js.native
     def reset(prop: String): Unit = js.native
@@ -2320,6 +2325,7 @@ trait IListData extends js.Object {
 }
 package qx.data {
 @js.native
+@JSName("qx.data.MBinding")
 trait MBinding extends js.Object {
     def bind(sourcePropertyChain: String, targetObject: qx.core.Object, targetProperty: String, options: js.Any): js.Dynamic = js.native
     def getBindings(): qx.data.Array = js.native
@@ -2454,6 +2460,7 @@ class List protected () extends qx.core.Object with qx.data.controller.ISelectio
 }
 package qx.data.controller {
 @js.native
+@JSName("qx.data.controller.MSelection")
 trait MSelection extends js.Object {
     protected def _addChangeTargetListener(value: qx.ui.core.Widget, old: qx.ui.core.Widget): Unit = js.native
     protected def _applySelection(value: qx.data.Array, old: qx.data.Array): Unit = js.native
@@ -2581,6 +2588,7 @@ object Json extends js.Object {
 }
 package qx.data.marshal {
 @js.native
+@JSName("qx.data.marshal.MEventBubbling")
 trait MEventBubbling extends js.Object {
     protected def _applyEventPropagation(value: js.Any, old: js.Any, name: String): Unit = js.native
     protected def _registerEventChaining(value: js.Any, old: js.Any, name: String): Unit = js.native
@@ -4967,6 +4975,7 @@ class LocalizedString protected () extends qx.`type`.BaseString {
 }
 package qx.locale {
 @js.native
+@JSName("qx.locale.MTranslation")
 trait MTranslation extends js.Object {
     def marktr(messageId: String): String = js.native
     def tr(messageId: String, varargs: js.Any = ???): String = js.native
@@ -6150,6 +6159,7 @@ class LayoutItem extends qx.core.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MBlocker")
 trait MBlocker extends js.Object {
     protected def _applyBlockerColor(value: String, old: String): Unit = js.native
     protected def _applyBlockerOpacity(value: Long, old: Long): Unit = js.native
@@ -6173,6 +6183,7 @@ trait MBlocker extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MChildrenHandling")
 trait MChildrenHandling extends js.Object {
     def add(child: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
     def addAfter(child: qx.ui.core.LayoutItem, after: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
@@ -6195,6 +6206,7 @@ object MChildrenHandling extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MContentPadding")
 trait MContentPadding extends js.Object {
     protected def _applyContentPadding(value: Int, old: Int): Unit = js.native
     def getContentPaddingBottom(): Int = js.native
@@ -6220,6 +6232,7 @@ trait MContentPadding extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MDragDropScrolling")
 trait MDragDropScrolling extends js.Object {
     protected def _calculateScrollAmount(scrollbarSize: Long, exceedanceAmount: Long): Long = js.native
     protected def _calculateThresholdExceedance(diff: Long, threshold: Long): Long = js.native
@@ -6249,6 +6262,7 @@ trait MDragDropScrolling extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MExecutable")
 trait MExecutable extends js.Object {
     protected def _applyCommand(value: qx.ui.command.Command, old: qx.ui.command.Command): Unit = js.native
     def execute(): Unit = js.native
@@ -6261,6 +6275,7 @@ trait MExecutable extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MLayoutHandling")
 trait MLayoutHandling extends js.Object {
     def getLayout(): qx.ui.layout.Abstract = js.native
     def setLayout(layout: qx.ui.layout.Abstract): Unit = js.native
@@ -6275,6 +6290,7 @@ object MLayoutHandling extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MMovable")
 trait MMovable extends js.Object {
     protected def _activateMoveHandle(widget: qx.ui.core.Widget): Unit = js.native
     protected def _onMovePointerDown(e: qx.event.`type`.Pointer): Unit = js.native
@@ -6298,6 +6314,7 @@ trait MMovable extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MMultiSelectionHandling")
 trait MMultiSelectionHandling extends js.Object {
     protected def _applyDragSelection(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyQuickSelection(value: Boolean, old: Boolean): Unit = js.native
@@ -6339,6 +6356,7 @@ trait MMultiSelectionHandling extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MNativeOverflow")
 trait MNativeOverflow extends js.Object {
     protected def _applyOverflowX(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyOverflowY(value: js.Any, old: js.Any): Unit = js.native
@@ -6357,6 +6375,7 @@ trait MNativeOverflow extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MPlacement")
 trait MPlacement extends js.Object {
     protected def _getPlacementOffsets(): js.Dynamic = js.native
     protected def _place(coords: js.Any): Unit = js.native
@@ -6420,6 +6439,7 @@ object MPlacement extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MRemoteChildrenHandling")
 trait MRemoteChildrenHandling extends js.Object {
     def add(child: qx.ui.core.LayoutItem, options: js.Any = ???): qx.ui.core.Widget = js.native
     def addAfter(child: qx.ui.core.LayoutItem, after: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
@@ -6436,6 +6456,7 @@ trait MRemoteChildrenHandling extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MRemoteLayoutHandling")
 trait MRemoteLayoutHandling extends js.Object {
     def getLayout(): qx.ui.layout.Abstract = js.native
     def setLayout(layout: qx.ui.layout.Abstract): Unit = js.native
@@ -6444,6 +6465,7 @@ trait MRemoteLayoutHandling extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MResizable")
 trait MResizable extends js.Object {
     protected def _getResizeFrame(): qx.ui.core.Widget = js.native
     def getResizableBottom(): Boolean = js.native
@@ -6487,6 +6509,7 @@ trait MResizable extends js.Object {
 }
 package qx.ui.core {
 @js.native
+@JSName("qx.ui.core.MSingleSelectionHandling")
 trait MSingleSelectionHandling extends js.Object {
     protected def _onChangeSelected(e: qx.event.`type`.Data): Unit = js.native
     def getSelectables(all: Boolean): js.Array[qx.ui.core.Widget] = js.native
@@ -6944,6 +6967,7 @@ trait IScrollBar extends js.Object {
 }
 package qx.ui.core.scroll {
 @js.native
+@JSName("qx.ui.core.scroll.MRoll")
 trait MRoll extends js.Object {
     protected def _addRollHandling(): Unit = js.native
     protected def _onPointerDownForRoll(e: qx.event.`type`.Pointer): Unit = js.native
@@ -6954,6 +6978,7 @@ trait MRoll extends js.Object {
 }
 package qx.ui.core.scroll {
 @js.native
+@JSName("qx.ui.core.scroll.MScrollBarFactory")
 trait MScrollBarFactory extends js.Object {
     protected def _createScrollBar(orientation: String = ???): qx.ui.core.scroll.IScrollBar = js.native
 
@@ -6961,6 +6986,7 @@ trait MScrollBarFactory extends js.Object {
 }
 package qx.ui.core.scroll {
 @js.native
+@JSName("qx.ui.core.scroll.MWheelHandling")
 trait MWheelHandling extends js.Object {
     protected def _onMouseWheel(e: qx.event.`type`.Mouse): Unit = js.native
 
@@ -7225,6 +7251,7 @@ trait IDecorator extends js.Object {
 }
 package qx.ui.decoration {
 @js.native
+@JSName("qx.ui.decoration.MBackgroundColor")
 trait MBackgroundColor extends js.Object {
     protected def _applyBackgroundColor(value: String, old: String): Unit = js.native
     protected def _styleBackgroundColor(styles: js.Any): Unit = js.native
@@ -7237,6 +7264,7 @@ trait MBackgroundColor extends js.Object {
 }
 package qx.ui.decoration {
 @js.native
+@JSName("qx.ui.decoration.MBackgroundImage")
 trait MBackgroundImage extends js.Object {
     protected def _applyBackgroundImage(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyBackgroundPosition(value: js.Any, old: js.Any): Unit = js.native
@@ -7264,6 +7292,7 @@ trait MBackgroundImage extends js.Object {
 }
 package qx.ui.decoration {
 @js.native
+@JSName("qx.ui.decoration.MBorderImage")
 trait MBorderImage extends js.Object {
     protected def _applyBorderImage(value: js.Any, old: js.Any): Unit = js.native
     protected def _getDefaultInsetsForBorderImage(): js.Dynamic = js.native
@@ -7315,6 +7344,7 @@ trait MBorderImage extends js.Object {
 }
 package qx.ui.decoration {
 @js.native
+@JSName("qx.ui.decoration.MBorderRadius")
 trait MBorderRadius extends js.Object {
     protected def _applyBorderRadius(value: Int, old: Int): Unit = js.native
     protected def _styleBorderRadius(styles: js.Any): Unit = js.native
@@ -7341,6 +7371,7 @@ trait MBorderRadius extends js.Object {
 }
 package qx.ui.decoration {
 @js.native
+@JSName("qx.ui.decoration.MBoxShadow")
 trait MBoxShadow extends js.Object {
     protected def _applyBoxShadow(value: js.Any, old: js.Any): Unit = js.native
     protected def _styleBoxShadow(styles: js.Any): Unit = js.native
@@ -7377,6 +7408,7 @@ trait MBoxShadow extends js.Object {
 }
 package qx.ui.decoration {
 @js.native
+@JSName("qx.ui.decoration.MDoubleBorder")
 trait MDoubleBorder extends js.Object with qx.ui.decoration.MSingleBorder with qx.ui.decoration.MBackgroundImage {
     protected def _applyDoubleBorder(value: js.Any, old: js.Any): Unit = js.native
     def getInnerColorBottom(): String = js.native
@@ -7424,6 +7456,7 @@ trait MDoubleBorder extends js.Object with qx.ui.decoration.MSingleBorder with q
 }
 package qx.ui.decoration {
 @js.native
+@JSName("qx.ui.decoration.MLinearBackgroundGradient")
 trait MLinearBackgroundGradient extends js.Object {
     protected def _applyLinearBackgroundGradient(value: js.Any, old: js.Any): Unit = js.native
     protected def _styleLinearBackgroundGradient(styles: js.Any): Unit = js.native
@@ -7460,6 +7493,7 @@ trait MLinearBackgroundGradient extends js.Object {
 }
 package qx.ui.decoration {
 @js.native
+@JSName("qx.ui.decoration.MSingleBorder")
 trait MSingleBorder extends js.Object {
     protected def _applyStyle(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyWidth(value: Long, old: Long): Unit = js.native
@@ -8200,6 +8234,7 @@ class ListItem protected () extends qx.ui.basic.Atom with qx.ui.form.IModel with
 }
 package qx.ui.form {
 @js.native
+@JSName("qx.ui.form.MForm")
 trait MForm extends js.Object {
     protected def _applyValid(value: Boolean, old: Boolean): Unit = js.native
     def getInvalidMessage(): String = js.native
@@ -8227,6 +8262,7 @@ trait MForm extends js.Object {
 }
 package qx.ui.form {
 @js.native
+@JSName("qx.ui.form.MModelProperty")
 trait MModelProperty extends js.Object {
     protected def _applyModel(value: js.Any, old: js.Any): Unit = js.native
     def getModel(): js.Dynamic = js.native
@@ -8238,6 +8274,7 @@ trait MModelProperty extends js.Object {
 }
 package qx.ui.form {
 @js.native
+@JSName("qx.ui.form.MModelSelection")
 trait MModelSelection extends js.Object {
     def getModelSelection(): qx.data.Array = js.native
     def setModelSelection(modelSelection: qx.data.Array): Unit = js.native
@@ -9442,6 +9479,7 @@ trait IListDelegate extends js.Object {
 }
 package qx.ui.list.core {
 @js.native
+@JSName("qx.ui.list.core.MWidgetController")
 trait MWidgetController extends js.Object {
     protected def _bindGroupItem(item: qx.ui.core.Widget, index: Int): Unit = js.native
     protected def _bindItem(item: qx.ui.core.Widget, index: Int): Unit = js.native
@@ -10290,6 +10328,7 @@ trait ITableModel extends js.Object {
 }
 package qx.ui.table {
 @js.native
+@JSName("qx.ui.table.MTableContextMenu")
 trait MTableContextMenu extends js.Object {
     def getContextMenuHandler(col: Int): js.Function = js.native
     def setContextMenuHandler(col: Int, handler: js.Function, context: js.Any = ???): Unit = js.native
@@ -11965,6 +12004,7 @@ trait IVirtualTreeDelegate extends js.Object {
 }
 package qx.ui.tree.core {
 @js.native
+@JSName("qx.ui.tree.core.MWidgetController")
 trait MWidgetController extends js.Object {
     protected def _bindItem(item: qx.ui.core.Widget, index: Int): Unit = js.native
     protected def _removeBindingsFrom(item: qx.ui.core.Widget): Unit = js.native
@@ -12064,6 +12104,7 @@ class DefaultDataCellRenderer extends qx.ui.table.cellrenderer.Default {
 }
 package qx.ui.treevirtual {
 @js.native
+@JSName("qx.ui.treevirtual.MFamily")
 trait MFamily extends js.Object {
     def familyGetFirstChild(nodeReference: js.Any): Int = js.native
     def familyGetLastChild(nodeReference: js.Any): Int = js.native
@@ -12074,6 +12115,7 @@ trait MFamily extends js.Object {
 }
 package qx.ui.treevirtual {
 @js.native
+@JSName("qx.ui.treevirtual.MNode")
 trait MNode extends js.Object {
     def nodeGet(nodeReference: js.Any): js.Dynamic = js.native
     def nodeGetCellStyle(nodeReference: js.Any): String = js.native
@@ -12099,6 +12141,7 @@ trait MNode extends js.Object {
 }
 package qx.ui.treevirtual {
 @js.native
+@JSName("qx.ui.treevirtual.MTreePrimitive")
 trait MTreePrimitive extends js.Object {
 
 }
@@ -12738,6 +12781,7 @@ trait ISelectionDelegate extends js.Object {
 }
 package qx.ui.virtual.selection {
 @js.native
+@JSName("qx.ui.virtual.selection.MModel")
 trait MModel extends js.Object {
     protected def _applyDefaultSelection(): Unit = js.native
     protected def _applyDragSelection(value: Boolean, old: Boolean): Unit = js.native
@@ -12820,6 +12864,7 @@ trait IWindowManager extends js.Object {
 }
 package qx.ui.window {
 @js.native
+@JSName("qx.ui.window.MDesktop")
 trait MDesktop extends js.Object {
     protected def _addWindow(win: qx.ui.window.Window): Unit = js.native
     protected def _afterAddChild(win: qx.ui.core.Widget): Unit = js.native

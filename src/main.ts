@@ -505,11 +505,14 @@ class Parser {
 
         write(`@js.native\n`);
         
+        if (a.type !== "interface") {
+          write(`@JSName("${a.fullName}")\n`);
+        }
+        
         var name = this.getName(a.name);
         if (a.type === "interface" || a.type === "mixin") {
           write(`trait ${name}`);  
         } else {
-          write(`@JSName("${a.fullName}")\n`);
           write (`class ${name}`);
         }
 
