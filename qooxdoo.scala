@@ -3475,7 +3475,7 @@ class Message protected () extends qx.core.Object {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Data")
 class Data extends qx.event.`type`.Event {
@@ -3484,7 +3484,7 @@ class Data extends qx.event.`type`.Event {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Dom")
 class Dom extends qx.event.`type`.Native {
@@ -3497,7 +3497,7 @@ class Dom extends qx.event.`type`.Native {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Drag")
 class Drag extends qx.event.`type`.Event {
@@ -3518,7 +3518,7 @@ class Drag extends qx.event.`type`.Event {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Event")
 class Event extends qx.core.Object {
@@ -3548,14 +3548,14 @@ class Event extends qx.core.Object {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Focus")
 class Focus extends qx.event.`type`.Event {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.GeoPosition")
 class GeoPosition extends qx.event.`type`.Event {
@@ -3594,7 +3594,7 @@ class GeoPosition extends qx.event.`type`.Event {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.KeyInput")
 class KeyInput extends qx.event.`type`.Dom {
@@ -3603,7 +3603,7 @@ class KeyInput extends qx.event.`type`.Dom {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.KeySequence")
 class KeySequence extends qx.event.`type`.Dom {
@@ -3613,7 +3613,7 @@ class KeySequence extends qx.event.`type`.Dom {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Mouse")
 class Mouse extends qx.event.`type`.Dom {
@@ -3630,7 +3630,7 @@ class Mouse extends qx.event.`type`.Dom {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.MouseWheel")
 class MouseWheel extends qx.event.`type`.Mouse {
@@ -3638,7 +3638,7 @@ class MouseWheel extends qx.event.`type`.Mouse {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Native")
 class Native extends qx.event.`type`.Event {
@@ -3649,7 +3649,7 @@ class Native extends qx.event.`type`.Event {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Orientation")
 class Orientation extends qx.event.`type`.Event {
@@ -3659,7 +3659,7 @@ class Orientation extends qx.event.`type`.Event {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Pinch")
 class Pinch extends qx.event.`type`.Pointer {
@@ -3667,7 +3667,7 @@ class Pinch extends qx.event.`type`.Pointer {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Pointer")
 class Pointer extends qx.event.`type`.Mouse {
@@ -3682,7 +3682,7 @@ class Pointer extends qx.event.`type`.Mouse {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Rest")
 class Rest extends qx.event.`type`.Data {
@@ -3705,7 +3705,7 @@ class Rest extends qx.event.`type`.Data {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Roll")
 class Roll extends qx.event.`type`.Pointer {
@@ -3715,7 +3715,7 @@ class Roll extends qx.event.`type`.Pointer {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Rotate")
 class Rotate extends qx.event.`type`.Pointer {
@@ -3723,7 +3723,7 @@ class Rotate extends qx.event.`type`.Pointer {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Swipe")
 class Swipe extends qx.event.`type`.Pointer {
@@ -3736,14 +3736,14 @@ class Swipe extends qx.event.`type`.Pointer {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Tap")
 class Tap extends qx.event.`type`.Pointer {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Touch")
 class Touch extends qx.event.`type`.Dom {
@@ -3765,7 +3765,7 @@ class Touch extends qx.event.`type`.Dom {
 
 }
 }
-package qx.event.type {
+package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Track")
 class Track extends qx.event.`type`.Pointer {
@@ -3773,7 +3773,7 @@ class Track extends qx.event.`type`.Pointer {
 
 }
 }
-package qx.event.type.dom {
+package qx.event.`type`.dom {
 @js.native
 @JSName("qx.event.type.dom.Custom")
 class Custom protected () extends js.Object {
@@ -3783,7 +3783,7 @@ class Custom protected () extends js.Object {
 
 }
 }
-package qx.event.type.dom {
+package qx.event.`type`.dom {
 @js.native
 @JSName("qx.event.type.dom.Pointer")
 class Pointer protected () extends qx.event.`type`.dom.Custom {
@@ -5501,7 +5501,7 @@ class Image extends qx.core.Object {
 
 }
 }
-package qx.type {
+package qx.`type` {
 @js.native
 @JSName("qx.type.Array")
 class Array protected () extends qx.`type`.BaseArray {
@@ -5519,7 +5519,7 @@ class Array protected () extends qx.`type`.BaseArray {
 
 }
 }
-package qx.type {
+package qx.`type` {
 @js.native
 @JSName("qx.type.BaseArray")
 class BaseArray protected () extends qx.data.Array {
@@ -5545,7 +5545,7 @@ class BaseArray protected () extends qx.data.Array {
 
 }
 }
-package qx.type {
+package qx.`type` {
 @js.native
 @JSName("qx.type.BaseError")
 class BaseError protected () extends js.Error {
@@ -5554,7 +5554,7 @@ class BaseError protected () extends js.Error {
 
 }
 }
-package qx.type {
+package qx.`type` {
 @js.native
 @JSName("qx.type.BaseString")
 class BaseString protected () extends js.Object {

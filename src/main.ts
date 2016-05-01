@@ -563,7 +563,7 @@ class Parser {
 		* Write the module declaration if any.
 		*/
     writeModule(d: Fmt) {
-        var moduleName = this.getName(d.attributes.packageName);
+        var moduleName = this.getFullName(d.attributes.packageName);
 
         if (moduleName) {
             write(`package ${moduleName} {\n`);
