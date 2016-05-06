@@ -1,0 +1,7 @@
+{
+    "type":"`type`",
+    "object":"obj",
+    "override":"`override`",
+    "lazy":"`lazy`",
+    "match":"`match`"
+}
