@@ -53,7 +53,7 @@
                   "children": [
                     {
                       "attributes": {
-                        "type": "qx.data.IListData"
+                        "type": "qx.data.Array"
                       },
                       "type": "entry"
                     }
@@ -111,7 +111,7 @@
                       "children": [
                         {
                           "attributes": {
-                            "type": "qx.data.IListData"
+                            "type": "qx.data.Array"
                           },
                           "type": "entry"
                         }
@@ -126,6 +126,34 @@
                 "text": "<p>Setter for the selection.</p>"
               },
               "type": "desc"
+            },
+            {
+              "attributes": {
+                
+              },
+              "type": "return",
+              "children": [
+                {
+                  "attributes": {
+                    "text": "<p>The unmodified incoming value.</p>"
+                  },
+                  "type": "desc"
+                },
+                {
+                  "attributes": {
+                    
+                  },
+                  "type": "types",
+                  "children": [
+                    {
+                      "attributes": {
+                        "type": "qx.data.Array"
+                      },
+                      "type": "entry"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

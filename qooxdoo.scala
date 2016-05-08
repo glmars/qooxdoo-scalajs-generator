@@ -2398,9 +2398,9 @@ trait IControllerDelegate extends js.Object {
 package qx.data.controller {
 @js.native
 trait ISelection extends js.Object {
-    def getSelection(): qx.data.IListData
+    def getSelection(): qx.data.Array
     def resetSelection(): Unit
-    def setSelection(value: qx.data.IListData): Unit
+    def setSelection(value: qx.data.Array): qx.data.Array
 
 }
 }
@@ -8687,9 +8687,9 @@ package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.VirtualSelectBox")
 class VirtualSelectBox protected () extends qx.ui.form.core.AbstractVirtualBox with qx.data.controller.ISelection {
-    override def getSelection(): qx.data.IListData = js.native
+    override def getSelection(): qx.data.Array = js.native
     override def resetSelection(): Unit = js.native
-    override def setSelection(value: qx.data.IListData): Unit = js.native
+    override def setSelection(value: qx.data.Array): qx.data.Array = js.native
     def this(model: js.Any = ???) = this()
     protected def _addBindings(): Unit = js.native
     protected def _applySelection(value: qx.data.Array, old: qx.data.Array): Unit = js.native
