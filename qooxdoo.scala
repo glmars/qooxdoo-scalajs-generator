@@ -184,7 +184,8 @@ package qx.application {
 @JSName("qx.application.AbstractGui")
 class AbstractGui extends qx.core.Object with qx.application.IApplication with qx.locale.MTranslation {
     override def close(): String = js.native
-    override def finalize(): Unit = js.native
+    @JSName("finalize")
+    override def finalizeQx(): Unit = js.native
     override def main(): Unit = js.native
     override def terminate(): Unit = js.native
     protected def _createRootWidget(): qx.ui.core.Widget = js.native
@@ -198,7 +199,8 @@ package qx.application {
 @JSName("qx.application.Basic")
 class Basic extends qx.core.Object with qx.application.IApplication {
     override def close(): String = js.native
-    override def finalize(): Unit = js.native
+    @JSName("finalize")
+    override def finalizeQx(): Unit = js.native
     override def main(): Unit = js.native
     override def terminate(): Unit = js.native
 
@@ -208,7 +210,8 @@ package qx.application {
 @js.native
 trait IApplication extends js.Object {
     def close(): String
-    def finalize(): Unit
+    @JSName("finalize")
+    def finalizeQx(): Unit
     def main(): Unit
     def terminate(): Unit
 
@@ -219,7 +222,8 @@ package qx.application {
 @JSName("qx.application.Native")
 class Native extends qx.core.Object with qx.application.IApplication {
     override def close(): String = js.native
-    override def finalize(): Unit = js.native
+    @JSName("finalize")
+    override def finalizeQx(): Unit = js.native
     override def main(): Unit = js.native
     override def terminate(): Unit = js.native
 
@@ -334,7 +338,8 @@ object Element extends js.Object {
     def addListener(element: HTMLElement, `type`: String, listener: js.Function, self: js.Any = ???, capture: Boolean = ???): String = js.native
     def blur(element: HTMLElement): Unit = js.native
     def capture(element: HTMLElement, containerCapture: Boolean = ???): Unit = js.native
-    def clone(element: HTMLElement, events: Boolean = ???): HTMLElement = js.native
+    @JSName("clone")
+    def cloneQx(element: HTMLElement, events: Boolean = ???): HTMLElement = js.native
     def deactivate(element: HTMLElement): Unit = js.native
     def focus(element: HTMLElement): Unit = js.native
     def hasListener(element: HTMLElement, `type`: String, capture: Boolean = ???): Boolean = js.native
@@ -2181,7 +2186,8 @@ class Object extends js.Object with qx.core.MEvent with qx.core.MAssert with qx.
     protected def _disposeObjects(varargs: js.Any = ???): Unit = js.native
     protected def _disposeSingletonObjects(varargs: js.Any = ???): Unit = js.native
     def base(args: js.Any, varargs: js.Any = ???): js.Dynamic = js.native
-    def clone(): qx.core.Object = js.native
+    @JSName("clone")
+    def cloneQx(): qx.core.Object = js.native
     def dispose(): Unit = js.native
     def getUserData(key: String): js.Dynamic = js.native
     def isDisposed(): Boolean = js.native
@@ -3636,7 +3642,7 @@ package qx.event.`type` {
 @js.native
 @JSName("qx.event.type.Native")
 class Native extends qx.event.`type`.Event {
-    protected def _cloneNativeEvent(nativeEvent: qx.event.`type`.Event, clone: js.Any): js.Dynamic = js.native
+    protected def _cloneNativeEvent(nativeEvent: qx.event.`type`.Event, cloneQx: js.Any): js.Dynamic = js.native
     def getNativeEvent(): qx.event.`type`.Event = js.native
     def getReturnValue(): String = js.native
     def setReturnValue(returnValue: String = ???): Unit = js.native
@@ -4685,7 +4691,8 @@ class Array extends js.Object {
 object Array extends js.Object {
     def append(arr1: js.Array[js.Any], arr2: js.Array[js.Any]): js.Array[js.Any] = js.native
     def cast(obj: js.Any, constructor: js.Function, offset: Int = ???): js.Array[js.Any] = js.native
-    def clone(arr: js.Array[js.Any]): js.Array[js.Any] = js.native
+    @JSName("clone")
+    def cloneQx(arr: js.Array[js.Any]): js.Array[js.Any] = js.native
     def contains(arr: js.Array[js.Any], obj: js.Any): Boolean = js.native
     def equals(arr1: js.Array[js.Any], arr2: js.Array[js.Any]): Boolean = js.native
     def exclude(arr1: js.Array[js.Any], arr2: js.Array[js.Any]): js.Array[js.Any] = js.native
@@ -4766,7 +4773,8 @@ class Object extends js.Object {
 @js.native
 @JSName("qx.lang.Object")
 object Object extends js.Object {
-    def clone(source: js.Any, deep: Boolean): js.Dynamic = js.native
+    @JSName("clone")
+    def cloneQx(source: js.Any, deep: Boolean): js.Dynamic = js.native
     def contains(map: js.Any, value: js.Any): Boolean = js.native
     def empty(map: js.Any): Unit = js.native
     def equals(object1: js.Any, object2: js.Any): Boolean = js.native
@@ -5501,7 +5509,8 @@ package qx.`type` {
 class Array protected () extends qx.`type`.BaseArray {
     def this(length_or_items: Int = ???) = this()
     def append(arr: js.Array[js.Any]): js.Array[js.Any] = js.native
-    def clone(): js.Array[js.Any] = js.native
+    @JSName("clone")
+    def cloneQx(): js.Array[js.Any] = js.native
     def contains(obj: js.Any): Boolean = js.native
     def insertAfter(obj: js.Any, obj2: js.Any): js.Array[js.Any] = js.native
     def insertAt(obj: js.Any, i: Int): js.Array[js.Any] = js.native
@@ -5559,7 +5568,8 @@ class BaseString protected () extends js.Object {
     def concat(stringN: String): String = js.native
     def indexOf(index: String, offset: Int = ???): Int = js.native
     def lastIndexOf(index: String, offset: Int = ???): Int = js.native
-    def `match`(regexp: js.Any): js.Dynamic = js.native
+    @JSName("match")
+    def matchQx(regexp: js.Any): js.Dynamic = js.native
     def replace(regexp: js.Any, aFunction: js.Function): String = js.native
     def search(regexp: js.Any): js.Dynamic = js.native
     def slice(beginslice: Int, endSlice: Int = ???): String = js.native

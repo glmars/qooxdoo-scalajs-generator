@@ -316,6 +316,12 @@ class Parser {
                 if (isOverride && (modifier == "protected ")) return;
 
                 var escapedName = this.getName(m.attributes.name)
+                
+                // name was changed for scala
+                if(escapedName !== m.attributes.name) {
+                    write(`${indent}@JSName("${m.attributes.name}")\n`);
+                }
+                
                 write(indent + modifier + "def " + escapedName + "(");
                 this.writeParameters(m);
                 write(")");
