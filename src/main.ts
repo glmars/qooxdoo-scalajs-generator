@@ -94,6 +94,9 @@ class Parser {
     // Where to find the API documentation json files
     static BASE_DIR = "api_5.0/";
 
+    // Where to find the fixed API documentation json files
+    static BASE_FIX_DIR = "api_fix_5.0/";
+
     // Contains the mapping from Qooxdoo types to Scala types
     private typeMappings: Map<string, string>;
 
@@ -164,6 +167,12 @@ class Parser {
     private loadAPIFile(name): Fmt {
         if (Parser.LOG_LEVEL > 3) console.info("Parsing API file" + name);
         var fileName = path.join(Parser.BASE_DIR, name);
+
+        var fixFileName = path.join(Parser.BASE_FIX_DIR, name);
+        if(fs.existsSync(fixFileName)) {
+            fileName = fixFileName;            
+        }
+
         var content = fs.readFileSync(fileName, "UTF-8");
         var result = JSON.parse(content);
         return result;
