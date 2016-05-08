@@ -365,7 +365,12 @@ class Parser {
         var a = this.findChildByType(Types.Types, p);
         a = this.findChildByType(Types.Entry, a);
         if (a && a.attributes.type) {
-            type = this.getFullName(this.getType(a.attributes.type));
+            type = a.attributes.type;
+            if (type === "var") {
+                type = this.properties[ this.fromProperty ];
+                console.log("Type determined for " + this.fromProperty + ":" + type);
+            }
+            type = this.getFullName(this.getType(type));
             if (a.attributes.dimensions) type = `js.Array[${type}]`;
         }
         write(type);
