@@ -207,10 +207,10 @@ class Basic extends qx.core.Object with qx.application.IApplication {
 package qx.application {
 @js.native
 trait IApplication extends js.Object {
-    def close(): String = js.native
-    def finalize(): Unit = js.native
-    def main(): Unit = js.native
-    def terminate(): Unit = js.native
+    def close(): String
+    def finalize(): Unit
+    def main(): Unit
+    def terminate(): Unit
 
 }
 }
@@ -1655,18 +1655,18 @@ class Video protected () extends qx.bom.media.Abstract {
 package qx.bom.request {
 @js.native
 trait IRequest extends js.Object {
-    def abort(): Unit = js.native
-    def getAllResponseHeaders(): String = js.native
-    def getResponseHeader(header: String): String = js.native
-    def onabort(): Unit = js.native
-    def onerror(): Unit = js.native
-    def onload(): Unit = js.native
-    def onloadend(): Unit = js.native
-    def onreadystatechange(): Unit = js.native
-    def ontimeout(): Unit = js.native
-    def open(method: String, url: String, async: Boolean = ???): Unit = js.native
-    def send(data: String = ???): Unit = js.native
-    def setRequestHeader(key: String, value: String): Unit = js.native
+    def abort(): Unit
+    def getAllResponseHeaders(): String
+    def getResponseHeader(header: String): String
+    def onabort(): Unit
+    def onerror(): Unit
+    def onload(): Unit
+    def onloadend(): Unit
+    def onreadystatechange(): Unit
+    def ontimeout(): Unit
+    def open(method: String, url: String, async: Boolean = ???): Unit
+    def send(data: String = ???): Unit
+    def setRequestHeader(key: String, value: String): Unit
 
 }
 }
@@ -2314,12 +2314,12 @@ object Conversion extends js.Object {
 package qx.data {
 @js.native
 trait IListData extends js.Object {
-    def contains(item: js.Any): Boolean = js.native
-    def getItem(index: Long): js.Dynamic = js.native
-    def getLength(): Long = js.native
-    def setItem(index: Long, item: js.Any): Unit = js.native
-    def splice(startIndex: Int, amount: Int, varargs: js.Any = ???): qx.data.Array = js.native
-    def toArray(): js.Array[js.Any] = js.native
+    def contains(item: js.Any): Boolean
+    def getItem(index: Long): js.Dynamic
+    def getLength(): Long
+    def setItem(index: Long, item: js.Any): Unit
+    def splice(startIndex: Int, amount: Int, varargs: js.Any = ???): qx.data.Array
+    def toArray(): js.Array[js.Any]
 
 }
 }
@@ -2382,19 +2382,19 @@ class Form protected () extends qx.core.Object {
 package qx.data.controller {
 @js.native
 trait IControllerDelegate extends js.Object {
-    def bindItem(controller: js.Any, item: qx.ui.core.Widget, id: js.Any): Unit = js.native
-    def configureItem(item: js.Any): Unit = js.native
-    def createItem(): qx.ui.core.Widget = js.native
-    def filter(data: js.Any): Boolean = js.native
+    def bindItem(controller: js.Any, item: qx.ui.core.Widget, id: js.Any): Unit
+    def configureItem(item: js.Any): Unit
+    def createItem(): qx.ui.core.Widget
+    def filter(data: js.Any): Boolean
 
 }
 }
 package qx.data.controller {
 @js.native
 trait ISelection extends js.Object {
-    def getSelection(): qx.data.IListData = js.native
-    def resetSelection(): Unit = js.native
-    def setSelection(value: qx.data.IListData): Unit = js.native
+    def getSelection(): qx.data.IListData
+    def resetSelection(): Unit
+    def setSelection(value: qx.data.IListData): Unit
 
 }
 }
@@ -2546,21 +2546,21 @@ class Tree protected () extends qx.core.Object with qx.data.controller.ISelectio
 package qx.data.marshal {
 @js.native
 trait IMarshaler extends js.Object {
-    def toClass(data: js.Any, includeBubbleEvents: Boolean): Unit = js.native
-    def toModel(data: js.Any): qx.core.Object = js.native
+    def toClass(data: js.Any, includeBubbleEvents: Boolean): Unit
+    def toModel(data: js.Any): qx.core.Object
 
 }
 }
 package qx.data.marshal {
 @js.native
 trait IMarshalerDelegate extends js.Object {
-    def getArrayClass(parentProperty: String, depth: Long): qx.Class = js.native
-    def getModelClass(properties: String, obj: js.Any, parentProperty: String, depth: Long): qx.Class = js.native
-    def getModelMixins(properties: String, parentProperty: String, depth: Long): js.Array[js.Any] = js.native
-    def getModelSuperClass(properties: String, parentProperty: String, depth: Long): qx.Class = js.native
-    def getPropertyMapping(property: String, properties: String): String = js.native
-    def getValidationRule(properties: String, propertyName: String): js.Function = js.native
-    def ignore(properties: String, parentProperty: String, depth: Long): Boolean = js.native
+    def getArrayClass(parentProperty: String, depth: Long): qx.Class
+    def getModelClass(properties: String, obj: js.Any, parentProperty: String, depth: Long): qx.Class
+    def getModelMixins(properties: String, parentProperty: String, depth: Long): js.Array[js.Any]
+    def getModelSuperClass(properties: String, parentProperty: String, depth: Long): qx.Class
+    def getPropertyMapping(property: String, properties: String): String
+    def getValidationRule(properties: String, propertyName: String): js.Function
+    def ignore(properties: String, parentProperty: String, depth: Long): Boolean
 
 }
 }
@@ -2592,8 +2592,8 @@ trait MEventBubbling extends js.Object {
 package qx.data.store {
 @js.native
 trait IStoreDelegate extends js.Object {
-    def configureRequest(request: js.Any): Unit = js.native
-    def manipulateData(data: js.Any): js.Dynamic = js.native
+    def configureRequest(request: js.Any): Unit
+    def manipulateData(data: js.Any): js.Dynamic
 
 }
 }
@@ -2835,17 +2835,17 @@ object GlobalError extends js.Object {
 package qx.event {
 @js.native
 trait IEventDispatcher extends js.Object {
-    def canDispatchEvent(target: HTMLElement, event: qx.event.`type`.Event, `type`: String): Boolean = js.native
-    def dispatchEvent(target: HTMLElement, event: qx.event.`type`.Event, `type`: String): Unit = js.native
+    def canDispatchEvent(target: HTMLElement, event: qx.event.`type`.Event, `type`: String): Boolean
+    def dispatchEvent(target: HTMLElement, event: qx.event.`type`.Event, `type`: String): Unit
 
 }
 }
 package qx.event {
 @js.native
 trait IEventHandler extends js.Object {
-    def canHandleEvent(target: js.Any, `type`: String): Boolean = js.native
-    def registerEvent(target: js.Any, `type`: String, capture: Boolean): Unit = js.native
-    def unregisterEvent(target: js.Any, `type`: String, capture: Boolean): Unit = js.native
+    def canHandleEvent(target: js.Any, `type`: String): Boolean
+    def registerEvent(target: js.Any, `type`: String, capture: Boolean): Unit
+    def unregisterEvent(target: js.Any, `type`: String, capture: Boolean): Unit
 
 }
 }
@@ -4642,7 +4642,7 @@ class Basic protected () extends qx.core.Object with qx.io.request.authenticatio
 package qx.io.request.authentication {
 @js.native
 trait IAuthentication extends js.Object {
-    def getAuthHeaders(): js.Array[js.Dynamic] = js.native
+    def getAuthHeaders(): js.Array[js.Dynamic]
 
 }
 }
@@ -5993,29 +5993,29 @@ object FocusHandler extends js.Object {
 package qx.ui.core {
 @js.native
 trait IMultiSelection extends js.Object {
-    def addToSelection(item: qx.ui.core.Widget): Unit = js.native
-    def removeFromSelection(item: qx.ui.core.Widget): Unit = js.native
-    def selectAll(): Unit = js.native
+    def addToSelection(item: qx.ui.core.Widget): Unit
+    def removeFromSelection(item: qx.ui.core.Widget): Unit
+    def selectAll(): Unit
 
 }
 }
 package qx.ui.core {
 @js.native
 trait ISingleSelection extends js.Object {
-    def getSelectables(all: Boolean): js.Array[qx.ui.core.Widget] = js.native
-    def getSelection(): js.Array[qx.ui.core.Widget] = js.native
-    def isSelected(item: qx.ui.core.Widget): Boolean = js.native
-    def isSelectionEmpty(): Boolean = js.native
-    def resetSelection(): Unit = js.native
-    def setSelection(items: js.Array[qx.ui.core.Widget]): Unit = js.native
+    def getSelectables(all: Boolean): js.Array[qx.ui.core.Widget]
+    def getSelection(): js.Array[qx.ui.core.Widget]
+    def isSelected(item: qx.ui.core.Widget): Boolean
+    def isSelectionEmpty(): Boolean
+    def resetSelection(): Unit
+    def setSelection(items: js.Array[qx.ui.core.Widget]): Unit
 
 }
 }
 package qx.ui.core {
 @js.native
 trait ISingleSelectionProvider extends js.Object {
-    def getItems(): js.Array[qx.ui.core.Widget] = js.native
-    def isItemSelectable(item: qx.ui.core.Widget): Boolean = js.native
+    def getItems(): js.Array[qx.ui.core.Widget]
+    def isItemSelectable(item: qx.ui.core.Widget): Boolean
 
 }
 }
@@ -6920,25 +6920,25 @@ class AbstractScrollArea extends qx.ui.core.Widget with qx.ui.core.scroll.MScrol
 package qx.ui.core.scroll {
 @js.native
 trait IScrollBar extends js.Object {
-    def getKnobFactor(): js.Dynamic = js.native
-    def getMaximum(): js.Dynamic = js.native
-    def getOrientation(): js.Dynamic = js.native
-    def getPosition(): js.Dynamic = js.native
-    protected def initKnobFactor(value: js.Any): js.Dynamic = js.native
-    protected def initMaximum(value: js.Any): js.Dynamic = js.native
-    protected def initOrientation(value: js.Any): js.Dynamic = js.native
-    protected def initPosition(value: js.Any): js.Dynamic = js.native
-    def resetKnobFactor(): Unit = js.native
-    def resetMaximum(): Unit = js.native
-    def resetOrientation(): Unit = js.native
-    def resetPosition(): Unit = js.native
-    def scrollBy(offset: Int, duration: Long): Unit = js.native
-    def scrollBySteps(steps: Int, duration: Long): Unit = js.native
-    def scrollTo(position: Int, duration: Long): Unit = js.native
-    def setKnobFactor(value: js.Any): js.Dynamic = js.native
-    def setMaximum(value: js.Any): js.Dynamic = js.native
-    def setOrientation(value: js.Any): js.Dynamic = js.native
-    def setPosition(value: js.Any): js.Dynamic = js.native
+    def getKnobFactor(): js.Dynamic
+    def getMaximum(): js.Dynamic
+    def getOrientation(): js.Dynamic
+    def getPosition(): js.Dynamic
+    protected def initKnobFactor(value: js.Any): js.Dynamic
+    protected def initMaximum(value: js.Any): js.Dynamic
+    protected def initOrientation(value: js.Any): js.Dynamic
+    protected def initPosition(value: js.Any): js.Dynamic
+    def resetKnobFactor(): Unit
+    def resetMaximum(): Unit
+    def resetOrientation(): Unit
+    def resetPosition(): Unit
+    def scrollBy(offset: Int, duration: Long): Unit
+    def scrollBySteps(steps: Int, duration: Long): Unit
+    def scrollTo(position: Int, duration: Long): Unit
+    def setKnobFactor(value: js.Any): js.Dynamic
+    def setMaximum(value: js.Any): js.Dynamic
+    def setOrientation(value: js.Any): js.Dynamic
+    def setPosition(value: js.Any): js.Dynamic
 
 }
 }
@@ -7220,9 +7220,9 @@ class Decorator extends qx.ui.decoration.Abstract with qx.ui.decoration.IDecorat
 package qx.ui.decoration {
 @js.native
 trait IDecorator extends js.Object {
-    def getInsets(): js.Dynamic = js.native
-    def getPadding(): js.Dynamic = js.native
-    def getStyles(): js.Dynamic = js.native
+    def getInsets(): js.Dynamic
+    def getPadding(): js.Dynamic
+    def getStyles(): js.Dynamic
 
 }
 }
@@ -8000,111 +8000,111 @@ class HoverButton protected () extends qx.ui.basic.Atom with qx.ui.form.IExecuta
 package qx.ui.form {
 @js.native
 trait IBooleanForm extends js.Object {
-    def getValue(): Boolean = js.native
-    def resetValue(): Unit = js.native
-    def setValue(value: Boolean): Unit = js.native
+    def getValue(): Boolean
+    def resetValue(): Unit
+    def setValue(value: Boolean): Unit
 
 }
 }
 package qx.ui.form {
 @js.native
 trait IColorForm extends js.Object {
-    def getValue(): String = js.native
-    def resetValue(): Unit = js.native
-    def setValue(value: String): Unit = js.native
+    def getValue(): String
+    def resetValue(): Unit
+    def setValue(value: String): Unit
 
 }
 }
 package qx.ui.form {
 @js.native
 trait IDateForm extends js.Object {
-    def getValue(): js.Date = js.native
-    def resetValue(): Unit = js.native
-    def setValue(value: js.Date): Unit = js.native
+    def getValue(): js.Date
+    def resetValue(): Unit
+    def setValue(value: js.Date): Unit
 
 }
 }
 package qx.ui.form {
 @js.native
 trait IExecutable extends js.Object {
-    def execute(): Unit = js.native
-    def getCommand(): qx.ui.command.Command = js.native
-    def setCommand(command: qx.ui.command.Command): Unit = js.native
+    def execute(): Unit
+    def getCommand(): qx.ui.command.Command
+    def setCommand(command: qx.ui.command.Command): Unit
 
 }
 }
 package qx.ui.form {
 @js.native
 trait IForm extends js.Object {
-    def getEnabled(): Boolean = js.native
-    def getInvalidMessage(): String = js.native
-    def getRequired(): Boolean = js.native
-    def getRequiredInvalidMessage(): String = js.native
-    def getValid(): Boolean = js.native
-    def setEnabled(enabled: Boolean): Unit = js.native
-    def setInvalidMessage(message: String): Unit = js.native
-    def setRequired(required: Boolean): Unit = js.native
-    def setRequiredInvalidMessage(message: String): Unit = js.native
-    def setValid(valid: Boolean): Unit = js.native
+    def getEnabled(): Boolean
+    def getInvalidMessage(): String
+    def getRequired(): Boolean
+    def getRequiredInvalidMessage(): String
+    def getValid(): Boolean
+    def setEnabled(enabled: Boolean): Unit
+    def setInvalidMessage(message: String): Unit
+    def setRequired(required: Boolean): Unit
+    def setRequiredInvalidMessage(message: String): Unit
+    def setValid(valid: Boolean): Unit
 
 }
 }
 package qx.ui.form {
 @js.native
 trait IModel extends js.Object {
-    def getModel(): js.Dynamic = js.native
-    def resetModel(): Unit = js.native
-    def setModel(value: js.Any): Unit = js.native
+    def getModel(): js.Dynamic
+    def resetModel(): Unit
+    def setModel(value: js.Any): Unit
 
 }
 }
 package qx.ui.form {
 @js.native
 trait IModelSelection extends js.Object {
-    def getModelSelection(): js.Array[js.Any] = js.native
-    def setModelSelection(value: js.Array[js.Any]): Unit = js.native
+    def getModelSelection(): js.Array[js.Any]
+    def setModelSelection(value: js.Array[js.Any]): Unit
 
 }
 }
 package qx.ui.form {
 @js.native
 trait INumberForm extends js.Object {
-    def getValue(): Long = js.native
-    def resetValue(): Unit = js.native
-    def setValue(value: Long): Unit = js.native
+    def getValue(): Long
+    def resetValue(): Unit
+    def setValue(value: Long): Unit
 
 }
 }
 package qx.ui.form {
 @js.native
 trait IRadioItem extends js.Object {
-    def getGroup(): qx.ui.form.RadioGroup = js.native
-    def getValue(): Boolean = js.native
-    def setGroup(value: qx.ui.form.RadioGroup): Unit = js.native
-    def setValue(value: Boolean): Unit = js.native
+    def getGroup(): qx.ui.form.RadioGroup
+    def getValue(): Boolean
+    def setGroup(value: qx.ui.form.RadioGroup): Unit
+    def setValue(value: Boolean): Unit
 
 }
 }
 package qx.ui.form {
 @js.native
 trait IRange extends js.Object {
-    def getMaximum(): Long = js.native
-    def getMinimum(): Long = js.native
-    def getPageStep(): Long = js.native
-    def getSingleStep(): Long = js.native
-    def setMaximum(max: Long): Unit = js.native
-    def setMinimum(min: Long): Unit = js.native
-    def setPageStep(step: Long): Unit = js.native
-    def setSingleStep(step: Long): Unit = js.native
+    def getMaximum(): Long
+    def getMinimum(): Long
+    def getPageStep(): Long
+    def getSingleStep(): Long
+    def setMaximum(max: Long): Unit
+    def setMinimum(min: Long): Unit
+    def setPageStep(step: Long): Unit
+    def setSingleStep(step: Long): Unit
 
 }
 }
 package qx.ui.form {
 @js.native
 trait IStringForm extends js.Object {
-    def getValue(): String = js.native
-    def resetValue(): Unit = js.native
-    def setValue(value: String): Unit = js.native
+    def getValue(): String
+    def resetValue(): Unit
+    def setValue(value: String): Unit
 
 }
 }
@@ -8804,8 +8804,8 @@ class Double protected () extends qx.ui.form.renderer.AbstractRenderer {
 package qx.ui.form.renderer {
 @js.native
 trait IFormRenderer extends js.Object {
-    def addButton(button: qx.ui.form.Button, options: js.Any = ???): Unit = js.native
-    def addItems(items: js.Array[qx.ui.core.Widget], names: js.Array[String], title: String = ???, itemsOptions: js.Array[js.Any] = ???, headerOptions: js.Any = ???): Unit = js.native
+    def addButton(button: qx.ui.form.Button, options: js.Any = ???): Unit
+    def addItems(items: js.Array[qx.ui.core.Widget], names: js.Array[String], title: String = ???, itemsOptions: js.Array[js.Any] = ???, headerOptions: js.Any = ???): Unit
 
 }
 }
@@ -9308,16 +9308,16 @@ class List protected () extends qx.ui.virtual.core.Scroller with qx.data.control
 package qx.ui.list.core {
 @js.native
 trait IListDelegate extends js.Object {
-    def bindGroupItem(controller: qx.ui.list.core.MWidgetController, item: qx.ui.core.Widget, id: Int): Unit = js.native
-    def bindItem(controller: qx.ui.list.core.MWidgetController, item: qx.ui.core.Widget, id: Int): Unit = js.native
-    def configureGroupItem(item: qx.ui.core.Widget): Unit = js.native
-    def configureItem(item: qx.ui.core.Widget): Unit = js.native
-    def createGroupItem(): qx.ui.core.Widget = js.native
-    def createItem(): qx.ui.core.Widget = js.native
-    def filter(data: js.Any): Boolean = js.native
-    def group(data: js.Any): String = js.native
-    def onPool(item: qx.ui.core.Widget): Unit = js.native
-    def sorter(a: js.Any, b: js.Any): Int = js.native
+    def bindGroupItem(controller: qx.ui.list.core.MWidgetController, item: qx.ui.core.Widget, id: Int): Unit
+    def bindItem(controller: qx.ui.list.core.MWidgetController, item: qx.ui.core.Widget, id: Int): Unit
+    def configureGroupItem(item: qx.ui.core.Widget): Unit
+    def configureItem(item: qx.ui.core.Widget): Unit
+    def createGroupItem(): qx.ui.core.Widget
+    def createItem(): qx.ui.core.Widget
+    def filter(data: js.Any): Boolean
+    def group(data: js.Any): String
+    def onPool(item: qx.ui.core.Widget): Unit
+    def sorter(a: js.Any, b: js.Any): Int
 
 }
 }
@@ -9368,18 +9368,18 @@ trait MWidgetController extends js.Object {
 package qx.ui.list.provider {
 @js.native
 trait IListProvider extends js.Object {
-    def createGroupRenderer(): js.Dynamic = js.native
-    def createItemRenderer(): js.Dynamic = js.native
-    def createLayer(): qx.ui.virtual.layer.Abstract = js.native
-    def isSelectable(row: Int): Boolean = js.native
-    def removeBindings(): Unit = js.native
-    def setDelegate(delegate: js.Any): Unit = js.native
-    def setIconOptions(options: js.Any): Unit = js.native
-    def setIconPath(path: String): Unit = js.native
-    def setLabelOptions(options: js.Any): Unit = js.native
-    def setLabelPath(path: String): Unit = js.native
-    def styleSelectabled(row: Int): Unit = js.native
-    def styleUnselectabled(row: Int): Unit = js.native
+    def createGroupRenderer(): js.Dynamic
+    def createItemRenderer(): js.Dynamic
+    def createLayer(): qx.ui.virtual.layer.Abstract
+    def isSelectable(row: Int): Boolean
+    def removeBindings(): Unit
+    def setDelegate(delegate: js.Any): Unit
+    def setIconOptions(options: js.Any): Unit
+    def setIconPath(path: String): Unit
+    def setLabelOptions(options: js.Any): Unit
+    def setLabelPath(path: String): Unit
+    def styleSelectabled(row: Int): Unit
+    def styleUnselectabled(row: Int): Unit
 
 }
 }
@@ -10084,77 +10084,77 @@ object Stylesheet extends js.Object {
 package qx.ui.table {
 @js.native
 trait ICellEditorFactory extends js.Object {
-    def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
-    def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
+    def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget
+    def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic
 
 }
 }
 package qx.ui.table {
 @js.native
 trait ICellRenderer extends js.Object {
-    def createDataCellHtml(cellInfo: js.Any, htmlArr: js.Array[String]): Boolean = js.native
+    def createDataCellHtml(cellInfo: js.Any, htmlArr: js.Array[String]): Boolean
 
 }
 }
 package qx.ui.table {
 @js.native
 trait IColumnMenuButton extends js.Object {
-    def empty(): Unit = js.native
-    def factory(item: String, options: js.Any): qx.ui.core.Widget = js.native
-    def getMenu(): js.Dynamic = js.native
-    protected def initMenu(value: js.Any): js.Dynamic = js.native
-    def resetMenu(): Unit = js.native
-    def setMenu(value: js.Any): js.Dynamic = js.native
+    def empty(): Unit
+    def factory(item: String, options: js.Any): qx.ui.core.Widget
+    def getMenu(): js.Dynamic
+    protected def initMenu(value: js.Any): js.Dynamic
+    def resetMenu(): Unit
+    def setMenu(value: js.Any): js.Dynamic
 
 }
 }
 package qx.ui.table {
 @js.native
 trait IColumnMenuItem extends js.Object {
-    def getVisible(): js.Dynamic = js.native
-    protected def initVisible(value: js.Any): js.Dynamic = js.native
-    def resetVisible(): Unit = js.native
-    def setVisible(value: js.Any): js.Dynamic = js.native
+    def getVisible(): js.Dynamic
+    protected def initVisible(value: js.Any): js.Dynamic
+    def resetVisible(): Unit
+    def setVisible(value: js.Any): js.Dynamic
 
 }
 }
 package qx.ui.table {
 @js.native
 trait IHeaderRenderer extends js.Object {
-    def createHeaderCell(cellInfo: js.Any): qx.ui.core.Widget = js.native
-    def updateHeaderCell(cellInfo: js.Any, cellWidget: qx.ui.core.Widget): Unit = js.native
+    def createHeaderCell(cellInfo: js.Any): qx.ui.core.Widget
+    def updateHeaderCell(cellInfo: js.Any, cellWidget: qx.ui.core.Widget): Unit
 
 }
 }
 package qx.ui.table {
 @js.native
 trait IRowRenderer extends js.Object {
-    def createRowStyle(rowInfo: js.Any): Unit = js.native
-    def getRowClass(rowInfo: js.Any): Unit = js.native
-    def getRowHeightStyle(height: Int): Unit = js.native
-    def updateDataRowElement(rowInfo: js.Any, rowElement: HTMLElement): Unit = js.native
+    def createRowStyle(rowInfo: js.Any): Unit
+    def getRowClass(rowInfo: js.Any): Unit
+    def getRowHeightStyle(height: Int): Unit
+    def updateDataRowElement(rowInfo: js.Any, rowElement: HTMLElement): Unit
 
 }
 }
 package qx.ui.table {
 @js.native
 trait ITableModel extends js.Object {
-    def getColumnCount(): Int = js.native
-    def getColumnId(columnIndex: Int): String = js.native
-    def getColumnIndexById(columnId: String): Int = js.native
-    def getColumnName(columnIndex: Int): String = js.native
-    def getRowCount(): Int = js.native
-    def getRowData(rowIndex: Int): js.Dynamic = js.native
-    def getSortColumnIndex(): Int = js.native
-    def getValue(columnIndex: Int, rowIndex: Int): js.Dynamic = js.native
-    def getValueById(columnId: String, rowIndex: Int): js.Dynamic = js.native
-    def isColumnEditable(columnIndex: Int): Boolean = js.native
-    def isColumnSortable(columnIndex: Int): Boolean = js.native
-    def isSortAscending(): Boolean = js.native
-    def prefetchRows(firstRowIndex: Int, lastRowIndex: Int): Unit = js.native
-    def setValue(columnIndex: Int, rowIndex: Int, value: js.Any): Unit = js.native
-    def setValueById(columnId: String, rowIndex: Int, value: js.Any): Unit = js.native
-    def sortByColumn(columnIndex: Int, ascending: Boolean): Unit = js.native
+    def getColumnCount(): Int
+    def getColumnId(columnIndex: Int): String
+    def getColumnIndexById(columnId: String): Int
+    def getColumnName(columnIndex: Int): String
+    def getRowCount(): Int
+    def getRowData(rowIndex: Int): js.Dynamic
+    def getSortColumnIndex(): Int
+    def getValue(columnIndex: Int, rowIndex: Int): js.Dynamic
+    def getValueById(columnId: String, rowIndex: Int): js.Dynamic
+    def isColumnEditable(columnIndex: Int): Boolean
+    def isColumnSortable(columnIndex: Int): Boolean
+    def isSortAscending(): Boolean
+    def prefetchRows(firstRowIndex: Int, lastRowIndex: Int): Unit
+    def setValue(columnIndex: Int, rowIndex: Int, value: js.Any): Unit
+    def setValueById(columnId: String, rowIndex: Int, value: js.Any): Unit
+    def sortByColumn(columnIndex: Int, ascending: Boolean): Unit
 
 }
 }
@@ -11786,29 +11786,29 @@ class FolderOpenButton extends qx.ui.basic.Image with qx.ui.core.MExecutable {
 package qx.ui.tree.core {
 @js.native
 trait IVirtualTree extends js.Object {
-    def closeNode(node: qx.core.Object): Unit = js.native
-    def closeNodeWithoutScrolling(node: qx.core.Object): Unit = js.native
-    def getLevel(row: Int): Int = js.native
-    def getLookupTable(): qx.data.Array = js.native
-    def getSelection(): qx.data.Array = js.native
-    def hasChildren(node: qx.core.Object): Boolean = js.native
-    def isNode(item: qx.core.Object): Boolean = js.native
-    def isNodeOpen(node: qx.core.Object): Boolean = js.native
-    def isShowTopLevelOpenCloseIcons(): Boolean = js.native
-    def openNode(node: qx.core.Object): Unit = js.native
-    def openNodeWithoutScrolling(node: qx.core.Object): Unit = js.native
+    def closeNode(node: qx.core.Object): Unit
+    def closeNodeWithoutScrolling(node: qx.core.Object): Unit
+    def getLevel(row: Int): Int
+    def getLookupTable(): qx.data.Array
+    def getSelection(): qx.data.Array
+    def hasChildren(node: qx.core.Object): Boolean
+    def isNode(item: qx.core.Object): Boolean
+    def isNodeOpen(node: qx.core.Object): Boolean
+    def isShowTopLevelOpenCloseIcons(): Boolean
+    def openNode(node: qx.core.Object): Unit
+    def openNodeWithoutScrolling(node: qx.core.Object): Unit
 
 }
 }
 package qx.ui.tree.core {
 @js.native
 trait IVirtualTreeDelegate extends js.Object {
-    def bindItem(controller: qx.ui.list.core.MWidgetController, item: qx.ui.core.Widget, id: Int): Unit = js.native
-    def configureItem(item: qx.ui.core.Widget): Unit = js.native
-    def createItem(): qx.ui.core.Widget = js.native
-    def filter(data: js.Any): Boolean = js.native
-    def onPool(item: qx.ui.core.Widget): Unit = js.native
-    def sorter(a: js.Any, b: js.Any): Int = js.native
+    def bindItem(controller: qx.ui.list.core.MWidgetController, item: qx.ui.core.Widget, id: Int): Unit
+    def configureItem(item: qx.ui.core.Widget): Unit
+    def createItem(): qx.ui.core.Widget
+    def filter(data: js.Any): Boolean
+    def onPool(item: qx.ui.core.Widget): Unit
+    def sorter(a: js.Any, b: js.Any): Int
 
 }
 }
@@ -11866,13 +11866,13 @@ object Util extends js.Object {
 package qx.ui.tree.provider {
 @js.native
 trait IVirtualTreeProvider extends js.Object {
-    def createLayer(): qx.ui.virtual.layer.Abstract = js.native
-    def createRenderer(): js.Dynamic = js.native
-    def isSelectable(row: Int): Boolean = js.native
-    def setChildProperty(value: String): Unit = js.native
-    def setLabelPath(value: String): Unit = js.native
-    def styleSelectabled(row: Int): Unit = js.native
-    def styleUnselectabled(row: Int): Unit = js.native
+    def createLayer(): qx.ui.virtual.layer.Abstract
+    def createRenderer(): js.Dynamic
+    def isSelectable(row: Int): Boolean
+    def setChildProperty(value: String): Unit
+    def setLabelPath(value: String): Unit
+    def styleSelectabled(row: Int): Unit
+    def styleUnselectabled(row: Int): Unit
 
 }
 }
@@ -12241,24 +12241,24 @@ class Html extends qx.ui.virtual.cell.Cell {
 package qx.ui.virtual.cell {
 @js.native
 trait ICell extends js.Object {
-    def getCellProperties(data: js.Any, states: js.Any): js.Dynamic = js.native
+    def getCellProperties(data: js.Any, states: js.Any): js.Dynamic
 
 }
 }
 package qx.ui.virtual.cell {
 @js.native
 trait IWidgetCell extends js.Object {
-    def getCellWidget(data: js.Any, states: js.Any): qx.ui.core.LayoutItem = js.native
-    def pool(widget: qx.ui.core.LayoutItem): Unit = js.native
-    def updateData(widget: qx.ui.core.LayoutItem, data: js.Any): Unit = js.native
-    def updateStates(widget: qx.ui.core.LayoutItem, states: js.Any): Unit = js.native
+    def getCellWidget(data: js.Any, states: js.Any): qx.ui.core.LayoutItem
+    def pool(widget: qx.ui.core.LayoutItem): Unit
+    def updateData(widget: qx.ui.core.LayoutItem, data: js.Any): Unit
+    def updateStates(widget: qx.ui.core.LayoutItem, states: js.Any): Unit
 
 }
 }
 package qx.ui.virtual.cell {
 @js.native
 trait IWidgetCellDelegate extends js.Object {
-    def createWidget(): qx.ui.core.LayoutItem = js.native
+    def createWidget(): qx.ui.core.LayoutItem
 
 }
 }
@@ -12337,24 +12337,24 @@ class CellEvent extends qx.event.`type`.Pointer {
 package qx.ui.virtual.core {
 @js.native
 trait IHtmlCellProvider extends js.Object {
-    def getCellProperties(row: Int, column: Int): js.Dynamic = js.native
+    def getCellProperties(row: Int, column: Int): js.Dynamic
 
 }
 }
 package qx.ui.virtual.core {
 @js.native
 trait ILayer extends js.Object {
-    def fullUpdate(firstRow: Int, firstColumn: Int, rowSizes: js.Array[Int], columnSizes: js.Array[Int]): Unit = js.native
-    def updateLayerData(): Unit = js.native
-    def updateLayerWindow(firstRow: Int, firstColumn: Int, rowSizes: js.Array[Int], columnSizes: js.Array[Int]): Unit = js.native
+    def fullUpdate(firstRow: Int, firstColumn: Int, rowSizes: js.Array[Int], columnSizes: js.Array[Int]): Unit
+    def updateLayerData(): Unit
+    def updateLayerWindow(firstRow: Int, firstColumn: Int, rowSizes: js.Array[Int], columnSizes: js.Array[Int]): Unit
 
 }
 }
 package qx.ui.virtual.core {
 @js.native
 trait IWidgetCellProvider extends js.Object {
-    def getCellWidget(row: Int, column: Int): qx.ui.core.LayoutItem = js.native
-    def poolCellWidget(widget: qx.ui.core.LayoutItem): Unit = js.native
+    def getCellWidget(row: Int, column: Int): qx.ui.core.LayoutItem
+    def poolCellWidget(widget: qx.ui.core.LayoutItem): Unit
 
 }
 }
@@ -12582,8 +12582,8 @@ class Column extends qx.ui.virtual.selection.Row {
 package qx.ui.virtual.selection {
 @js.native
 trait ISelectionDelegate extends js.Object {
-    def isItemSelectable(item: js.Any): Boolean = js.native
-    def styleSelectable(item: js.Any, `type`: String, wasAdded: Boolean): Unit = js.native
+    def isItemSelectable(item: js.Any): Boolean
+    def styleSelectable(item: js.Any, `type`: String, wasAdded: Boolean): Unit
 
 }
 }
@@ -12644,23 +12644,23 @@ class Desktop protected () extends qx.ui.core.Widget with qx.ui.window.IDesktop 
 package qx.ui.window {
 @js.native
 trait IDesktop extends js.Object {
-    def blockContent(zIndex: Int): Unit = js.native
-    def getWindows(): js.Array[qx.ui.window.Window] = js.native
-    def isBlocked(): Boolean = js.native
-    def setWindowManager(manager: qx.ui.window.IWindowManager): Unit = js.native
-    def supportsMaximize(): Boolean = js.native
-    def unblock(): Unit = js.native
+    def blockContent(zIndex: Int): Unit
+    def getWindows(): js.Array[qx.ui.window.Window]
+    def isBlocked(): Boolean
+    def setWindowManager(manager: qx.ui.window.IWindowManager): Unit
+    def supportsMaximize(): Boolean
+    def unblock(): Unit
 
 }
 }
 package qx.ui.window {
 @js.native
 trait IWindowManager extends js.Object {
-    def bringToFront(win: Window): Unit = js.native
-    def changeActiveWindow(active: Window, oldActive: Window): Unit = js.native
-    def sendToBack(win: Window): Unit = js.native
-    def setDesktop(desktop: qx.ui.window.IDesktop): Unit = js.native
-    def updateStack(): Unit = js.native
+    def bringToFront(win: Window): Unit
+    def changeActiveWindow(active: Window, oldActive: Window): Unit
+    def sendToBack(win: Window): Unit
+    def setDesktop(desktop: qx.ui.window.IDesktop): Unit
+    def updateStack(): Unit
 
 }
 }
@@ -13260,8 +13260,8 @@ object DateFormat extends js.Object {
 package qx.util.format {
 @js.native
 trait IFormat extends js.Object {
-    def format(obj: js.Any): String = js.native
-    def parse(str: String): js.Dynamic = js.native
+    def format(obj: js.Any): String
+    def parse(str: String): js.Dynamic
 
 }
 }

@@ -279,7 +279,7 @@ class Parser {
 	/**
 		* Write all the methods of a type
 		*/
-    writeMethods(d: Fmt[], isStatic = false, isOverride = false, processOnly = false) {
+    writeMethods(d: Fmt[], isStatic = false, isOverride = false, processOnly = false, isAbstract = false) {
         d.forEach((m) => {
             if (m.type === Types.Method) {
                 this.fromProperty = null;
@@ -320,6 +320,11 @@ class Parser {
                 this.writeParameters(m);
                 write(")");
                 this.writeReturnType(m);
+                
+                if(!isAbstract) {
+                    write(" = js.native");
+                }
+                
                 write("\n");
                 // }
             }
@@ -346,7 +351,7 @@ class Parser {
             }
             if (a.attributes.dimensions) returnType = `js.Array[${returnType}]`;
         }
-        write(": " + returnType + " = js.native");
+        write(": " + returnType);
     }
 
 	/**
@@ -527,6 +532,8 @@ class Parser {
           write(` protected ()`);  
         }
 
+        var isAbstract = a.type === "interface";
+
         this.writeExtendsClause(a);
         this.writeImplementsClause(a);
 
@@ -539,7 +546,7 @@ class Parser {
         });
 
         this.runChildrenOfType(d, Types.Methods, (c) => {
-            this.writeMethods(c.children);
+            this.writeMethods(c.children, false, false, false, isAbstract);
         });
 
         write("\n}\n");
