@@ -279,7 +279,7 @@ class Parser {
 	/**
 		* Write all the methods of a type
 		*/
-    writeMethods(d: Fmt[], isStatic = false, isMixin = false) {
+    writeMethods(d: Fmt[], isStatic = false, isOverride = false, processOnly = false) {
         d.forEach((m) => {
             if (m.type === Types.Method) {
                 this.fromProperty = null;
@@ -300,20 +300,23 @@ class Parser {
                 if (Parser.LOG_LEVEL > 3) console.info("Processing method " + m.attributes.name);
 
                 var modifier = "";
-                if (isMixin) {
+                if (isOverride) {
                     modifier = "override ";
                 }
 
                 this.processedMethods[ m.attributes.name ] = true;
+                
+                if(processOnly) return;
 
                 if (m.attributes.access) {
                     if (m.attributes.access === "protected") modifier = "protected ";
                     if (m.attributes.access === "private") return;
                 }
 
-                if (isMixin && (modifier == "protected ")) return;
+                if (isOverride && (modifier == "protected ")) return;
 
-                write(indent + modifier + "def " + this.getName(m.attributes.name) + "(");
+                var escapedName = this.getName(m.attributes.name)
+                write(indent + modifier + "def " + escapedName + "(");
                 this.writeParameters(m);
                 write(")");
                 this.writeReturnType(m);
@@ -415,7 +418,7 @@ class Parser {
 	/**
 	  * Write the interface implemented methods and properties
 	  */
-    includeImplemented(name: string) {
+    includeImplemented(name: string, isMixin = false) {
         name = name.trim();
         if (!name) return;
         this.addIfNewDependency(name);
@@ -427,11 +430,11 @@ class Parser {
         });
 
         this.runChildrenOfType(d, Types.MethodsStatic, (c) => {
-            this.writeMethods(c.children, true, true);
+            this.writeMethods(c.children, true, true, isMixin);
         });
 
         this.runChildrenOfType(d, Types.Methods, (c) => {
-            this.writeMethods(c.children, false, true);
+            this.writeMethods(c.children, false, true, isMixin);
         });
 
     }
@@ -452,6 +455,10 @@ class Parser {
 
         var joinString = " with ";
         write(joinString + impl.join(joinString) + " {\n");
+
+        mixins.forEach((name) => {
+            this.includeImplemented(name, true);
+        });
 
         interfaces.forEach((name) => {
             this.includeImplemented(name);

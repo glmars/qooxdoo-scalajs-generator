@@ -2402,9 +2402,6 @@ package qx.data.controller {
 @js.native
 @JSName("qx.data.controller.List")
 class List protected () extends qx.core.Object with qx.data.controller.ISelection with qx.data.controller.MSelection {
-    override def getSelection(): qx.data.IListData = js.native
-    override def resetSelection(): Unit = js.native
-    override def setSelection(value: qx.data.IListData): Unit = js.native
     def this(model: qx.data.Array = ???, target: qx.ui.core.Widget = ???, labelPath: String = ???) = this()
     protected def _applyDelegate(value: qx.core.Object, old: qx.core.Object): Unit = js.native
     protected def _applyIconOptions(value: js.Any, old: js.Any): Unit = js.native
@@ -2495,9 +2492,6 @@ package qx.data.controller {
 @js.native
 @JSName("qx.data.controller.Tree")
 class Tree protected () extends qx.core.Object with qx.data.controller.ISelection with qx.data.controller.MSelection {
-    override def getSelection(): qx.data.IListData = js.native
-    override def resetSelection(): Unit = js.native
-    override def setSelection(value: qx.data.IListData): Unit = js.native
     def this(model: qx.core.Object = ???, target: qx.ui.tree.Tree = ???, childPath: String = ???, labelPath: String = ???) = this()
     protected def _applyChildPath(value: String, old: String): Unit = js.native
     protected def _applyDelegate(value: qx.core.Object, old: qx.core.Object): Unit = js.native
@@ -5750,12 +5744,6 @@ package qx.ui.container {
 @js.native
 @JSName("qx.ui.container.Stack")
 class Stack extends qx.ui.core.Widget with qx.ui.core.ISingleSelection with qx.ui.core.MSingleSelectionHandling with qx.ui.core.MChildrenHandling {
-    override def getSelectables(all: Boolean): js.Array[qx.ui.core.Widget] = js.native
-    override def getSelection(): js.Array[qx.ui.core.Widget] = js.native
-    override def isSelected(item: qx.ui.core.Widget): Boolean = js.native
-    override def isSelectionEmpty(): Boolean = js.native
-    override def resetSelection(): Unit = js.native
-    override def setSelection(items: js.Array[qx.ui.core.Widget]): Unit = js.native
     protected def _applyDynamic(value: Boolean, old: Boolean): Unit = js.native
     protected def _getItems(): js.Array[qx.ui.core.Widget] = js.native
     protected def _isAllowEmptySelection(): Boolean = js.native
@@ -5876,19 +5864,8 @@ package qx.ui.control {
 @js.native
 @JSName("qx.ui.control.DateChooser")
 class DateChooser protected () extends qx.ui.core.Widget with qx.ui.form.IExecutable with qx.ui.form.IForm with qx.ui.form.IDateForm with qx.ui.core.MExecutable with qx.ui.form.MForm {
-    override def execute(): Unit = js.native
-    override def getCommand(): qx.ui.command.Command = js.native
-    override def setCommand(command: qx.ui.command.Command): Unit = js.native
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
     override def getValue(): js.Date = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: js.Date): Unit = js.native
@@ -7788,15 +7765,7 @@ class AbstractField protected () extends qx.ui.core.Widget with qx.ui.form.IStri
     override def resetValue(): Unit = js.native
     override def setValue(value: String): Unit = js.native
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
     def this(value: String = ???) = this()
     protected def _applyMaxLength(value: Int, old: Int): Unit = js.native
     protected def _applyPlaceholder(value: String, old: String): Unit = js.native
@@ -7862,15 +7831,7 @@ package qx.ui.form {
 @JSName("qx.ui.form.AbstractSelectBox")
 class AbstractSelectBox extends qx.ui.core.Widget with qx.ui.form.IForm with qx.ui.core.MRemoteChildrenHandling with qx.ui.form.MForm {
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
     protected def _applyMaxListHeight(value: Long, old: Long): Unit = js.native
     protected def _defaultFormat(item: js.Any): String = js.native
     protected def _onBlur(e: qx.event.`type`.Focus): Unit = js.native
@@ -7897,9 +7858,6 @@ package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.Button")
 class Button protected () extends qx.ui.basic.Atom with qx.ui.form.IExecutable with qx.ui.core.MExecutable {
-    override def execute(): Unit = js.native
-    override def getCommand(): qx.ui.command.Command = js.native
-    override def setCommand(command: qx.ui.command.Command): Unit = js.native
     def this(label: String = ???, icon: String = ???, command: qx.ui.command.Command = ???) = this()
     protected def _onKeyDown(e: qx.event.`type`.Event): Unit = js.native
     protected def _onKeyUp(e: qx.event.`type`.Event): Unit = js.native
@@ -7919,18 +7877,7 @@ package qx.ui.form {
 @JSName("qx.ui.form.CheckBox")
 class CheckBox protected () extends qx.ui.form.ToggleButton with qx.ui.form.IForm with qx.ui.form.IModel with qx.ui.form.MForm with qx.ui.form.MModelProperty {
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
-    override def getModel(): js.Dynamic = js.native
-    override def resetModel(): Unit = js.native
-    override def setModel(value: js.Any): Unit = js.native
     def this(label: String = ???) = this()
 
 }
@@ -7964,15 +7911,7 @@ package qx.ui.form {
 @JSName("qx.ui.form.DateField")
 class DateField extends qx.ui.core.Widget with qx.ui.form.IForm with qx.ui.form.IDateForm with qx.ui.core.MRemoteChildrenHandling with qx.ui.form.MForm {
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
     override def getValue(): js.Date = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: js.Date): Unit = js.native
@@ -8035,9 +7974,6 @@ package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.HoverButton")
 class HoverButton protected () extends qx.ui.basic.Atom with qx.ui.form.IExecutable with qx.ui.core.MExecutable {
-    override def execute(): Unit = js.native
-    override def getCommand(): qx.ui.command.Command = js.native
-    override def setCommand(command: qx.ui.command.Command): Unit = js.native
     def this(label: String = ???, icon: String = ???) = this()
     protected def _onInterval(): Unit = js.native
     protected def _onPointerOut(e: qx.event.`type`.Pointer): Unit = js.native
@@ -8176,21 +8112,8 @@ package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.List")
 class List protected () extends qx.ui.core.scroll.AbstractScrollArea with qx.ui.core.IMultiSelection with qx.ui.form.IForm with qx.ui.form.IModelSelection with qx.ui.core.MRemoteChildrenHandling with qx.ui.core.MMultiSelectionHandling with qx.ui.form.MForm with qx.ui.form.MModelSelection {
-    override def addToSelection(item: qx.ui.core.Widget): Unit = js.native
-    override def removeFromSelection(item: qx.ui.core.Widget): Unit = js.native
-    override def selectAll(): Unit = js.native
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
-    override def getModelSelection(): qx.data.Array = js.native
-    override def setModelSelection(value: qx.data.Array): Unit = js.native
     def this(horizontal: Boolean = ???) = this()
     protected def _applyOrientation(value: js.Any, old: js.Any): Unit = js.native
     protected def _applySpacing(value: Int, old: Int): Unit = js.native
@@ -8223,9 +8146,6 @@ package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.ListItem")
 class ListItem protected () extends qx.ui.basic.Atom with qx.ui.form.IModel with qx.ui.form.MModelProperty {
-    override def getModel(): js.Dynamic = js.native
-    override def resetModel(): Unit = js.native
-    override def setModel(value: js.Any): Unit = js.native
     def this(label: String = ???, icon: String = ???, model: String = ???) = this()
     protected def _onPointerOut(): Unit = js.native
     protected def _onPointerOver(): Unit = js.native
@@ -8312,19 +8232,8 @@ class RadioButton protected () extends qx.ui.form.Button with qx.ui.form.IRadioI
     override def setGroup(value: qx.ui.form.RadioGroup): Unit = js.native
     override def setValue(value: Boolean): Unit = js.native
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
     override def resetValue(): Unit = js.native
-    override def getModel(): js.Dynamic = js.native
-    override def resetModel(): Unit = js.native
-    override def setModel(value: js.Any): Unit = js.native
     def this(label: String = ???) = this()
     protected def _applyGroup(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyValue(value: Boolean, old: Boolean): Unit = js.native
@@ -8358,8 +8267,6 @@ class RadioButtonGroup protected () extends qx.ui.core.Widget with qx.ui.form.IF
     override def isSelectionEmpty(): Boolean = js.native
     override def resetSelection(): Unit = js.native
     override def setSelection(items: js.Array[qx.ui.core.Widget]): Unit = js.native
-    override def getModelSelection(): qx.data.Array = js.native
-    override def setModelSelection(value: qx.data.Array): Unit = js.native
     def this(layout: qx.ui.layout.Abstract = ???) = this()
     protected def _applyInvalidMessage(value: String, old: String): Unit = js.native
     protected def _applyValid(value: Boolean, old: Boolean): Unit = js.native
@@ -8387,12 +8294,6 @@ package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.RadioGroup")
 class RadioGroup protected () extends qx.core.Object with qx.ui.core.ISingleSelection with qx.ui.form.IForm with qx.ui.form.IModelSelection with qx.ui.core.MSingleSelectionHandling with qx.ui.form.MModelSelection {
-    override def getSelectables(all: Boolean): js.Array[qx.ui.core.Widget] = js.native
-    override def getSelection(): js.Array[qx.ui.core.Widget] = js.native
-    override def isSelected(item: qx.ui.core.Widget): Boolean = js.native
-    override def isSelectionEmpty(): Boolean = js.native
-    override def resetSelection(): Unit = js.native
-    override def setSelection(items: js.Array[qx.ui.core.Widget]): Unit = js.native
     override def getEnabled(): Boolean = js.native
     override def getInvalidMessage(): String = js.native
     override def getRequired(): Boolean = js.native
@@ -8403,8 +8304,6 @@ class RadioGroup protected () extends qx.core.Object with qx.ui.core.ISingleSele
     override def setRequired(required: Boolean): Unit = js.native
     override def setRequiredInvalidMessage(message: String): Unit = js.native
     override def setValid(valid: Boolean): Unit = js.native
-    override def getModelSelection(): qx.data.Array = js.native
-    override def setModelSelection(value: qx.data.Array): Unit = js.native
     def this(varargs: qx.core.Object = ???) = this()
     protected def _applyAllowEmptySelection(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyEnabled(value: Boolean, old: Boolean): Unit = js.native
@@ -8494,14 +8393,6 @@ package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.SelectBox")
 class SelectBox extends qx.ui.form.AbstractSelectBox with qx.ui.core.ISingleSelection with qx.ui.form.IModelSelection with qx.ui.core.MSingleSelectionHandling with qx.ui.form.MModelSelection {
-    override def getSelectables(all: Boolean): js.Array[qx.ui.core.Widget] = js.native
-    override def getSelection(): js.Array[qx.ui.core.Widget] = js.native
-    override def isSelected(item: qx.ui.core.Widget): Boolean = js.native
-    override def isSelectionEmpty(): Boolean = js.native
-    override def resetSelection(): Unit = js.native
-    override def setSelection(items: js.Array[qx.ui.core.Widget]): Unit = js.native
-    override def getModelSelection(): qx.data.Array = js.native
-    override def setModelSelection(value: qx.data.Array): Unit = js.native
     protected def _getItems(): js.Array[qx.ui.form.ListItem] = js.native
     protected def _isAllowEmptySelection(): Boolean = js.native
     protected def _onKeyInput(e: qx.event.`type`.KeyInput): Unit = js.native
@@ -8516,15 +8407,7 @@ package qx.ui.form {
 @JSName("qx.ui.form.Slider")
 class Slider protected () extends qx.ui.core.Widget with qx.ui.form.IForm with qx.ui.form.INumberForm with qx.ui.form.IRange with qx.ui.form.MForm {
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
     override def getValue(): Long = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: Long): Unit = js.native
@@ -8603,15 +8486,7 @@ class Spinner protected () extends qx.ui.core.Widget with qx.ui.form.INumberForm
     override def setPageStep(step: Long): Unit = js.native
     override def setSingleStep(step: Long): Unit = js.native
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
     def this(min: Long = ???, value: Long = ???, max: Long = ???) = this()
     protected def _applyEditable(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyMaximum(value: Long, old: Long): Unit = js.native
@@ -8664,9 +8539,6 @@ package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.SplitButton")
 class SplitButton protected () extends qx.ui.core.Widget with qx.ui.form.IExecutable with qx.ui.core.MExecutable {
-    override def execute(): Unit = js.native
-    override def getCommand(): qx.ui.command.Command = js.native
-    override def setCommand(command: qx.ui.command.Command): Unit = js.native
     def this(label: String = ???, icon: String = ???, menu: qx.ui.menu.Menu = ???, command: qx.ui.command.Command = ???) = this()
     protected def _applyIcon(value: String, old: String): Unit = js.native
     protected def _applyLabel(value: String, old: String): Unit = js.native
@@ -8747,9 +8619,6 @@ class ToggleButton protected () extends qx.ui.basic.Atom with qx.ui.form.IBoolea
     override def getValue(): Boolean = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: Boolean): Unit = js.native
-    override def execute(): Unit = js.native
-    override def getCommand(): qx.ui.command.Command = js.native
-    override def setCommand(command: qx.ui.command.Command): Unit = js.native
     override def getGroup(): qx.ui.form.RadioGroup = js.native
     override def setGroup(value: qx.ui.form.RadioGroup): Unit = js.native
     def this(label: String = ???, icon: String = ???) = this()
@@ -8826,15 +8695,7 @@ package qx.ui.form.core {
 @JSName("qx.ui.form.core.AbstractVirtualBox")
 class AbstractVirtualBox protected () extends qx.ui.core.Widget with qx.ui.form.IForm with qx.ui.form.MForm {
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
     def this(model: qx.data.Array = ???) = this()
     protected def _applyDelegate(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyIconOptions(value: js.Any, old: js.Any): Unit = js.native
@@ -9025,9 +8886,6 @@ class CheckGroupBox extends qx.ui.groupbox.GroupBox with qx.ui.form.IExecutable 
     override def getValue(): Boolean = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: Boolean): Unit = js.native
-    override def getModel(): js.Dynamic = js.native
-    override def resetModel(): Unit = js.native
-    override def setModel(value: js.Any): Unit = js.native
     protected def _onExecute(e: qx.event.`type`.Event): Unit = js.native
     protected def _onRadioChangeValue(e: qx.event.`type`.Data): Unit = js.native
 
@@ -9038,15 +8896,7 @@ package qx.ui.groupbox {
 @JSName("qx.ui.groupbox.GroupBox")
 class GroupBox protected () extends qx.ui.core.Widget with qx.ui.form.IForm with qx.ui.core.MRemoteChildrenHandling with qx.ui.core.MRemoteLayoutHandling with qx.ui.core.MContentPadding with qx.ui.form.MForm {
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
     def this(legend: String = ???, icon: String = ???) = this()
     protected def _applyLegendPosition(e: js.Any): Unit = js.native
     protected def _getContentPaddingTarget(): qx.ui.core.Widget = js.native
@@ -9074,9 +8924,6 @@ class RadioGroupBox extends qx.ui.groupbox.GroupBox with qx.ui.form.IRadioItem w
     override def getCommand(): qx.ui.command.Command = js.native
     override def setCommand(command: qx.ui.command.Command): Unit = js.native
     override def resetValue(): Unit = js.native
-    override def getModel(): js.Dynamic = js.native
-    override def resetModel(): Unit = js.native
-    override def setModel(value: js.Any): Unit = js.native
     protected def _onExecute(e: qx.event.`type`.Event): Unit = js.native
     protected def _onRadioChangeValue(e: qx.event.`type`.Data): Unit = js.native
     def getLabel(): String = js.native
@@ -9378,9 +9225,6 @@ package qx.ui.list {
 @js.native
 @JSName("qx.ui.list.List")
 class List protected () extends qx.ui.virtual.core.Scroller with qx.data.controller.ISelection with qx.ui.virtual.selection.MModel {
-    override def getSelection(): qx.data.IListData = js.native
-    override def resetSelection(): Unit = js.native
-    override def setSelection(value: qx.data.IListData): Unit = js.native
     def this(model: qx.data.IListData = ???) = this()
     protected def _applyDelegate(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyGroupLabelOptions(value: js.Any, old: js.Any): Unit = js.native
@@ -9549,12 +9393,6 @@ class WidgetProvider protected () extends qx.core.Object with qx.ui.virtual.core
     override def createItemRenderer(): js.Dynamic = js.native
     override def createLayer(): qx.ui.virtual.layer.Abstract = js.native
     override def isSelectable(row: Int): Boolean = js.native
-    override def removeBindings(): Unit = js.native
-    override def setDelegate(delegate: js.Any): Unit = js.native
-    override def setIconOptions(options: js.Any): Unit = js.native
-    override def setIconPath(path: String): Unit = js.native
-    override def setLabelOptions(options: js.Any): Unit = js.native
-    override def setLabelPath(path: String): Unit = js.native
     override def styleSelectabled(row: Int): Unit = js.native
     override def styleUnselectabled(row: Int): Unit = js.native
     def this(list: qx.ui.list.List = ???) = this()
@@ -9571,9 +9409,6 @@ package qx.ui.menu {
 @js.native
 @JSName("qx.ui.menu.AbstractButton")
 class AbstractButton extends qx.ui.core.Widget with qx.ui.form.IExecutable with qx.ui.core.MExecutable {
-    override def execute(): Unit = js.native
-    override def getCommand(): qx.ui.command.Command = js.native
-    override def setCommand(command: qx.ui.command.Command): Unit = js.native
     protected def _applyIcon(value: String, old: String): Unit = js.native
     protected def _applyLabel(value: String, old: String): Unit = js.native
     protected def _applyMenu(value: qx.ui.menu.Menu, old: qx.ui.menu.Menu): Unit = js.native
@@ -9792,9 +9627,6 @@ class RadioButton protected () extends qx.ui.menu.AbstractButton with qx.ui.form
     override def setGroup(value: qx.ui.form.RadioGroup): Unit = js.native
     override def setValue(value: Boolean): Unit = js.native
     override def resetValue(): Unit = js.native
-    override def getModel(): js.Dynamic = js.native
-    override def resetModel(): Unit = js.native
-    override def setModel(value: js.Any): Unit = js.native
     def this(label: String = ???, menu: qx.ui.menu.Menu = ???) = this()
     protected def _applyGroup(value: qx.ui.form.RadioGroup, old: qx.ui.form.RadioGroup): Unit = js.native
     protected def _applyValue(value: Boolean, old: Boolean): Unit = js.native
@@ -11549,9 +11381,6 @@ package qx.ui.toolbar {
 @js.native
 @JSName("qx.ui.toolbar.RadioButton")
 class RadioButton extends qx.ui.toolbar.CheckBox with qx.ui.form.IModel with qx.ui.form.IRadioItem with qx.ui.form.MModelProperty {
-    override def getModel(): js.Dynamic = js.native
-    override def resetModel(): Unit = js.native
-    override def setModel(value: js.Any): Unit = js.native
     override def getGroup(): qx.ui.form.RadioGroup = js.native
     override def getValue(): Boolean = js.native
     override def setGroup(value: qx.ui.form.RadioGroup): Unit = js.native
@@ -11696,21 +11525,8 @@ package qx.ui.tree {
 @js.native
 @JSName("qx.ui.tree.Tree")
 class Tree extends qx.ui.core.scroll.AbstractScrollArea with qx.ui.core.IMultiSelection with qx.ui.form.IModelSelection with qx.ui.form.IForm with qx.ui.core.MMultiSelectionHandling with qx.ui.core.MContentPadding with qx.ui.form.MModelSelection with qx.ui.form.MForm {
-    override def addToSelection(item: qx.ui.core.Widget): Unit = js.native
-    override def removeFromSelection(item: qx.ui.core.Widget): Unit = js.native
-    override def selectAll(): Unit = js.native
-    override def getModelSelection(): qx.data.Array = js.native
-    override def setModelSelection(value: qx.data.Array): Unit = js.native
     override def getEnabled(): Boolean = js.native
-    override def getInvalidMessage(): String = js.native
-    override def getRequired(): Boolean = js.native
-    override def getRequiredInvalidMessage(): String = js.native
-    override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
     protected def _applyHideRoot(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyOpenMode(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyRoot(value: qx.ui.tree.core.AbstractTreeItem, old: qx.ui.tree.core.AbstractTreeItem): Unit = js.native
@@ -11771,15 +11587,12 @@ class VirtualTree protected () extends qx.ui.virtual.core.Scroller with qx.ui.tr
     override def closeNodeWithoutScrolling(node: qx.core.Object): Unit = js.native
     override def getLevel(row: Int): Int = js.native
     override def getLookupTable(): qx.data.Array = js.native
-    override def getSelection(): qx.data.Array = js.native
     override def hasChildren(node: qx.core.Object): Boolean = js.native
     override def isNode(item: qx.core.Object): Boolean = js.native
     override def isNodeOpen(node: qx.core.Object): Boolean = js.native
     override def isShowTopLevelOpenCloseIcons(): Boolean = js.native
     override def openNode(node: qx.core.Object): Unit = js.native
     override def openNodeWithoutScrolling(node: qx.core.Object): Unit = js.native
-    override def resetSelection(): Unit = js.native
-    override def setSelection(value: qx.data.IListData): Unit = js.native
     def this(model: qx.core.Object = ???, labelPath: String = ???, childProperty: String = ???) = this()
     protected def _afterApplySelection(): Unit = js.native
     protected def _applyChildProperty(value: String, old: String): Unit = js.native
@@ -11880,9 +11693,6 @@ package qx.ui.tree.core {
 @js.native
 @JSName("qx.ui.tree.core.AbstractItem")
 class AbstractItem protected () extends qx.ui.core.Widget with qx.ui.form.IModel with qx.ui.form.MModelProperty {
-    override def getModel(): js.Dynamic = js.native
-    override def resetModel(): Unit = js.native
-    override def setModel(value: js.Any): Unit = js.native
     def this(label: String = ???) = this()
     protected def _addWidgets(): Unit = js.native
     protected def _applyIcon(value: String, old: String): Unit = js.native
@@ -12075,8 +11885,6 @@ class WidgetProvider protected () extends qx.core.Object with qx.ui.virtual.core
     override def createLayer(): qx.ui.virtual.layer.Abstract = js.native
     override def createRenderer(): js.Dynamic = js.native
     override def isSelectable(row: Int): Boolean = js.native
-    override def setChildProperty(value: String): Unit = js.native
-    override def setLabelPath(value: String): Unit = js.native
     override def styleSelectabled(row: Int): Unit = js.native
     override def styleUnselectabled(row: Int): Unit = js.native
     def this(tree: qx.ui.tree.VirtualTree = ???) = this()
@@ -12829,12 +12637,6 @@ package qx.ui.window {
 @js.native
 @JSName("qx.ui.window.Desktop")
 class Desktop protected () extends qx.ui.core.Widget with qx.ui.window.IDesktop with qx.ui.core.MChildrenHandling with qx.ui.window.MDesktop with qx.ui.core.MBlocker {
-    override def blockContent(zIndex: Int): Unit = js.native
-    override def getWindows(): js.Array[qx.ui.window.Window] = js.native
-    override def isBlocked(): Boolean = js.native
-    override def setWindowManager(manager: qx.ui.window.IWindowManager): Unit = js.native
-    override def supportsMaximize(): Boolean = js.native
-    override def unblock(): Unit = js.native
     def this(windowManager: qx.ui.window.IWindowManager = ???) = this()
 
 }
