@@ -454,6 +454,40 @@
                 "text": "<p>Sets the invalid message of the widget.</p>"
               },
               "type": "desc"
+            },
+            {
+              "attributes": {
+                "text": "<p>Sets the user value of the property <code>invalidMessage</code>.</p>\n\n<p>For further details take a look at the property definition: {@link #invalidMessage}.</p>"
+              },
+              "type": "desc"
+            },
+            {
+              "attributes": {
+                
+              },
+              "type": "return",
+              "children": [
+                {
+                  "attributes": {
+                    "text": "<p>The unmodified incoming value.</p>"
+                  },
+                  "type": "desc"
+                },
+                {
+                  "attributes": {
+                    
+                  },
+                  "type": "types",
+                  "children": [
+                    {
+                      "attributes": {
+                        "type": "String"
+                      },
+                      "type": "entry"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -505,6 +539,40 @@
                 "text": "<p>Sets the required state of a widget.</p>"
               },
               "type": "desc"
+            },
+            {
+              "attributes": {
+                "text": "<p>Sets the user value of the property <code>required</code>.</p>\n\n<p>For further details take a look at the property definition: {@link #required}.</p>"
+              },
+              "type": "desc"
+            },
+            {
+              "attributes": {
+                
+              },
+              "type": "return",
+              "children": [
+                {
+                  "attributes": {
+                    "text": "<p>The unmodified incoming value.</p>"
+                  },
+                  "type": "desc"
+                },
+                {
+                  "attributes": {
+                    
+                  },
+                  "type": "types",
+                  "children": [
+                    {
+                      "attributes": {
+                        "type": "Boolean"
+                      },
+                      "type": "entry"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -556,6 +624,34 @@
                 "text": "<p>Sets the invalid message if required of the widget.</p>"
               },
               "type": "desc"
+            },
+            {
+              "attributes": {
+                
+              },
+              "type": "return",
+              "children": [
+                {
+                  "attributes": {
+                    "text": "<p>The unmodified incoming value.</p>"
+                  },
+                  "type": "desc"
+                },
+                {
+                  "attributes": {
+                    
+                  },
+                  "type": "types",
+                  "children": [
+                    {
+                      "attributes": {
+                        "type": "String"
+                      },
+                      "type": "entry"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -607,6 +703,34 @@
                 "text": "<p>Sets the valid state of the widget.</p>"
               },
               "type": "desc"
+            },
+            {
+              "attributes": {
+                
+              },
+              "type": "return",
+              "children": [
+                {
+                  "attributes": {
+                    "text": "<p>The unmodified incoming value.</p>"
+                  },
+                  "type": "desc"
+                },
+                {
+                  "attributes": {
+                    
+                  },
+                  "type": "types",
+                  "children": [
+                    {
+                      "attributes": {
+                        "type": "Boolean"
+                      },
+                      "type": "entry"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

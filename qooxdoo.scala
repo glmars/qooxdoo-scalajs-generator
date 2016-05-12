@@ -8060,10 +8060,10 @@ trait IForm extends js.Object {
     def getRequiredInvalidMessage(): String
     def getValid(): Boolean
     def setEnabled(enabled: Boolean): Unit
-    def setInvalidMessage(message: String): Unit
-    def setRequired(required: Boolean): Unit
-    def setRequiredInvalidMessage(message: String): Unit
-    def setValid(valid: Boolean): Unit
+    def setInvalidMessage(message: String): String
+    def setRequired(required: Boolean): Boolean
+    def setRequiredInvalidMessage(message: String): String
+    def setValid(valid: Boolean): Boolean
 
 }
 }
@@ -8275,10 +8275,10 @@ class RadioButtonGroup protected () extends qx.ui.core.Widget with qx.ui.form.IF
     override def getRequiredInvalidMessage(): String = js.native
     override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
+    override def setInvalidMessage(message: String): String = js.native
+    override def setRequired(required: Boolean): Boolean = js.native
+    override def setRequiredInvalidMessage(message: String): String = js.native
+    override def setValid(valid: Boolean): Boolean = js.native
     override def getSelectables(all: Boolean): js.Array[qx.ui.core.Widget] = js.native
     override def getSelection(): js.Array[qx.ui.core.Widget] = js.native
     override def isSelected(item: qx.ui.core.Widget): Boolean = js.native
@@ -8318,10 +8318,10 @@ class RadioGroup protected () extends qx.core.Object with qx.ui.core.ISingleSele
     override def getRequiredInvalidMessage(): String = js.native
     override def getValid(): Boolean = js.native
     override def setEnabled(enabled: Boolean): Unit = js.native
-    override def setInvalidMessage(message: String): Unit = js.native
-    override def setRequired(required: Boolean): Unit = js.native
-    override def setRequiredInvalidMessage(message: String): Unit = js.native
-    override def setValid(valid: Boolean): Unit = js.native
+    override def setInvalidMessage(message: String): String = js.native
+    override def setRequired(required: Boolean): Boolean = js.native
+    override def setRequiredInvalidMessage(message: String): String = js.native
+    override def setValid(valid: Boolean): Boolean = js.native
     def this(varargs: qx.core.Object = ???) = this()
     protected def _applyAllowEmptySelection(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyEnabled(value: Boolean, old: Boolean): Unit = js.native
