@@ -318,11 +318,9 @@ class Parser {
                 if(processOnly) return;
 
                 if (m.attributes.access) {
-                    if (m.attributes.access === "protected") modifier = "protected ";
+                    if (m.attributes.access === "protected") modifier += "protected ";
                     if (m.attributes.access === "private") return;
                 }
-
-                if (isOverride && (modifier == "protected ")) return;
 
                 var escapedName = this.getName(m.attributes.name)
                 

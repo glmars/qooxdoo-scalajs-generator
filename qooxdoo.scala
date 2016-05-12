@@ -6987,6 +6987,10 @@ class NativeScrollBar protected () extends qx.ui.core.Widget with qx.ui.core.scr
     override def getMaximum(): js.Dynamic = js.native
     override def getOrientation(): js.Dynamic = js.native
     override def getPosition(): js.Dynamic = js.native
+    override protected def initKnobFactor(value: js.Any): js.Dynamic = js.native
+    override protected def initMaximum(value: js.Any): js.Dynamic = js.native
+    override protected def initOrientation(value: js.Any): js.Dynamic = js.native
+    override protected def initPosition(value: js.Any): js.Dynamic = js.native
     override def resetKnobFactor(): Unit = js.native
     override def resetMaximum(): Unit = js.native
     override def resetOrientation(): Unit = js.native
@@ -7024,6 +7028,10 @@ class ScrollBar protected () extends qx.ui.core.Widget with qx.ui.core.scroll.IS
     override def getMaximum(): js.Dynamic = js.native
     override def getOrientation(): js.Dynamic = js.native
     override def getPosition(): js.Dynamic = js.native
+    override protected def initKnobFactor(value: js.Any): js.Dynamic = js.native
+    override protected def initMaximum(value: js.Any): js.Dynamic = js.native
+    override protected def initOrientation(value: js.Any): js.Dynamic = js.native
+    override protected def initPosition(value: js.Any): js.Dynamic = js.native
     override def resetKnobFactor(): Unit = js.native
     override def resetMaximum(): Unit = js.native
     override def resetOrientation(): Unit = js.native
@@ -10629,6 +10637,7 @@ class Button extends qx.ui.form.MenuButton with qx.ui.table.IColumnMenuButton {
     override def empty(): Unit = js.native
     override def factory(item: String, options: js.Any): qx.ui.core.Widget = js.native
     override def getMenu(): js.Dynamic = js.native
+    override protected def initMenu(value: js.Any): js.Dynamic = js.native
     override def resetMenu(): Unit = js.native
     override def setMenu(value: js.Any): js.Dynamic = js.native
     def getBlocker(): qx.ui.core.Blocker = js.native
@@ -10640,6 +10649,7 @@ package qx.ui.table.columnmenu {
 @JSName("qx.ui.table.columnmenu.MenuItem")
 class MenuItem protected () extends qx.ui.menu.CheckBox with qx.ui.table.IColumnMenuItem {
     override def getVisible(): js.Dynamic = js.native
+    override protected def initVisible(value: js.Any): js.Dynamic = js.native
     override def resetVisible(): Unit = js.native
     override def setVisible(value: js.Any): js.Dynamic = js.native
     def this(text: String = ???) = this()
