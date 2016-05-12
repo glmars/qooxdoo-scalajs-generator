@@ -8206,7 +8206,7 @@ trait MModelProperty extends js.Object {
     def getModel(): js.Dynamic = js.native
     protected def initModel(value: js.Any): js.Dynamic = js.native
     def resetModel(): Unit = js.native
-    def setModel(value: js.Any): js.Dynamic = js.native
+    def setModel(value: js.Any): Unit = js.native
 
 }
 }
