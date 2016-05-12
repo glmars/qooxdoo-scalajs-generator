@@ -8047,7 +8047,7 @@ package qx.ui.form {
 trait IExecutable extends js.Object {
     def execute(): Unit
     def getCommand(): qx.ui.command.Command
-    def setCommand(command: qx.ui.command.Command): Unit
+    def setCommand(command: qx.ui.command.Command): qx.ui.command.Command
 
 }
 }
@@ -8900,7 +8900,7 @@ package qx.ui.groupbox {
 class CheckGroupBox extends qx.ui.groupbox.GroupBox with qx.ui.form.IExecutable with qx.ui.form.IBooleanForm with qx.ui.form.IModel with qx.ui.form.MModelProperty {
     override def execute(): Unit = js.native
     override def getCommand(): qx.ui.command.Command = js.native
-    override def setCommand(command: qx.ui.command.Command): Unit = js.native
+    override def setCommand(command: qx.ui.command.Command): qx.ui.command.Command = js.native
     override def getValue(): Boolean = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: Boolean): Unit = js.native
@@ -8940,7 +8940,7 @@ class RadioGroupBox extends qx.ui.groupbox.GroupBox with qx.ui.form.IRadioItem w
     override def setValue(value: Boolean): Unit = js.native
     override def execute(): Unit = js.native
     override def getCommand(): qx.ui.command.Command = js.native
-    override def setCommand(command: qx.ui.command.Command): Unit = js.native
+    override def setCommand(command: qx.ui.command.Command): qx.ui.command.Command = js.native
     override def resetValue(): Unit = js.native
     protected def _onExecute(e: qx.event.`type`.Event): Unit = js.native
     protected def _onRadioChangeValue(e: qx.event.`type`.Data): Unit = js.native

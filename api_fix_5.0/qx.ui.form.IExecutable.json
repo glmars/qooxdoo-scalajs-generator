@@ -162,6 +162,34 @@
                 "text": "<p>Set the command of this executable.</p>"
               },
               "type": "desc"
+            },
+            {
+              "attributes": {
+                
+              },
+              "type": "return",
+              "children": [
+                {
+                  "attributes": {
+                    "text": "<p>The unmodified incoming value.</p>"
+                  },
+                  "type": "desc"
+                },
+                {
+                  "attributes": {
+                    
+                  },
+                  "type": "types",
+                  "children": [
+                    {
+                      "attributes": {
+                        "type": "qx.ui.command.Command"
+                      },
+                      "type": "entry"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
