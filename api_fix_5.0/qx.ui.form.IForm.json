@@ -403,6 +403,34 @@
                 "text": "<p>Set the enabled state of the widget.</p>"
               },
               "type": "desc"
+            },
+            {
+              "attributes": {
+                
+              },
+              "type": "return",
+              "children": [
+                {
+                  "attributes": {
+                    "text": "<p>The unmodified incoming value.</p>"
+                  },
+                  "type": "desc"
+                },
+                {
+                  "attributes": {
+                    
+                  },
+                  "type": "types",
+                  "children": [
+                    {
+                      "attributes": {
+                        "type": "Boolean"
+                      },
+                      "type": "entry"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
