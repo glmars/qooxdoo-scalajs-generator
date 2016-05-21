@@ -8079,7 +8079,7 @@ trait IModel extends js.Object {
 package qx.ui.form {
 @js.native
 trait IModelSelection extends js.Object {
-    def getModelSelection(): js.Array[js.Any]
+    def getModelSelection(): qx.data.Array
     def setModelSelection(value: js.Array[js.Any]): Unit
 
 }
