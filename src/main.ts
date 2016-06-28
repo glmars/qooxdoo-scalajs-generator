@@ -134,6 +134,12 @@ class Parser {
                 if (Parser.LOG_LEVEL > 1) console.error("processed file: " + fileName + " error: " + err);
             }
         });
+        
+        this.flushOutput("qooxdoo.scala")
+    }
+    
+    private flushOutput(filename: string) {
+        fs.writeFileSync(filename, output);
     }
 
 	/**
@@ -618,6 +624,4 @@ var files = process.argv.slice(2);
 
 var parser = new Parser();
 parser.run();
-fs.writeFileSync("qooxdoo.scala", output);
-
 
