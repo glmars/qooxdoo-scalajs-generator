@@ -10626,7 +10626,7 @@ class Replace extends qx.ui.table.cellrenderer.Default {
 package qx.ui.table.cellrenderer {
 @js.native
 @JSName("qx.ui.table.cellrenderer.String")
-class String extends qx.ui.table.cellrenderer.Conditional {
+class StringQx extends qx.ui.table.cellrenderer.Conditional {
 
 }
 }
