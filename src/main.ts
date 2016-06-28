@@ -97,6 +97,9 @@ class Parser {
     // Where to find the fixed API documentation json files
     static BASE_FIX_DIR = "api_fix_5.0/";
 
+    // Where to find the output files
+    static OUT_DIR = "out/";
+
     // Contains the mapping from Qooxdoo types to Scala types
     private typeMappings: Map<string, string>;
 
@@ -139,7 +142,8 @@ class Parser {
     }
     
     private flushOutput(filename: string) {
-        fs.writeFileSync(filename, output);
+        var filepath = path.join(Parser.OUT_DIR, filename);
+        fs.writeFileSync(Parser.OUT_DIR + filename, output);
     }
 
 	/**
