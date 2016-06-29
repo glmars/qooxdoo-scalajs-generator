@@ -123,22 +123,25 @@ class Parser {
     public run() {
         this.writeBase();
 
-        this.fileNames.forEach((fileName) => {
-            if ((!fileName) || (fileName.indexOf("//") === 0)) return;
-            try {
-                var src: Fmt = this.loadAPIFile(fileName);
-
-                // Reset the golbal methods list.
-                this.processedMethods = {};
-                this.properties = {};
-
-                this.writeModule(src);
-            } catch (err) {
-                if (Parser.LOG_LEVEL > 1) console.error("processed file: " + fileName + " error: " + err);
-            }
-        });
+        this.fileNames.forEach(this.processFile.bind(this));
         
         this.flushOutput("qooxdoo.scala")
+    }
+    
+    private processFile(fileName: string) {
+        if ((!fileName) || (fileName.indexOf("//") === 0)) return;
+
+        try {
+            var src: Fmt = this.loadAPIFile(fileName);
+
+            // Reset the golbal methods list.
+            this.processedMethods = {};
+            this.properties = {};
+
+            this.writeModule(src);
+        } catch (err) {
+            if (Parser.LOG_LEVEL > 1) console.error("processed file: " + fileName + " error: " + err);
+        }
     }
     
     private flushOutput(filename: string) {
