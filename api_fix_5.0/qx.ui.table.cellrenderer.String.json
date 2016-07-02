@@ -3,7 +3,7 @@
     "fullName": "qx.ui.table.cellrenderer.String",
     "packageName": "qx.ui.table.cellrenderer",
     "type": "class",
-    "name": "String",
+    "name": "StringQx",
     "superClass": "qx.ui.table.cellrenderer.Conditional"
   },
   "type": "class",
