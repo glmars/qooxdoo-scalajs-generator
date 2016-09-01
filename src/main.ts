@@ -98,7 +98,7 @@ class Parser {
     static BASE_FIX_DIR = "api_fix_5.0/";
 
     // Where to find the output files
-    static OUT_DIR = "out/";
+    static OUT_DIR = "out";
 
     // Contains the mapping from Qooxdoo types to Scala types
     private typeMappings: Map<string, string>;
@@ -121,11 +121,7 @@ class Parser {
     }
 
     public run() {
-        this.writeBase();
-
         this.fileNames.forEach(this.processFile.bind(this));
-        
-        this.flushOutput("qooxdoo.scala")
     }
     
     private processFile(fileName: string) {
@@ -138,15 +134,48 @@ class Parser {
             this.processedMethods = {};
             this.properties = {};
 
+            output = ""
+            this.writeBase();
             this.writeModule(src);
+        
+            this.flushOutput(fileName);
         } catch (err) {
             if (Parser.LOG_LEVEL > 1) console.error("processed file: " + fileName + " error: " + err);
         }
     }
     
     private flushOutput(filename: string) {
-        var filepath = path.join(Parser.OUT_DIR, filename);
-        fs.writeFileSync(Parser.OUT_DIR + filename, output);
+        var outputPathForFilename = this.inputFilenameToOutputPath(filename);
+        var filepath = path.join(Parser.OUT_DIR, outputPathForFilename);
+        this.mkDirsInPath(filepath);
+        fs.writeFileSync(filepath, output);
+    }
+
+    private inputFilenameToOutputPath(filename: string): string {
+        var pathSegments = filename.split(".");
+        pathSegments.pop(); //exclude .ext
+        var filepath = path.join.apply(this, pathSegments);
+        return filepath + ".scala";
+    }
+
+    private mkDirsInPath(filepath: string) {
+        var dirs = filepath.split(path.sep);
+        dirs.pop(); //exclude filename.ext
+        var dirpath = "";
+        dirs.forEach((dir) => {
+            dirpath = path.join(dirpath, dir);
+            if(!this.isDirectory(dirpath)) {
+                fs.mkdirSync(dirpath);
+            }
+        })
+    }
+    
+    private isDirectory(path: string): Boolean {
+        try {
+            return fs.statSync(path).isDirectory();
+        } catch(e) {
+            return false;
+        }
     }
 
 	/**
